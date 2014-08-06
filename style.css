@@ -1,0 +1,27 @@
+body {
+	background: #544E4B;
+	color: #b2b9bC;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #FFF9ED;
+	font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+}
+
+#hero {
+	background: #e97770;
+	color: #FFF9ED;
+	text-align: center;
+}
+
+#footer {
+	color: #91998E;
+	text-align: center;
+}
