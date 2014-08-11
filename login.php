@@ -14,10 +14,14 @@
         $password = $_POST['password'];
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','sample');
         $result = mysqli_query($con, "SELECT * FROM `users` WHERE username='$username' AND password='$password'");
-        if(mysqli_num_rows($result) == 0)
+        if(mysqli_num_rows($result) == 0) {
+            $_SESSION['login'] = "";
             echo 'Invalid username or password';
-        else
+        }
+        else {
+            $_SESSION['login'] = "1";
             header("Location: /index.php");
+        }
     }
     else {
 ?>
