@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>login</title>
@@ -18,6 +19,7 @@
         if(mysqli_num_rows($result) == 0) {
             $_SESSION['login'] = "";
             header("HTTP/1.1 403 Forbidden");
+            header("Location: /403.html");
         }
         else {
             $_SESSION['login'] = "1";
