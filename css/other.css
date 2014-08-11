@@ -1,7 +1,4 @@
-#name .profile-circular {
-position: fixed;
-top: 0;
-right: 0;	
+.profile-circular {
 width: 100px;
 height: 100px;
 background-image: url('/images/alvin.png');
