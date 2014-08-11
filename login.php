@@ -6,7 +6,6 @@
       <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet" />
       <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-      <base href="http://104.131.195.41:9091" />
 <link rel="stylesheet" type="text/css" href="/login.css">
 </head>
 <body>
