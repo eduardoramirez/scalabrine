@@ -17,7 +17,7 @@
         $result = mysqli_query($con, "SELECT * FROM `users` WHERE username='$username' AND password='$password'");
         if(mysqli_num_rows($result) == 0) {
             $_SESSION['login'] = "";
-            header("HTTP/1.1 403 Unauthorized");
+            header("HTTP/1.1 403 Forbidden");
         }
         else {
             $_SESSION['login'] = "1";
