@@ -104,11 +104,14 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                   </div>
                </section>
                <section class="4u">
-                  <h4>Th***s Po**ll</h4>
-                  <p><i class="fa fa-github"></i> tpo***l</p>
-                  <p><i class="fa fa-envelope-o"></i> tpo***l@pi**.com</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> Rumored phantom 6th member. Legend has it that is he the underground boss of CSE 135.</p>
+                  <div id="enigma-mug" class="profile-circular"></div>
+                  <div>
+                     <h4>Th***s Po**ll</h4>
+                     <p><i class="fa fa-github"></i> tpo***l</p>
+                     <p><i class="fa fa-envelope-o"></i> tpo***l@pi**.com</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> Rumored phantom 6th member. Legend has it that is he the underground boss of CSE 135.</p>
+                  </div>
                </section>
             </div>
          </article>
