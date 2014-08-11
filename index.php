@@ -109,7 +109,7 @@
                      <p><i class="fa fa-github"></i> tpo***l</p>
                      <p><i class="fa fa-envelope-o"></i> tpo***l@pi**.com</p>
                      <br>
-                     <p><i class="fa fa-user"></i> Rumored phantom 6th member. Legend has it that is he the underground boss of CSE 135.</p>
+                     <p><i class="fa fa-user"></i> Rumored phantom 6th member. Legend has it that he is the underground boss of CSE 135.</p>
                   </div>
                </section>
             </div>
