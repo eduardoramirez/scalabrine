@@ -54,21 +54,18 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                   <h4>Matt Asaro</h4>
                   <p><i class="fa fa-github"></i> mattasaro</p>
                   <p><i class="fa fa-envelope-o"></i> masaro@ucsd.edu</p>
-                  <p></p>
                   <p><i class="fa fa-user"></i> <p>Software Engineer mainly on .NET. I like coding, but I’d rather be outside playing sports or doing something in the ocean. I love watching comedies that make me laugh so hard that I cry.</p>
                </section>
                <section class="4u">
                   <h4>Slava Gadetskiy</h4>
                   <p><i class="fa fa-github"></i> vgadetsk</p>
                   <p><i class="fa fa-envelope-o"></i> vgadetsk@ucsd.edu</p>
-                  <br>
                   <p><i class="fa fa-user"></i> <p>Born in Ukraine, 3rd year transfer at UCSD, love driving, soccer and basketball.</p>
                </section>
                <section class="4u">
                   <h4>Kenny Mai</h4>
                   <p><i class="fa fa-github"></i> kenmai9</p>
                   <p><i class="fa fa-envelope-o"></i> k1mai@ucsd.edu</p>
-                  <br>
                   <p><i class="fa fa-user"></i> <p>5th year student at UCSD, for Computer Science. I love my dog and taking care of business.</p>
                </section>
             </div>
@@ -77,14 +74,12 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                   <h4>Eduardo Ramirez</h4>
                   <p><i class="fa fa-github"></i> eduardoramirez</p>
                   <p><i class="fa fa-envelope-o"></i> edr007@ucsd.edu</p>
-                  <br>
                   <p><i class="fa fa-user"></i> <p>3rd year student at UCSD studying computer science. I love photography and soccer.</p>
                </section>
                <section class="4u">
                   <h4>Alvin See</h4>
                   <p><i class="fa fa-github"></i> alvinsee</p>
                   <p><i class="fa fa-envelope-o"></i> aysee@ucsd.edu</p>
-                  <br>
                   <p><i class="fa fa-user"></i> <p>A computer ENGINEERING student who has a very nihilistic view on life. I like taking long walks on the beach and watching the sunset.</p>
                </section>
             </div>
