@@ -3,7 +3,8 @@
     <title>login</title>
     <meta charset="UTF-8">
       <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet" />
-      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
         $result = mysqli_query($con, "SELECT * FROM `users` WHERE username='$username' AND password='$password'");
         if(mysqli_num_rows($result) == 0) {
             $_SESSION['login'] = "";
-            echo 'Invalid username or password';
+            header("HTTP/1.1 403 Unauthorized");
         }
         else {
             $_SESSION['login'] = "1";
