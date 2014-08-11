@@ -22,7 +22,7 @@
             mobile: { range: '-480', containers: 'fluid', lockViewport: true, grid: { collapse: true } }
          }
       });
-      document.write('<link rel="stylesheet" href="css/font-awesome.min.css">')
+      document.write('<link rel="stylesheet" href="/css/font-awesome.min.css">')
       </script>
    </head>
    <body>
