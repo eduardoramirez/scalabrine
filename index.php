@@ -83,7 +83,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                </section>
                <section class="4u">
                   <div class="profile-circular"></div>
-                  <div style="clear: right"><h4>Alvin See</h4></div>
+                  <h4>Alvin See</h4>
                   <p><i class="fa fa-github"></i> alvinsee</p>
                   <p><i class="fa fa-envelope-o"></i> aysee@ucsd.edu</p>
                   <br>
