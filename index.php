@@ -6,7 +6,7 @@
       <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet" />
       <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-      <link rel="stylesheet" type="text/css" href="/css/other.css">
+      <link rel="stylesheet" href="/css/other.css">
       <!--[if lte IE 8]><script src="js/html5shiv.js" type="text/javascript"></script><![endif]-->
       <script src="/js/skel.min.js"></script>
       <script>
@@ -29,7 +29,7 @@
       <?php
          session_start();
          if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-            header("Location:login.php");
+            header("Location: /login");
          }
       ?>
       <div class="container">
