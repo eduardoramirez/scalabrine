@@ -52,34 +52,46 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
             <h3>team members</h3>
             <div class="row">
                <section class="4u">
-                  <h4>Matt Asaro</h4>
-                  <p><i class="fa fa-github"></i> mattasaro</p>
-                  <p><i class="fa fa-envelope-o"></i> masaro@ucsd.edu</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> Software Engineer mainly on .NET. I like coding, but I’d rather be outside playing sports or doing something in the ocean. I love watching comedies that make me laugh so hard that I cry.</p>
+                  <div id="matt-mug" class="profile-circular"></div>
+                  <div>
+                     <h4>Matt Asaro</h4>
+                     <p><i class="fa fa-github"></i> mattasaro</p>
+                     <p><i class="fa fa-envelope-o"></i> masaro@ucsd.edu</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> Software Engineer mainly on .NET. I like coding, but I’d rather be outside playing sports or doing something in the ocean. I love watching comedies that make me laugh so hard that I cry.</p>
+                  </div>
                </section>
                <section class="4u">
-                  <h4>Slava Gadetskiy</h4>
-                  <p><i class="fa fa-github"></i> vgadetsk</p>
-                  <p><i class="fa fa-envelope-o"></i> vgadetsk@ucsd.edu</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> Born in Ukraine, 3rd year transfer at UCSD, love driving, soccer and basketball.</p>
+                  <div id="slava-mug" class="profile-circular"></div>
+                  <div>
+                     <h4>Slava Gadetskiy</h4>
+                     <p><i class="fa fa-github"></i> vgadetsk</p>
+                     <p><i class="fa fa-envelope-o"></i> vgadetsk@ucsd.edu</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> Born in Ukraine, 3rd year transfer at UCSD, love driving, soccer and basketball.</p>
+                  </div>
                </section>
                <section class="4u">
-                  <h4>Kenny Mai</h4>
-                  <p><i class="fa fa-github"></i> kenmai9</p>
-                  <p><i class="fa fa-envelope-o"></i> k1mai@ucsd.edu</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> 5th year student at UCSD, for Computer Science. I love my dog and taking care of business.</p>
+                  <div id="ken-mug" class="profile-circular"></div>
+                  <div>
+                     <h4>Kenny Mai</h4>
+                     <p><i class="fa fa-github"></i> kenmai9</p>
+                     <p><i class="fa fa-envelope-o"></i> k1mai@ucsd.edu</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> 5th year student at UCSD, for Computer Science. I love my dog and taking care of business.</p>
+                  </div>
                </section>
             </div>
             <div class="row">
                <section class="4u">
-                  <h4>Eduardo Ramirez</h4>
-                  <p><i class="fa fa-github"></i> eduardoramirez</p>
-                  <p><i class="fa fa-envelope-o"></i> edr007@ucsd.edu</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> 3rd year student at UCSD studying computer science. I love photography and soccer.</p>
+                  <div id="ed-mug" class="profile-circular"></div>
+                  <div>
+                     <h4>Eduardo Ramirez</h4>
+                     <p><i class="fa fa-github"></i> eduardoramirez</p>
+                     <p><i class="fa fa-envelope-o"></i> edr007@ucsd.edu</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> 3rd year student at UCSD studying computer science. I love photography and soccer.</p>
+                  </div>
                </section>
                <section class="4u">
                   <div id="alvin-mug" class="profile-circular"></div>
