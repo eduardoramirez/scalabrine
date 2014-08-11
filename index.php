@@ -37,6 +37,7 @@
          <header role="banner">
             <div id="header" class="row">
                <div class="4u">
+                  <div id="logo"></div>
                   <h1>scalabrine</h1>
                </div>
             </div>
