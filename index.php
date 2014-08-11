@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
- <?php
-    if(!isset($_SESSION['username'])) {
-    die("Please login");
+
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+   header("Location:login.php");
 }
 
 ?>
