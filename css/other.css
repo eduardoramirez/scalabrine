@@ -36,6 +36,7 @@ border-radius: 50px;
 
 #logo {
 float: left;
+background-image: url('/images/logo.png');
 width: 100px;
 height: 100px;
 }
