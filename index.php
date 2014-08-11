@@ -82,13 +82,14 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                </section>
                <section class="4u">
                   <h4>Alvin See</h4>
+                  <div class="profile-circular"></div>
                   <p><i class="fa fa-github"></i> alvinsee</p>
                   <p><i class="fa fa-envelope-o"></i> aysee@ucsd.edu</p>
                   <br>
                   <p><i class="fa fa-user"></i> A computer ENGINEERING student who has a very nihilistic view on life. I like taking long walks on the beach and watching the sunset.</p>
                </section>
                <section class="4u">
-                  <h4>Th**@s Po**ll</h4>
+                  <h4>Th***s Po**ll</h4>
                   <p><i class="fa fa-github"></i> tpo***l</p>
                   <p><i class="fa fa-envelope-o"></i> tpo***l@pi**.com</p>
                   <br>
