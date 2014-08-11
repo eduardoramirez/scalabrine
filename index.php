@@ -1,4 +1,10 @@
 <!DOCTYPE HTML>
+ <?php
+    if(!isset($_SESSION['username'])) {
+    die("Please login");
+}
+
+?>
 <html>
    <head>
       <title>scalabrine | team 16</title>

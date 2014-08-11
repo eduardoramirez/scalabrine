@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+    session_start();
     if(isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -16,7 +17,7 @@
         if(mysqli_num_rows($result) == 0)
             echo 'Invalid username or password';
         else
-            echo '<h1>Logged in</h1><p>A Secret for you....</p>';
+            header("Location: /index.php");
     }
     else {
 ?>
