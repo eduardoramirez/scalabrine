@@ -1,8 +1,11 @@
+#alvin-mug {
+background-image: url('/images/alvin.png');
+}
+
 .profile-circular {
 float: right;
 width: 100px;
 height: 100px;
-background-image: url('/images/alvin.png');
 border:2px solid #fff;
 background-size: cover;
 display: block;

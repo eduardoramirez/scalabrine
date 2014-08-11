@@ -82,13 +82,13 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
                   <p><i class="fa fa-user"></i> 3rd year student at UCSD studying computer science. I love photography and soccer.</p>
                </section>
                <section class="4u">
-                  <div class="profile-circular"></div>
+                  <div id="alvin-mug" class="profile-circular-alvin"></div>
                   <div>
-                  <h4>Alvin See</h4>
-                  <p><i class="fa fa-github"></i> alvinsee</p>
-                  <p><i class="fa fa-envelope-o"></i> aysee@ucsd.edu</p>
-                  <br>
-                  <p><i class="fa fa-user"></i> A computer ENGINEERING student who has a very nihilistic view on life. I like taking long walks on the beach and watching the sunset.</p>
+                     <h4>Alvin See</h4>
+                     <p><i class="fa fa-github"></i> alvinsee</p>
+                     <p><i class="fa fa-envelope-o"></i> aysee@ucsd.edu</p>
+                     <br>
+                     <p><i class="fa fa-user"></i> A computer ENGINEERING student who has a very nihilistic view on life. I like taking long walks on the beach and watching the sunset.</p>
                   </div>
                </section>
                <section class="4u">
