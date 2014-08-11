@@ -10,7 +10,6 @@
 </head>
 <body>
 <?php
-    session_name('NinjaCookiesStopLooking');
     session_start();
     if(isset($_POST['login'])) {
         $username = $_POST['username'];

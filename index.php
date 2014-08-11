@@ -27,7 +27,6 @@
    </head>
    <body>
       <?php
-         session_name('NinjaCookiesStopLooking');
          session_start();
          if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
             header("Location: /login");
