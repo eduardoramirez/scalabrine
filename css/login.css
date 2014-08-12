@@ -52,10 +52,10 @@ h2 {
 }
 
 	.btn-minimal {
-		background-color: #FFA180;
+		background-color: #B0E0E6;
 		border-radius: 0;
-		border: 1px solid rgb( 186, 186, 186 );
-		color: rgb( 186, 186, 186 );
+		border: 1px solid rgb( 255, 255, 240 );
+		color: rgb( 255, 255, 240 );
 		text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
 	}
 	
