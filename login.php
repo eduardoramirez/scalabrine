@@ -32,7 +32,7 @@
     <h2>login</h2>
     <form method="post" class="minimal">
         <label for="username">
-            <input type="text" name="username" id="username" placeholder="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{4,20}$" required="required" />
+            <input type="text" name="username" id="username" placeholder="username"  required="required" />
         </label>
         <label for="password">
             <input type="password" name="password" id="password" placeholder="password"  required="required" />
