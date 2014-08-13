@@ -36,9 +36,16 @@
          <!-- Header -->
          <header role="banner">
             <div id="header" class="row">
-               <div class="4u">
+               <div class="2u">
                   <div id="logo"></div>
+               </div>
+               <div class="2u">
                   <h1>scalabrine</h1>
+               </div>
+               <div class="4u">
+                  <a href="/error_log">error logs</a>
+                  <a href="/gzip">gzip</a>
+                  <a href="/logout">logout</a>
                </div>
             </div>
          </header>
