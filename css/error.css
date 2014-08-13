@@ -28,6 +28,7 @@ a {
 
 th {
     background-color: #FA8072;
+    color: #FFF9ED;
     text-align: center;
 }
 
@@ -38,12 +39,4 @@ td {
 
 hr {
 	width:33%;
-}
-
-#leftside {
-	text-align: left;
-}
-
-#rightside {
-	text-align: right;
 }
