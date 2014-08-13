@@ -25,6 +25,10 @@ a {
 	text-decoration: none;
 }
 
+#nav {
+	text-align: left;
+}
+
 #hero {
 	background: #e97770;
 	color: #FFF9ED;

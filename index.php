@@ -40,7 +40,7 @@
                   <div id="logo"></div>
                   <h1>scalabrine</h1>
                </div>
-               <div class="8u">
+               <div class="8u" id="nav">
                   <a href="/error_log">error logs</a> | 
                   <a href="/gzip">gzip</a> | 
                   <a href="/logout">logout</a>
