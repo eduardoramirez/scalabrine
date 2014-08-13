@@ -39,3 +39,11 @@ td {
 hr {
 	width:33%;
 }
+
+#leftside {
+	text-align: left;
+}
+
+#rightside {
+	text-align: right;
+}
