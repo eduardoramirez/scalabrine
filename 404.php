@@ -4,6 +4,8 @@
       <title>scalabrine | 404</title>
       <meta charset="utf-8">
       <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600%7CSource+Code+Pro" rel="stylesheet" />
+      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
       <!--[if lte IE 8]><script src="js/html5shiv.js" type="text/javascript"></script><![endif]-->
       <script src="/js/skel.min.js"></script>
       <script>
