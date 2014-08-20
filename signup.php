@@ -30,9 +30,9 @@
         $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']); 
 
         // Passwords match
-        if(strcmp(password, confirm_password) != 0) {
+        if(strcmp(password, confirm_password) == 0) {
 
-          $res = mysql_query("SELECT * FROM users WHERE username = '$username'");
+          $res = mysql_query("SELECT * FROM users WHERE username = '$username'", $con);
 
           $options = [
             'cost' => 11,
