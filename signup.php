@@ -24,10 +24,10 @@
       session_start();
       if(isset($_POST['signup'])) {
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrine');
-        $username = mysqli_real_escape_string($con, $_POST['username']);
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']); 
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password']; 
 
         // Passwords match
         if(strcmp(password, confirm_password) == 0) {
