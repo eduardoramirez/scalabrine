@@ -46,6 +46,8 @@
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
             mysqli_query($con,$sql);
+            $_SESSION['signup'] = "";
+            header("Location: /index");
           } 
           else {
             //username is taken
