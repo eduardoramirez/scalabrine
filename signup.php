@@ -23,7 +23,7 @@
     <?php
       session_start();
       if(isset($_POST['signup'])) {
-        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','sample');
+        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrine');
         $username = mysqli_real_escape_string($con, $_POST['username']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -62,6 +62,17 @@
       else{
     ?>
     <section id="signupBox">
+      <?php
+        if(isset($_GET['username_taken']))
+          {
+            //add html for username taken alert
+          }
+
+        else if (isset($_GET['password_mismatch'])) 
+        {
+          //add html for pw mismatch alert
+        }
+      ?>
       <h2>signup</h2>
       <form method="post" class="minimal">
           <label for="username">
