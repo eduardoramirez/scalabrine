@@ -89,7 +89,7 @@
           <label for="confirm_password">
               <input type="password" name="confirm_password" id="confirm_password" placeholder="confirm password"  required="required" />
           </label>
-          <button type="submit" class="btn-minimal" name="signup">sign up</button>
+          <button type="submit" class="btn-minimal" name="signup" id="signup">sign up</button>
       </form>
     </section>
     <?php
