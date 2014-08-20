@@ -44,7 +44,7 @@
           // Username is free
           if($res && mysql_num_rows($res) == 0) {
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
-
+echo $sql;
             mysqli_query($con,$sql);
             $_SESSION['signup'] = "";
             header("Location: /index");
