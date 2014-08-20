@@ -23,7 +23,7 @@
     <?php
       session_start();
       if(isset($_POST['signup'])) {
-        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrine');
+        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
