@@ -50,14 +50,12 @@
          </header>
          <!-- Hero -->
          <section id="hero">
-               <h2>hello.</h2>
-               <p>we are scalabrine.</p>
+               <h2>configuration</h2>
+               <p>Include the appropriate JavaScript in every page of your web application.</p>
          </section>
          <!-- Main -->
          <article>
-            <h3>Configuration</h3>
-            <div class="row">
-               <p>Include the appropriate JavaScript in every page of your web application.</p>
+            <div>
                 <?php
 
                 function getScriptName($name){
