@@ -61,7 +61,7 @@
                 <?php
 
                 function getScriptName($name){
-                    return "http://scalabrine.net/track/" . $_SESSION['login'] 
+                    return "http://scalabrine.net/track/" . $_SESSION['username'] 
                         . "_" . $name . ".js";    
                 }
                 

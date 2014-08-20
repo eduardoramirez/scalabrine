@@ -23,6 +23,7 @@
         }
         else {
             $_SESSION['login'] = "1";
+            $_SESSION['username'] = $username;
             header("Location: /index");
         }
     }
