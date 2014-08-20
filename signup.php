@@ -40,7 +40,11 @@
           ];
 
           $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-          
+             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
+
+            mysqli_query($con,$sql);
+            $_SESSION['signup'] = "";
+            header("Location: /index");         
           // Username is free
           if($res && mysql_num_rows($res) == 0) {
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
