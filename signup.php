@@ -47,12 +47,20 @@
 
             mysqli_query($con,$sql);
 
+            $_SESSION['signup'] = "";
+            header("Location: /index");
+
           } 
           else {
             //username is taken
             $_SESSION['signup'] = "username_taken";
             header("Location: /signup");
           }
+        }
+        else {
+          // passwords didnt match
+          $_SESSION['signup'] = "password_mismatch";
+          header("Location: /signup");
         }
       }
       else{
