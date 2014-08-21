@@ -23,8 +23,6 @@
     <?php
       session_start();
       if(isset($_POST['signup'])) {
-        session_unset();
-        session_destroy();
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -88,6 +86,7 @@
           </section>
       <?php    
         }
+          session_unset();
       ?>
       <h2>signup</h2>
       <form method="post" class="minimal">
