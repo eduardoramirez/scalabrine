@@ -1,0 +1,35 @@
+= 273 = <html>
+= 274 = <head>
+= 275 = <META HTTP-EQUIV="Expires" CONTENT="Tue, 04 Dec 1993 21:29:02 GMT">
+= 276 = <title>
+= 277 = <TMPL_IF NAME> <TMPL_VAR NAME> </TMPL_IF>
+= 278 = </title>
+= 279 = </head>
+= 280 = <body>
+= 281 =
+= 282 = <TMPL_IF NAME>
+= 283 =   <p>This is the <TMPL_VAR NAME> page. </p>
+= 284 = </TMPL_IF>
+= 285 =
+= 286 = <p> <hr/> </p>
+= 287 =
+= 288 = <TMPL_IF MESSAGE>
+= 289 =   <p> <TMPL_VAR MESSAGE> </p>
+= 290 = </TMPL_IF>
+= 291 =
+= 292 = <TMPL_IF USER>
+= 293 =   <p> User: <TMPL_VAR USER> is logged in. </p>
+= 294 =   <p> Click <a href="<TMPL_VAR MYURL>/logout">here</a> to logout. </p>
+= 295 = <TMPL_ELSE>
+= 296 =   <p> Click <a href="<TMPL_VAR MYURL>/mustlogin">here</a> to login. </p>
+= 297 = </TMPL_IF>
+= 298 =
+= 299 = <p> <hr/> </p>
+= 300 = <p><a href="<TMPL_VAR MYURL>/public">public</a></p>
+= 301 = <p><a href="<TMPL_VAR MYURL>/public2">public2</a></p>
+= 302 = <p><a href="<TMPL_VAR MYURL>/private">private</a></p>
+= 303 = <p><a href="<TMPL_VAR MYURL>/private2">private2</a></p>
+= 304 = <p> <hr/> </p>
+= 305 = </body>
+= 306 = </html>
+= 307 =

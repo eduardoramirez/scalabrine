@@ -1,0 +1,31 @@
+= 331 = <html>
+= 332 = <head>
+= 333 = <title>Log In</title>
+= 334 = </head>
+= 335 = <body onLoad="document.loginform.authen_username.focus();">
+= 336 = <h2>Please login:</h2>
+= 337 = <TMPL_IF ERROR>
+= 338 =   <p style="color:red">ERROR - Please try again.</p>
+= 339 = </TMPL_IF>
+= 340 = <p> </p>
+= 341 = <form name="loginform" method=POST action="<TMPL_VAR MYURL>/mustlogin" >
+= 342 = <table>
+= 343 =   <tr>
+= 344 =     <td align="right">User name:</td>
+= 345 =     <td><input type="text" name="authen_username" size=20 /></td>
+= 346 =   </tr>
+= 347 =   <tr>
+= 348 =     <td align="right">Password:</td>
+= 349 =     <td><input type="password" name="authen_password" size=20 /></td>
+= 350 =   </tr>
+= 351 =   <tr>
+= 352 =     <td> &nbsp; </td>
+= 353 =     <td><input type="submit" name="submit" value="Submit" /></td>
+= 354 =   </tr>
+= 355 = </table>
+= 356 = <input type="hidden" name="destination" value="<TMPL_VAR DESTINATION>" />
+= 357 = </form>
+= 358 = <hr/>
+= 359 = </body>
+= 360 = </html>
+= 361 =
