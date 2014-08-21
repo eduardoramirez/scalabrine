@@ -1,11 +1,11 @@
 #!/usr/bin/perl
 use strict;
-use lib '/var/cgi-bin/scalabrine/libs';
-use ScalabrineLib::Scalabrine;
+use lib '/var/www/html/perl/WebApp/libs';
+use MyLib::Simple;
 
-my $scalabrine = ScalabrineLib::Scalabrine->new(
+my $scalabrine = MyLib::Simple->new(
   PARAMS => {
-    cfg_file => ['scalabrine.ini'],
+    cfg_file => ['simple.ini'],
     format => 'equal',
   },
 );
