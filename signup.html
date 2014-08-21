@@ -23,40 +23,46 @@
     <?php
       session_start();
       if(isset($_POST['signup'])) {
-        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','sample');
-        $username = mysqli_real_escape_string($con, $_POST['username']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $confirm_password = mysqli_real_escape_string($con, $_POST['confirm_password']);
+        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password']; 
 
-        // Passwords match
-        if(strcmp(password, confirm_password) == 0) {
-          $res = mysql_query("SELECT * FROM `users` WHERE username = '$username'");
-          
-          // Username is free
-          if($res && mysql_num_rows($res) == 0) {
-            $sql="INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
-            mysqli_query($con,$sql);
-          } 
-          else {
-            //username is taken
-            $_SESSION['signup'] = "";
-            header("Location: /signup");
-          }
-        }
-        else {
-          // passwords didnt matc
-          $_SESSION['signup'] = "";
-          header("Location: /signup");
-        }
+        $h_password = "whar";
+
+        $options = [
+          'cost' => 11,
+          'salt' => mcrypt_create_iv(strlen($password), MCRYPT_DEV_URANDOM),
+        ];
+
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        
+        echo "<script type='text/javascript'>alert('$password');</script>";
+
       }
       else{
     ?>
     <section id="signupBox">
+      <?php
+        if(isset($_GET['username_taken']))
+          {
+            //add html for username taken alert
+          }
+
+        else if (isset($_GET['password_mismatch'])) 
+        {
+          //add html for pw mismatch alert
+        }
+      ?>
       <h2>signup</h2>
       <form method="post" class="minimal">
           <label for="username">
               <input type="text" name="username" id="username" placeholder="username"  required="required" />
+          </label>
+          <label for="email">
+              <input type="email" name="email" id="email" placeholder="email"  required="required" />
           </label>
           <label for="password">
               <input type="password" name="password" id="password" placeholder="password"  required="required" />
@@ -64,7 +70,7 @@
           <label for="confirm_password">
               <input type="password" name="confirm_password" id="confirm_password" placeholder="confirm password"  required="required" />
           </label>
-          <button type="submit" class="btn-minimal" name="login">sign up</button>
+          <button type="submit" class="btn-minimal" name="signup" id="signup">sign up</button>
       </form>
     </section>
     <?php
