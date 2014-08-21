@@ -40,18 +40,18 @@
           $res = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
 
           // Username is free
-          if(mysql_num_rows($res) == 0) {
-
+          if(mysql_num_rows($res) == 0) 
+          {
             $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
             mysqli_query($con,$sql);
 
             $_SESSION['signup'] = "";
-            header("Location: /index");
-
+            header("Location: /error_log");
           } 
-          else {
+          else 
+          {
             //username is taken
             $_SESSION['signup'] = "username_taken";
             header("Location: /signup");
