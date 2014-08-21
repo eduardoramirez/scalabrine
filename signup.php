@@ -1,13 +1,3 @@
-<!-- Got the basic framework of the signup mechanism, 
-     need to test and find out what db we actually have. It seems
-     that rn we are using a "sample" one. Also, need to add html
-     to alert user when 1. the username they chose is taken. 
-     2. when the password they enter doesnt match the confirm.
-     WIP
-
-     - eduardo 
--->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -86,7 +76,7 @@
           </section>
       <?php    
         }
-          session_unset();
+        session_unset();
       ?>
       <h2>signup</h2>
       <form method="post" class="minimal">
