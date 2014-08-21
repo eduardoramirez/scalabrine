@@ -26,6 +26,13 @@
 
             mysqli_stmt_fetch($stmt);
 
+            if(strcmp($username, $db_username) !== 0)
+            {
+                $_SESSION['login'] = "";
+                header("HTTP/1.1 403 Forbidden");
+                header("Location: /403");
+            } 
+
             if(password_verify($password, $db_password))
             {
                 $_SESSION['login'] = "1";
@@ -39,12 +46,7 @@
                 header("Location: /index");
             }
         }
-        else
-        {
-            $_SESSION['login'] = "";
-            header("HTTP/1.1 403 Forbidden");
-            header("Location: /403");
-        }
+
         mysqli_close($con);
     }
     else {
