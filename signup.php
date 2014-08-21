@@ -29,21 +29,20 @@
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password']; 
 
-
-        
-
         $options = [
           'cost' => 11,
-          'salt' => mcrypt_create_iv(strlen($password), MCRYPT_DEV_URANDOM),
+          'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ];
 
-        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-        echo $h_password;
+        if(strcmp($password, $confirm_password) === 0)
+        {
+          $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
+          $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
-        mysqli_query($con,$sql);
+          mysqli_query($con,$sql);
+        }
       }
       else{
     ?>
