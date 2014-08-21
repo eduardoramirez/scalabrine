@@ -104,6 +104,8 @@
     </section>
     <?php
         }
+        $_SESSION['pass'] = false;
+        $_SESSION['username'] = false;
     ?>
   </body>
 </html>
