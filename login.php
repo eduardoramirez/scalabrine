@@ -76,7 +76,7 @@
             <input type="password" name="password" id="password" placeholder="password"  required="required" />
         </label>
         <button type="submit" class="btn-minimal" name="login">sign in</button>
-        <br><a href="signup">Forgot your password?</a>
+        <br><a href="reset">Forgot your password?</a>
     </form>
 </section>
 <?php
