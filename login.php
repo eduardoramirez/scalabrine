@@ -14,7 +14,7 @@
     if(isset($_POST['login'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','sample');
+        $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         
         $query = "SELECT username, password FROM users WHERE username='$username'";
 
