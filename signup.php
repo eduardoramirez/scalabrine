@@ -39,7 +39,7 @@
             mysqli_query($con, $sql);
 
             $_SESSION['signup'] = "";
-            header("Location: /index");
+            header("Location: /login");
           } 
           else 
           {
@@ -53,7 +53,7 @@
           $_SESSION['pass'] = true;
           header("Location: /signup");
         }
-        
+
         mysqli_close($con);
       }
       else{
