@@ -55,6 +55,14 @@
                   <p>We have a service endpoint that collects the errors sent in as JavaScript errors happen.</p>
                </section>
                <section class="4u">
+                  <h4>Configuration Page</h4>
+                  <p>This configuration page is for developers to get the script for the site they will track errors on.</p>
+               </section>
+               <section class="4u">
+                  <h4>Admin Dashboard</h4>
+                  <p>This admin dashboard allows the admin to see who logs in and logs out of the system, add/edit/delete clients, and get basic stats on overall usage and error rates across accounts.</p>
+               </section>
+               <section class="4u">
                   <h4>Account Creation and Management</h4>
                   <p>Users who wish to track their errors on their website can create an account, which may have many users. Additionally, each account will have full user management (Add, Edit and Delete users including setting passworsd and access). Users may also recover their own password using our password recovery system.</p>
                </section>
@@ -65,14 +73,6 @@
                <section class="4u">
                   <h4>Error Detail Page</h4>
                   <p>Users can see an error detail page that show an error incident and provides an area for other users to comment on the errors and rate severity of an error (1-5 stars). Users can also upload screenshots.</p>
-               </section>
-               <section class="4u">
-                  <h4>Configuration Page</h4>
-                  <p>This configuration page is for developers to get the script for the site they will track errors on.</p>
-               </section>
-               <section class="4u">
-                  <h4>Admin Dashboard</h4>
-                  <p>This admin dashboard allows the admin to see who logs in and logs out of the system, add/edit/delete clients, and get basic stats on overall usage and error rates across accounts.</p>
                </section>
             </div>
          </article>
