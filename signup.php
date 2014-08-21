@@ -39,7 +39,7 @@
 
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-        echo h_password;
+        echo $h_password;
 
         $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
