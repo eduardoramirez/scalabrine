@@ -71,7 +71,7 @@
             <input type="password" name="password" id="password" placeholder="password"  required="required" />
         </label>
         <button type="submit" class="btn-minimal" name="login">sign in</button>
-        <br><p>Don't have an account? <a href="/login">Sign up here</a></p>
+        <br><p>Don't have an account? <a href="signup">Sign up here</a></p>
     </form>
 </section>
 <?php
