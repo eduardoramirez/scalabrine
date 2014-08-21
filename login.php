@@ -15,17 +15,36 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','sample');
-        $result = mysqli_query($con, "SELECT * FROM `users` WHERE username='$username' AND password='$password'");
-        if(mysqli_num_rows($result) == 0) {
+        
+        $query = "SELECT username, password FROM users WHERE username='$username'";
+
+        if($stmt = mysqli_prepare($con, $query))
+        {
+            mysqli_stmt_execute($stmt);
+
+            mysqli_stmt_bind_result($stmt, $db_username, $db_password);
+
+            mysqli_stmt_fetch($stmt);
+
+            if(password_verify($password, $db_password))
+            {
+                $_SESSION['login'] = "1";
+                $_SESSION['username'] = $username;
+                header("Location: /index");
+            }
+            else
+            {
+                //incorrect password
+                header("Location: /index");
+            }
+        }
+        else
+        {
             $_SESSION['login'] = "";
             header("HTTP/1.1 403 Forbidden");
             header("Location: /403");
         }
-        else {
-            $_SESSION['login'] = "1";
-            $_SESSION['username'] = $username;
-            header("Location: /index");
-        }
+        mysqli_close($con);
     }
     else {
 ?>
