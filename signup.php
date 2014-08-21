@@ -30,7 +30,7 @@
         $confirm_password = $_POST['confirm_password']; 
 
 
-        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
+        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
         mysqli_query($con,$sql);
       }
