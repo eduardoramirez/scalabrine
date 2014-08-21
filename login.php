@@ -35,6 +35,7 @@
             else
             {
                 //incorrect password
+                $_SESSION['incorrect_pass'] = true;
                 header("Location: /index");
             }
         }
@@ -49,6 +50,18 @@
     else {
 ?>
 <section id="loginBox">
+    <?php
+        if(isset($_SESSION['incorrect_pass']))
+        {
+          $_SESSION['incorrect_pass'] = false;
+      ?>
+            <section id="hero">
+               <h4>incorrect password.</h4>
+            </section>
+      <?php
+        }
+        session_unset();
+      ?>
     <h2>login</h2>
     <form method="post" class="minimal">
         <label for="username">

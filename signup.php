@@ -53,6 +53,8 @@
           $_SESSION['pass'] = true;
           header("Location: /signup");
         }
+        
+        mysqli_close($con);
       }
       else{
     ?>
