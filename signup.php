@@ -29,37 +29,10 @@
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password']; 
 
-        // Passwords match
-        if(strcmp(password, confirm_password) == 0) {
 
-          $res = mysql_query("SELECT * FROM users WHERE username = '$username'", $con);
+        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
-          $options = [
-            'cost' => 11,
-            'salt' => mcrypt_create_iv(strlen($password), MCRYPT_DEV_URANDOM),
-          ];
-
-          $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-       
-          // Username is free
-          if($res && mysql_num_rows($res) == 0) {
-            $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
-
-            mysqli_query($con,$sql);
-            $_SESSION['signup'] = "";
-            header("Location: /index");
-          } 
-          else {
-            //username is taken
-            $_SESSION['signup'] = "username_taken";
-            header("Location: /signup");
-          }
-        }
-        else {
-          // passwords didnt match
-          $_SESSION['signup'] = "password_mismatch";
-          header("Location: /signup");
-        }
+        mysqli_query($con,$sql);
       }
       else{
     ?>
