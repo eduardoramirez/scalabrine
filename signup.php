@@ -37,11 +37,11 @@
 
         if(strcmp($password, $confirm_password) === 0)
         {
-          $res = mysql_query("SELECT * FROM users WHERE username = '$username'", $con);
+          $res = mysqli_query($con, "SELECT * FROM `users` WHERE username='$username'");
 
           // Username is free
-          if($res && mysql_num_rows($res) === 0) {
-            
+          if(mysql_num_rows($res) === 0) {
+
             $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
