@@ -30,7 +30,16 @@
         $confirm_password = $_POST['confirm_password']; 
 
 
-        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        
+
+        $options = [
+          'cost' => 11,
+          'salt' => mcrypt_create_iv(strlen($password), MCRYPT_DEV_URANDOM),
+        ];
+
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+
+        $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
         mysqli_query($con,$sql);
       }
