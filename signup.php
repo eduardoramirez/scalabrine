@@ -23,6 +23,8 @@
     <?php
       session_start();
       if(isset($_POST['signup'])) {
+        $_SESSION['pass'] = false;
+        $_SESSION['username'] = false;
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -104,8 +106,6 @@
     </section>
     <?php
         }
-        $_SESSION['pass'] = false;
-        $_SESSION['username'] = false;
     ?>
   </body>
 </html>
