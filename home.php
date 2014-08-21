@@ -41,7 +41,7 @@
                   <h1>scalabrine</h1>
                </div>
                <div class="8u" id="nav">
-                  <a href="/team">About us</a>
+                  <a href="/team">about us</a>
                   <a href="/login">login</a>
                   <a href="/signup">sign up</a>
                </div>
