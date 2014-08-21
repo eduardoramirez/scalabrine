@@ -48,7 +48,7 @@
             $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
-            mysqli_query($con,$sql);
+            mysqli_query($con, $sql);
 
             $_SESSION['signup'] = "";
             header("Location: /index");
