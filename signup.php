@@ -53,13 +53,13 @@
           else 
           {
             //username is taken
-            $_SESSION['signup'] = "username_taken";
+            $_SESSION['username'] = true;
             header("Location: /signup");
           }
         }
         else {
           // passwords didnt match
-          $_SESSION['signup'] = "password_mismatch";
+          $_SESSION['pass'] = true;
           header("Location: /signup");
         }
       }
@@ -67,7 +67,7 @@
     ?>
     <section id="signupBox">
       <?php
-        if(isset($_GET['username_taken']))
+        if(isset($_SESSION['username']))
         {
       ?>
             <section id="hero">
@@ -75,7 +75,7 @@
             </section>
       <?php
         }
-        else if (isset($_GET['password_mismatch'])) 
+        else if (isset($_SESSION['pass'])) 
         {
       ?>
           <section id="hero">
