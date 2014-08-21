@@ -44,7 +44,7 @@
          <!-- Hero -->
          <section id="hero">
                <h2>hello.</h2>
-               <p>we are scalabrine.</p>
+               <p>we are scalabrine and these are our services.</p>
          </section>
          <!-- Main -->
          <!-- things about our product should go here -->
