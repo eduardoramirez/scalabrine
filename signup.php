@@ -68,13 +68,20 @@
     <section id="signupBox">
       <?php
         if(isset($_GET['username_taken']))
-          {
-            //add html for username taken alert
-          }
-
+        {
+      ?>
+            <section id="hero">
+               <h4>username is not available.</h4>
+            </section>
+      <?php
+        }
         else if (isset($_GET['password_mismatch'])) 
         {
-          //add html for pw mismatch alert
+      ?>
+          <section id="hero">
+            <h4>passwords do not match.</h4>
+          </section>
+      <?php    
         }
       ?>
       <h2>signup</h2>
