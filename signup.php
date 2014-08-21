@@ -37,14 +37,12 @@
 
         if(strcmp($password, $confirm_password) === 0)
         {
-          $_SESSION['pass'] = false;
           $res = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
 
           // Username is free
           if(mysqli_num_rows($res) == 0) 
           {
-            $_SESSION['username'] = false;
-            
+
             $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
@@ -57,14 +55,12 @@
           {
             //username is taken
             $_SESSION['username'] = true;
-            $_SESSION['pass'] = false;
             header("Location: /signup");
           }
         }
         else {
           // passwords didnt match
           $_SESSION['pass'] = true;
-          $_SESSION['username'] = false;
           header("Location: /signup");
         }
       }
