@@ -40,7 +40,7 @@
           $res = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
 
           // Username is free
-          if(mysql_num_rows($res) === 0) 
+          if(mysqli_num_rows($res) == 0) 
           {
             $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
             $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
