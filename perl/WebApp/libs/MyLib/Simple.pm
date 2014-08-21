@@ -1,7 +1,7 @@
 package MyLib::Simple;
 use strict;
 
-use lib '/var/www/html/perl/WebApp/libs';
+use lib '/var/cgi-bin/WebApp/libs';
 use base 'MyLib::Login';
 
 sub cgiapp_init {

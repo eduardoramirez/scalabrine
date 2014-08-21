@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 use strict;
-use lib '/var/www/html/perl/WebApp/libs';
+use lib '/var/cgi-bin/WebApp/libs';
 use MyLib::Simple;
 
 print "content-type: text/html\n\n";
