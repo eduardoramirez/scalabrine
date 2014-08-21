@@ -22,8 +22,6 @@
   <body>
     <?php
       session_start();
-      $_SESSION['pass'] = false;
-      $_SESSION['username'] = false;
       if(isset($_POST['signup'])) {
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         $username = $_POST['username'];
@@ -72,6 +70,7 @@
       <?php
         if(isset($_SESSION['username']))
         {
+          $_SESSION['username'] = false;
       ?>
             <section id="hero">
                <h4>username is not available.</h4>
@@ -80,6 +79,7 @@
         }
         else if (isset($_SESSION['pass'])) 
         {
+          $_SESSION['pass'] = false;
       ?>
           <section id="hero">
             <h4>passwords do not match.</h4>
