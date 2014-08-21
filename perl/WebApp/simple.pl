@@ -3,11 +3,11 @@ use strict;
 use lib '/var/www/html/perl/WebApp/libs';
 use MyLib::Simple;
 
-my $scalabrine = MyLib::Simple->new(
+my $webapp = MyLib::Simple->new(
   PARAMS => {
     cfg_file => ['simple.ini'],
     format => 'equal',
   },
 );
 
-$scalabrine->run();
+$webapp->run();
