@@ -12,6 +12,7 @@
 <?php
     session_start();
     if(isset($_POST['login'])) {
+        // need to escape characters
         $username = $_POST['username'];
         $password = $_POST['password'];
         $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
@@ -28,6 +29,7 @@
 
             if(strcmp($username, $db_username) !== 0)
             {
+                //should say something along the lines of .. no username found
                 $_SESSION['login'] = "";
                 header("HTTP/1.1 403 Forbidden");
                 header("Location: /403");
@@ -74,7 +76,7 @@
             <input type="password" name="password" id="password" placeholder="password"  required="required" />
         </label>
         <button type="submit" class="btn-minimal" name="login">sign in</button>
-        <br><p>Don't have an account? <a href="signup">Sign up here</a></p>
+        <br><a href="signup">Forgot your password?</a>
     </form>
 </section>
 <?php
