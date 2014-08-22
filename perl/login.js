@@ -17,6 +17,7 @@ $(document).ready(function(){
       // script call was successful 
       // data contains the JSON values returned by the Perl script 
       success: function(data){
+        alert("it worked!")
         // show what kind of error the user received (wrong username -- wrong pass)
         } // if
         else { // login was successful

@@ -35,7 +35,7 @@ if($username eq $db_username)
 
   if($pbkdf2->validate($db_password, $password))
   {
-    #valid
+    # valid
     # add the user time of login and username to session variables
   }
   else
