@@ -103,7 +103,7 @@
                </li>
 
                <li>
-                  <a href="/index.php">
+                  <a href="/index">
                      <i class="icon-user"></i>
                      <span>home</span>
                   </a>
