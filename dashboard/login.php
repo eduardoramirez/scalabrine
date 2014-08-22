@@ -31,7 +31,7 @@
         $_SESSION['login'] = "1";
         $_SESSION['username'] = $username;
 
-        if(strcmp($username, $db_username) !== 0)
+        if(strcmp($username, $db_username) === 0)
         {
           //should say something along the lines of .. no username found
           $_SESSION['email'] = $db_email;
