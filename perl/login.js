@@ -13,15 +13,18 @@ $(document).ready(function(){
       // script call was *not* successful
       error: function(XMLHttpRequest, textStatus, errorThrown) { 
         // error occure in http request
+         alert("something went wrong!")
       }, // error 
       // script call was successful 
       // data contains the JSON values returned by the Perl script 
       success: function(data){
-        alert("it worked!")
+        if (data.error){
+          alert("some error!");
         // show what kind of error the user received (wrong username -- wrong pass)
         } // if
         else { // login was successful
           // move the user to the dashboard
+          alert("it worked!")
         } //else
       } // success
     }); // ajax

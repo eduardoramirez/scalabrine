@@ -37,21 +37,19 @@ if($username eq $db_username)
   {
     # valid
     # add the user time of login and username to session variables
+     my $json = qq{{"success" : "login is successful"}} : 
   }
   else
   {
-    #wrong pass
+    my $json = qq{{"error" : "password is wrong"}};
   }
 }
 else
 {
-  # username does not exist
+  my $json = qq{{"error" : "username does not exist"}};
 }
 
-my ($userID) = $sth->fetchrow_array;
-my $json = ($userID) ? 
-  qq{{"success" : "login is successful", "userid" : "$userID"}} : 
-  qq{{"error" : "username or password is wrong"}};
+
 
 
 $con->disconnect;
