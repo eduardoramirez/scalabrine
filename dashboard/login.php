@@ -26,7 +26,7 @@
       } */
 
       //if(password_verify($password, $db_password))
-      if(strcmp($password, "opensesame") !== 0)
+      if(strcmp($password, "opensesame") === 0)
       {
         $_SESSION['login'] = "1";
         $_SESSION['username'] = $username;
