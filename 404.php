@@ -7,10 +7,10 @@
       <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
       <!--[if lte IE 8]><script src="js/html5shiv.js" type="text/javascript"></script><![endif]-->
-      <script src="/js/skel.min.js"></script>
+      <script src="/old/js/skel.min.js"></script>
       <script>
       skel.init({
-         prefix: '/css/style',
+         prefix: '/old/css/style',
          preloadStyleSheets: true,
          resetCSS: true,
          boxModel: 'border',
@@ -21,7 +21,7 @@
             mobile: { range: '-480', containers: 'fluid', lockViewport: true, grid: { collapse: true } }
          }
       });
-      document.write('<link rel="stylesheet" href="/css/font-awesome.min.css" />')
+      document.write('<link rel="stylesheet" href="/old/css/font-awesome.min.css" />')
       </script>
    </head>
    <body>
