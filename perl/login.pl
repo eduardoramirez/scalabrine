@@ -6,10 +6,10 @@ use Crypt::PBKDF2;
 # read the CGI params
 my $cgi = CGI->new;
 
-$session = CGI::Session()->new(undef, $cgi, {Directory=>'/var/cgi-bin/'});
-$CGISESSID = $session->id();
+#$session = CGI::Session()->new(undef, $cgi, {Directory=>'/var/cgi-bin/'});
+#$CGISESSID = $session->id();
 
-print $session->header();
+#print $session->header();
 
 my $json = qq{{"success" : "login is successful"}} : 
 
