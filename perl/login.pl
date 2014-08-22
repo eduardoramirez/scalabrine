@@ -11,6 +11,8 @@ $CGISESSID = $session->id();
 
 print $session->header();
 
+my $json = qq{{"success" : "login is successful"}} : 
+
 my $username = $cgi->param("username");
 my $password = $cgi->param("password");
 
@@ -37,7 +39,7 @@ if($username eq $db_username)
   {
     # valid
     # add the user time of login and username to session variables
-     my $json = qq{{"success" : "login is successful"}} : 
+     my $json = qq{{"success" : "login is successful"}};
   }
   else
   {
@@ -49,7 +51,7 @@ else
   my $json = qq{{"error" : "username does not exist"}};
 }
 
-
-
-
 $con->disconnect;
+
+print $cgi->header(-type => "application/json", -charset => "utf-8");
+print $json;
