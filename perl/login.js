@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: "GET",
-      url: "/perl/login.pl", // URL of the Perl script
+      url: "/cgi-bin/login.pl", // URL of the Perl script
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       // send username and password as parameters to the Perl script
