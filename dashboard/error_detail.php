@@ -52,6 +52,9 @@
             <a>
                <i class="icon-bell-alt"></i>
                last logged in: <?php echo $_SESSION['time'] ?>
+               <br>
+               <i class="icon-envelope"></i>
+               current user's email: <?php echo $_SESSION['email'] ?>
             </a>
          </div>
 
