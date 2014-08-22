@@ -11,8 +11,6 @@ my $cgi = CGI->new;
 
 #print $session->header();
 
-my $json = qq{{"success" : "login is successful"}} : 
-
 my $username = $cgi->param("username");
 my $password = $cgi->param("password");
 
@@ -52,6 +50,6 @@ else
 }
 
 $con->disconnect;
-
+my $json = qq{{"success" : "login is successful"}} : 
 print $cgi->header(-type => "application/json", -charset => "utf-8");
 print $json;
