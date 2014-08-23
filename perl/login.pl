@@ -22,7 +22,7 @@ $sth->execute($username)
 my ($user_id) = $sth->fetchrow_array;
 
 
-my $time = localtime;
+my $time = localtime();
 
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
