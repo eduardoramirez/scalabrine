@@ -93,7 +93,7 @@
                </li>
 
                <li>
-                  <a class="active" href="/perl/error_detail.html">
+                  <a class="active" href="/perl/error_detail.shtml">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
