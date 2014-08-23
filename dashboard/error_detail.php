@@ -100,7 +100,7 @@
                </li>
 
                <li>
-                  <a href="/index.html">
+                  <a href="/index">
                      <i class="icon-user"></i>
                      <span>home</span>
                   </a>
