@@ -297,7 +297,7 @@
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star-empty"></i>
                                               </p>                                              
-                                              <p>White power.</p>
+                                              <p>core dump.</p>
                                           </div>
                                       </div>
                                   </div>
