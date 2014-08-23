@@ -113,7 +113,7 @@
         
         <div class="registration">
           Don't have an account yet?
-          <a class="" href="/dashboard/registration.php">
+          <a class="" href="/dashboard/registration">
             Create an account
           </a>
         </div>
