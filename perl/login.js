@@ -24,7 +24,7 @@ $(document).ready(function(){
         else { // login was successful
           alert("it worked!");
           $.post("dashboard.html", {email: data.userid, time: data.now});
-          location.href = "/perl/index.html";
+          location.href = "/perl/index.shtml";
         } //else
       } // success
     }); // ajax
