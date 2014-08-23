@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 use CGI;
 use DBI;
-#use DateTime;
 
 # read the CGI params
 my $cgi = CGI->new;
@@ -23,7 +22,7 @@ $sth->execute($username)
 my ($user_id) = $sth->fetchrow_array;
 
 
-#my $time = DateTime->now;
+my $time = localtime;
 
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
