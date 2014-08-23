@@ -32,7 +32,7 @@ $(document).ready(function(){
         else { // login was successful
           // move the user to the dashboard
           alert("it worked!");
-          $('form#loginForm').hide();
+          $('form#loginform').hide();
             $('div#loginResult').text("data.success: " + data.success 
               + ", data.userid: " + data.userid);
             $('div#loginResult').addClass("success");
