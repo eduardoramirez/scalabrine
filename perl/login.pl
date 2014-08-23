@@ -2,6 +2,7 @@
 use CGI;
 use DBI;
 use Crypt::PBKDF2;
+use POSIX qw(strftime);
 
 # read the CGI params
 my $cgi = CGI->new;
@@ -27,9 +28,11 @@ $sth->execute($username)
 
 my ($user_id) = $sth->fetchrow_array;
 
+$time = strftime "%a %b %e %H:%M:%S %Y", localtime;
+
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
-  qq{{"success" : "login is successful", "userid" : "$user_id"}} :
+  qq{{"success" : "login is successful", "userid" : "$username" "$time"}} :
   qq{{"error" : "username or password is wrong"}};
 
 # return JSON string
