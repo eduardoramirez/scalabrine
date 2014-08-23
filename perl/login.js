@@ -20,7 +20,7 @@ $(document).ready(function(){
       success: function(data){
         if (data.error){          
           alert("didnt worked!");
-          $(".login-body").prepend("<div class='alert alert-danger' role='alert'>incorrect password.</div>");
+          $(".container").prepend("<div class='alert alert-danger' role='alert'>incorrect password.</div>");
         } // if
         else { // login was successful
           alert("it worked!");
