@@ -13,22 +13,19 @@ $(document).ready(function(){
       // script call was *not* successful
       error: function(XMLHttpRequest, textStatus, errorThrown) { 
         // error occure in http request
-                  alert("womps");
+        alert("womps");
       }, // error 
       // script call was successful 
       // data contains the JSON values returned by the Perl script 
       success: function(data){
-        if (data.error){          alert("didnt worked!");
-         // add this <div class="alert alert-danger" role="alert">incorrect password.</div>
-          //wrong password
+        if (data.error){          
+          alert("didnt worked!");
+          $(".container").append("<div class='alert alert-danger' role='alert'>incorrect password.</div>");
         } // if
         else { // login was successful
-          // move the user to the dashboard
           alert("it worked!");
-          $('form#loginform').hide();
-            $('div#loginResult').text("data.time: " + data.time
-              + ", data.userid: " + data.userid);
-            //location.href = "/index"
+          $.post("dashboard.html", {email: data.userid, time: data.now});
+          location.href = "/dashboard";
         } //else
       } // success
     }); // ajax

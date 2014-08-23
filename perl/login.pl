@@ -22,11 +22,11 @@ $sth->execute($username)
 my ($user_id) = $sth->fetchrow_array;
 
 
-my $time = localtime();
+my $now = localtime();
 
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
-  qq{{"success" : "login is successful", "userid" : "$username", "time" : "$time"}} :
+  qq{{"success" : "login is successful", "userid" : "$username", "time" : "$now"}} :
   qq{{"error" : "username or password is wrong"}};
 
 # return JSON string
