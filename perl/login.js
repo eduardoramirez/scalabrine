@@ -36,6 +36,7 @@ $(document).ready(function(){
             $('div#loginResult').text("data.success: " + data.success 
               + ", data.userid: " + data.userid);
             $('div#loginResult').addClass("success");
+            location.href = "/index"
         } //else
       } // success
     }); // ajax
