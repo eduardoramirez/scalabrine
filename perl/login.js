@@ -5,7 +5,11 @@ $(document).ready(function(){
 
     $.ajax({
       type: "GET",
+<<<<<<< HEAD
       url: "104.131.195.41:9093/cgi-bin/", // URL of the Perl script
+=======
+      url: "/cgi-bin/login2.pl", // URL of the Perl script
+>>>>>>> 3a7b625bfb916aaac1815d7c7ceb8852dfdfa7af
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       // send username and password as parameters to the Perl script
@@ -32,10 +36,11 @@ $(document).ready(function(){
         else { // login was successful
           // move the user to the dashboard
           alert("it worked!");
-          $('form#loginForm').hide();
+          $('form#loginform').hide();
             $('div#loginResult').text("data.success: " + data.success 
               + ", data.userid: " + data.userid);
             $('div#loginResult').addClass("success");
+            location.href = "/index"
         } //else
       } // success
     }); // ajax
