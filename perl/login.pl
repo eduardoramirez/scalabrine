@@ -32,7 +32,7 @@ $time = strftime "%a %b %e %H:%M:%S %Y", localtime;
 
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
-  qq{{"success" : "login is successful", "userid" : "$username" "$time"}} :
+  qq{{"success" : "login is successful", "userid" : "$username" "time":"$time"}} :
   qq{{"error" : "username or password is wrong"}};
 
 # return JSON string
