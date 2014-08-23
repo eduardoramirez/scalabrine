@@ -19,37 +19,20 @@ my $con = DBI->connect("DBI:mysql:database=scalabrinedb;host=localhost;port=3306
   "root", "Tw0sof+9Ly") 
   or die $DBI::errstr;
 
-my $statement = qq{SELECT username, password FROM users WHERE username=?};
+my $statement = qq{SELECT username, email, password FROM users WHERE username=?};
 my $sth = $con->prepare($statement)
   or die $con->errstr;
 $sth->execute($username)
   or die $sth->errstr;
 
-my @user_row = $sth->fetchrow_array;
-my ($db_username, $db_password) = @user_row;
-$sth->finish;
+my ($user_id) = $sth->fetchrow_array;
 
-if($username eq $db_username)
-{
-  my $pbkdf2 = Crypt::PBKDF2->new;
+# create a JSON string according to the database result
+my $json = ($password eq "opensesame") ?
+  qq{{"success" : "login is successful", "userid" : "$user_id"}} :
+  qq{{"error" : "username or password is wrong"}};
 
-  if($pbkdf2->validate($db_password, $password))
-  {
-    # valid
-    # add the user time of login and username to session variables
-     my $json = qq{{"success" : "login is successful"}};
-  }
-  else
-  {
-    my $json = qq{{"error" : "password is wrong"}};
-  }
-}
-else
-{
-  my $json = qq{{"error" : "username does not exist"}};
-}
-
-$con->disconnect;
-my $json = qq{{"success" : "login is successful"}} : 
-print $cgi->header(-type => "application/json", -charset => "utf-8");
+# return JSON string
+print $cgi->header;
 print $json;
+             
