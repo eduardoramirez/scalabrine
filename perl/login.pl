@@ -2,7 +2,8 @@
 use CGI;
 use DBI;
 use Crypt::PBKDF2;
-use POSIX qw(strftime);
+use Time::localtime;
+use File::stat;
 
 # read the CGI params
 my $cgi = CGI->new;
@@ -28,7 +29,8 @@ $sth->execute($username)
 
 my ($user_id) = $sth->fetchrow_array;
 
-$time = strftime "%a %b %e %H:%M:%S %Y", localtime;
+
+$time = ctime(stat($file)->mtime);
 
 # create a JSON string according to the database result
 my $json = ($password eq "opensesame") ?
