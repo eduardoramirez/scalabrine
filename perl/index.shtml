@@ -39,7 +39,7 @@
             <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
          </div>
          <!--logo start-->
-         <a href="/dashboard/index" class="logo"><span>scalabrine</span></a>
+         <a href="/perl/index.shtml" class="logo"><span>scalabrine</span></a>
          <!--logo end-->
 
          <div class="nav notify-row" id="top_menu">
@@ -83,14 +83,14 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a class="active" href="/dashboard/index">
+                  <a class="active" href="/perl/index.shtml">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
                </li>
 
                <li>
-                  <a href="/dashboard/error_detail">
+                  <a href="/perl/error_detail.html">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
