@@ -51,10 +51,10 @@
             <!--  notification start -->
             <a>
                <i class="icon-bell-alt"></i>
-               last logged in: <?php echo $_SESSION['time'] ?>
+               last logged in: <!--#exec cgi="/cgi-bin/time.pl"--> 
                <br>
                <i class="icon-envelope"></i>
-               current user's email: <?php echo $_SESSION['email'] ?>
+               current user's email: <!--#exec cgi="/cgi-bin/email.pl"-->
             </a>
          </div>
 
