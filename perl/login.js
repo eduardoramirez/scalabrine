@@ -1,11 +1,11 @@
 $(document).ready(function(){
-  $("form#loginBox").submit(function() { // loginForm is submitted
+  $("form#loginform").submit(function() { // loginForm is submitted
     var username = $('#username').attr('value'); // get username
     var password = $('#password').attr('value'); // get password
 
     $.ajax({
       type: "GET",
-      url: "/cgi-bin/login.pl", // URL of the Perl script
+      url: "http://104.131.195.41:9093/cgi-bin/", // URL of the Perl script
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       // send username and password as parameters to the Perl script
