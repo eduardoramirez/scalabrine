@@ -21,7 +21,6 @@ $sth->execute($username)
 
 my ($user_id) = $sth->fetchrow_array;
 
-
 my $now = localtime();
 
 # create a JSON string according to the database result
