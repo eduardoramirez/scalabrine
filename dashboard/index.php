@@ -1,7 +1,7 @@
 <?php
    session_start();
    if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-      header("Location: /dashboard/login.php");
+      header("Location: /dashboard/login");
    }
    else
    {
@@ -45,7 +45,7 @@
             <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
          </div>
          <!--logo start-->
-         <a href="/dashboard/index.php" class="logo"><span>scalabrine</span></a>
+         <a href="/dashboard/index" class="logo"><span>scalabrine</span></a>
          <!--logo end-->
 
          <div class="nav notify-row" id="top_menu">
@@ -73,7 +73,7 @@
                   </a>
                   <ul class="dropdown-menu extended logout">
                      <li class="log-arrow-up"></li>
-                     <li><a href="/dashboard/logout.php"><i class="icon-key"></i> Log Out</a></li>
+                     <li><a href="/dashboard/logout"><i class="icon-key"></i> Log Out</a></li>
                   </ul>
                </li>
                <!-- user login dropdown end -->
@@ -89,14 +89,14 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a class="active" href="/dashboard/index.php">
+                  <a class="active" href="/dashboard/index">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
                </li>
 
                <li>
-                  <a href="/dashboard/error_detail.php">
+                  <a href="/dashboard/error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>

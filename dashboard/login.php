@@ -44,13 +44,13 @@
         $date = new DateTime();
         $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
-        header("Location: /dashboard/index.php");
+        header("Location: /dashboard/index");
       }
       else
       {
         //incorrect password
         $_SESSION['incorrect_pass'] = true;
-        header("Location: /dashboard/login.php");
+        header("Location: /dashboard/login");
       }
     }
 

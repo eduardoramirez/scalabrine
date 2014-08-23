@@ -27,20 +27,20 @@
       mysqli_query($con, $sql);
 
       $_SESSION['signup'] = "";
-      header("Location: /dashboard/index.php");
+      header("Location: /dashboard/index");
       } 
       else 
       {
         //username is taken
         $_SESSION['username'] = true;
-        header("Location: /dashboard/registration.php");
+        header("Location: /dashboard/registration");
       }
     }
     else 
     {
       // passwords didnt match
       $_SESSION['pass'] = true;
-      header("Location: /dashboard/registration.php");
+      header("Location: /dashboard/registration");
     }
 
     mysqli_close($con);
