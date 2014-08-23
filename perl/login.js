@@ -26,9 +26,8 @@ $(document).ready(function(){
           // move the user to the dashboard
           alert("it worked!");
           $('form#loginform').hide();
-            $('div#loginResult').text("data.success: " + data.success 
+            $('div#loginResult').text("data.time: " + data.time
               + ", data.userid: " + data.userid);
-            $('div#loginResult').addClass("success");
             //location.href = "/index"
         } //else
       } // success
