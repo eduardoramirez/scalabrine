@@ -111,7 +111,7 @@
 
         <div class="registration">
           already registered?
-          <a class="" href="/dashboard/login.php">
+          <a class="" href="/dashboard/login">
             login
           </a>
         </div>
