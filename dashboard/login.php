@@ -12,7 +12,7 @@
       {
         // email is not valid
         // let user know somehow
-        header("Location: ../index");
+        header("Location: /dashboard/signup");
       } 
       else {
         // email exists -- send email to user
