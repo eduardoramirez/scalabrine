@@ -5,6 +5,7 @@ $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
 function checkEmail($email)
 {
+    echo "in function"
     $error = array('status'=>false,'userID'=>0);
     if (isset($email) && trim($email) != '') {
         //email was entered

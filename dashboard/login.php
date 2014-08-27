@@ -8,7 +8,7 @@
  // else{
     if(isset($_POST['reset_pass'])) {
       $result = checkEmail($_POST['email']);
-      if ($result['status'] == false )
+      if ($result['status'] === false )
       {
         // email is not valid
         // let user know somehow
