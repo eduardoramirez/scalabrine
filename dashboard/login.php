@@ -2,10 +2,10 @@
   session_start();
 
 
-  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
-      header("Location: /dashboard/index");
-  }
-  else{
+//  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
+//      header("Location: /dashboard/index");
+ // }
+ // else{
     if(isset($_POST['reset_pass'])) {
       $result = checkEmail($_POST['email']);
       if ($result['status'] == false )
@@ -107,7 +107,7 @@
 <?php
   }
   session_unset();
-}
+//}
 ?>
     <form class="form-signin" method="post">
       <h2 class="form-signin-heading">login</h2>
