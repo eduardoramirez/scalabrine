@@ -1,9 +1,9 @@
 <?php
   session_start();
-  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
-      header("Location: /dashboard/index");
-  }
-  else if(isset($_POST['signup'])) {
+//  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
+//      header("Location: /dashboard/index");
+//  }
+    if(isset($_POST['signup'])) {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     // need to escape characters
     $username = $_POST['username'];
