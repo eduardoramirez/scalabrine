@@ -69,7 +69,6 @@
 
       mysqli_close($con);
     }*/
-    else {
 ?>
 
 <!DOCTYPE html>
@@ -162,9 +161,6 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="/dashboard/js/jquery.js"></script>
   <script src="/dashboard/js/bootstrap.min.js"></script>
-<?php
-  }
-?>
 
   </body>
 </html>
