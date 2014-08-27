@@ -1,7 +1,31 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
   session_start();
-  
+  function checkEmail($email)
+  {
+    echo "in function";
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+    $error = array('status'=>false,'userID'=>0);
+    if (isset($email) && trim($email) != '') 
+    {
+        //email was entered
+        if ($SQL = $con->prepare("SELECT `ID` FROM `user` WHERE `Email` = ? LIMIT 1"))
+        {
+            $SQL->bind_param('s',trim($email));
+            $SQL->execute();
+            $SQL->store_result();
+            $numRows = $SQL->num_rows();
+            $SQL->bind_result($userID);
+            $SQL->fetch();
+            $SQL->close();
+            if ($numRows >= 1) return array('status'=>true,'userID'=>$userID);
+        } else { return $error; }
+    } else {
+        //nothing was entered;
+        return $error;
+    }
+  }
+
   function sendPasswordEmail($userID)
   {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
