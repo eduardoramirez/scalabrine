@@ -1,6 +1,7 @@
-<?php
+<?php 
+  session_start();
   function checkEmail($email)
-{
+  {
     echo "in function"
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     $error = array('status'=>false,'userID'=>0);
@@ -21,10 +22,10 @@
         //nothing was entered;
         return $error;
     }
-}
+  }
 
-function sendPasswordEmail($userID)
-{
+  function sendPasswordEmail($userID)
+  {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("SELECT `Username`,`Email`,`Password` FROM `user` WHERE `ID` = ? LIMIT 1"))
     {
@@ -63,9 +64,9 @@ function sendPasswordEmail($userID)
             return str_replace("\r\n","<br/ >",$message);
         }
     }
-}
+  }
 
-  session_start();
+
 //  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
 //      header("Location: /dashboard/index");
 //  }
