@@ -1,11 +1,10 @@
 <?php
 define(PW_SALT,'(+3%_');
 
-$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-
 function checkEmail($email)
 {
     echo "in function"
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     $error = array('status'=>false,'userID'=>0);
     if (isset($email) && trim($email) != '') {
         //email was entered
@@ -28,6 +27,7 @@ function checkEmail($email)
 
 function sendPasswordEmail($userID)
 {
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("SELECT `Username`,`Email`,`Password` FROM `user` WHERE `ID` = ? LIMIT 1"))
     {
         $SQL->bind_param('i',$userID);
@@ -69,6 +69,7 @@ function sendPasswordEmail($userID)
 
 function checkEmailKey($key,$userID)
 {
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     $curDate = date("Y-m-d H:i:s");
     if ($SQL = $con->prepare("SELECT `UserID` FROM `recoveryemails` WHERE `Key` = ? AND `UserID` = ? AND `expDate` >= ?"))
     {
@@ -89,6 +90,7 @@ function checkEmailKey($key,$userID)
  
 function updateUserPassword($userID,$password)
 {
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("UPDATE `user` SET `Password` = ? WHERE `ID` = ?"))
     {  
         $options = [
@@ -107,3 +109,4 @@ function updateUserPassword($userID,$password)
 }
 
 ?>
+

@@ -1,11 +1,12 @@
 <?php
   session_start();
-  include 'functions.php';
+  //include 'functions.php';
 //  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
 //      header("Location: /dashboard/index");
 //  }
 //  else{
-    if(isset($_POST['login'])) {
+    if(isset($_POST['login'])) 
+    {
       /*$result = checkEmail($_POST['username']);
       if ($result['status'] == false )
       {
