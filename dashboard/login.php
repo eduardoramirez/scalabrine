@@ -1,12 +1,15 @@
 <?php
   session_start();
-  if(isset($_POST['login'])) {
+  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
+      header("Location: /dashboard/index");
+  }
+  else if(isset($_POST['login'])) {
     // need to escape characters
     $username = $_POST['username'];
     $password = $_POST['password'];
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         
-    $query = "SELECT username, email, password FROM users WHERE username='$username'";
+    $query = "SELECT username, email, password FROM user WHERE username='$username'";
 
     if($stmt = mysqli_prepare($con, $query))
     {
@@ -16,30 +19,21 @@
 
       mysqli_stmt_fetch($stmt);
 
-      /*if(strcmp($username, $db_username) !== 0)
+      if(strcmp($username, $db_username) !== 0)
       {
         //should say something along the lines of .. no username found
         $_SESSION['login'] = "";
         header("HTTP/1.1 403 Forbidden");
         header("Location: /403");
         exit();
-      } */
+      } 
 
-      //if(password_verify($password, $db_password))
-      if(strcmp($password, "opensesame") === 0)
+      if(password_verify($password, $db_password))
       {
         $_SESSION['login'] = "1";
         $_SESSION['username'] = $username;
 
-        if(strcmp($username, $db_username) === 0)
-        {
-          //should say something along the lines of .. no username found
-          $_SESSION['email'] = $db_email;
-        }
-        else
-        {
-          $_SESSION['email'] = "anon@anon.com";
-        }
+        $_SESSION['email'] = $db_email;
 
         $date = new DateTime();
         $_SESSION['time'] = $date->format('Y-m-d H:i:s');
@@ -55,6 +49,19 @@
     }
 
     mysqli_close($con);
+  }
+  else if(isset($_POST['reset_pass'])) {
+    $result = checkEmail($_POST['email']);
+    if ($result['status'] == false )
+    {
+      // email is not valid
+      // let user know somehow
+    } 
+    else {
+      // email exists -- send email to user
+      // let user know email was sent
+      sendPasswordEmail($result['userID']);
+    }
   }
   else {
 ?>
@@ -135,7 +142,7 @@
               </div>
               <div class="modal-footer">
                 <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                <button class="btn btn-success" type="button">Submit</button>
+                <button class="btn btn-success" type="button" name="reset_pass">Submit</button>
               </div>
           </div>
         </div>

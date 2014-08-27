@@ -1,6 +1,9 @@
 <?php
   session_start();
-  if(isset($_POST['signup'])) {
+  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
+      header("Location: /dashboard/index");
+  }
+  else if(isset($_POST['signup'])) {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     // need to escape characters
     $username = $_POST['username'];
@@ -15,19 +18,18 @@
 
     if(strcmp($password, $confirm_password) === 0)
     {
-      $res = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
+      $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
 
       // Username is free
       if(mysqli_num_rows($res) == 0) 
       {
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        $sql="INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
-      $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-      $sql="INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$h_password')";
+        mysqli_query($con, $sql);
 
-      mysqli_query($con, $sql);
-
-      $_SESSION['signup'] = "";
-      header("Location: /dashboard/index");
+        $_SESSION['signup'] = "";
+        header("Location: /dashboard/index");
       } 
       else 
       {
