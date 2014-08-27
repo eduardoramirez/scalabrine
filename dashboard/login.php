@@ -5,7 +5,7 @@
 //      header("Location: /dashboard/index");
 //  }
 //  else{
-    if(isset($_POST['login'])) 
+    if(isset($_POST['reset_pass'])) 
     {
       /*$result = checkEmail($_POST['username']);
       if ($result['status'] == false )
