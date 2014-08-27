@@ -105,3 +105,5 @@ function updateUserPassword($userID,$password)
         $SQL->execute();
     }
 }
+
+?>
