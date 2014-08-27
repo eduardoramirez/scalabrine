@@ -6,22 +6,7 @@
 //      header("Location: /dashboard/index");
  // }
  // else{
-    if(isset($_POST['reset_pass'])) {
-      header("Location: /dashboard/index");
-      $result = checkEmail($_POST['email']);
-      if ($result['status'] === false )
-      {
-        // email is not valid
-        // let user know somehow
-        header("Location: /dashboard/index");
-      } 
-      else {
-        // email exists -- send email to user
-        // let user know email was sent
-        sendPasswordEmail($result['userID']);
-        header("Location: /dashboard/login");
-      }
-    }
+
     if(isset($_POST['login'])) {
       // need to escape characters
       $username = $_POST['username'];
@@ -164,6 +149,22 @@
   <script src="/dashboard/js/bootstrap.min.js"></script>
 <?php
   }
+  if(isset($_POST['reset_pass'])) {
+      header("Location: /dashboard/index");
+      $result = checkEmail($_POST['email']);
+      if ($result['status'] === false )
+      {
+        // email is not valid
+        // let user know somehow
+        header("Location: /dashboard/index");
+      } 
+      else {
+        // email exists -- send email to user
+        // let user know email was sent
+        sendPasswordEmail($result['userID']);
+        header("Location: /dashboard/login");
+      }
+    }
 ?>
 
   </body>
