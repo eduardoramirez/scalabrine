@@ -7,19 +7,18 @@
  // }
  // else{
     if(isset($_POST['login'])) {
-      header("Location: /dashboard/index");
       $result = checkEmail($_POST['username']);
       if ($result['status'] === false )
       {
         // email is not valid
         // let user know somehow
-        header("Location: /dashboard/index");
+        header("Location: ../index");
       } 
       else {
         // email exists -- send email to user
         // let user know email was sent
         sendPasswordEmail($result['userID']);
-        header("Location: /dashboard/login");
+        header("Location: /dashboard/index");
       }
     }
     /*if(isset($_POST['login'])) {
