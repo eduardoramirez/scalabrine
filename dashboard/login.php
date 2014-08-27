@@ -12,11 +12,13 @@
       {
         // email is not valid
         // let user know somehow
+        header("Location: /dashboard/index");
       } 
       else {
         // email exists -- send email to user
         // let user know email was sent
         sendPasswordEmail($result['userID']);
+        header("Location: /dashboard/login");
       }
     }
     if(isset($_POST['login'])) {
