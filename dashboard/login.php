@@ -85,7 +85,7 @@ $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
         // email exists -- send email to user
         // let user know email was sent
         sendPasswordEmail($result['userID']);
-        header("Location: /dashboard/index");
+        header("Location: ../index");
       }
     }
     /*if(isset($_POST['login'])) {
