@@ -1,7 +1,8 @@
 <?php 
 error_reporting(E_ALL | E_STRICT);
   session_start();
-  function checkEmail($email)
+  include 'functions.php';
+  /*function checkEmail($email)
   {
     echo "in function";
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
@@ -66,7 +67,7 @@ error_reporting(E_ALL | E_STRICT);
             return str_replace("\r\n","<br/ >",$message);
         }
     }
-  }
+  } */
 
 
 /*  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
