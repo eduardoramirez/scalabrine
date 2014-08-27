@@ -1,11 +1,13 @@
 <?php 
+error_reporting(E_ALL | E_STRICT);
   session_start();
   function checkEmail($email)
   {
     echo "in function"
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     $error = array('status'=>false,'userID'=>0);
-    if (isset($email) && trim($email) != '') {
+    if (isset($email) && trim($email) != '') 
+    {
         //email was entered
         if ($SQL = $con->prepare("SELECT `ID` FROM `user` WHERE `Email` = ? LIMIT 1"))
         {
@@ -67,10 +69,10 @@
   }
 
 
-//  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
-//      header("Location: /dashboard/index");
-//  }
-//  else{
+/*  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
+      header("Location: /dashboard/index");
+  }
+  else{ */
     if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
