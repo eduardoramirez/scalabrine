@@ -29,7 +29,7 @@ function sendPasswordEmail($userID)
       $SQL->execute();
       $SQL->close();
       $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
-      $message = "Dear $uname,\r\n\r\n";
+      $message = "Dear $uname,\r\n";
       $message .= "Please visit the following link to reset your password:\r\n";
       $message .= "-----------------------\r\n";
       $message .= "$passwordLink\r\n";
@@ -88,7 +88,7 @@ if(isset($_POST['reset_pass']))
   {
     // email is not valid
     // let user know somehow
-    header("Location: /dashboard/login");
+    header("Location: /dashboard/registration");
   }
 } 
 else if(isset($_POST['login'])) 
