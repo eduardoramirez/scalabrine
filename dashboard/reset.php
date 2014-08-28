@@ -53,8 +53,8 @@ function updateUserPassword($userID,$password)
 
 if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
 {
-  /*$result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
-  if ($result == false)
+  $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
+  /*if ($result == false)
   {
     // key does not match our key.. bad key
   } 
