@@ -37,14 +37,10 @@ function sendPasswordEmail($userID)
             $message .= "Thanks,\r\n";
             $message .= "-- scalabrine";
             $headers .= "From: Scalabrine <scalabrinecse@gmail.com> \n";
-            $headers .= "To-Sender: \n";
+            $headers .= "To: $db_email\n";
             $headers .= "X-Mailer: PHP\n"; // mailer
-            $headers .= "Reply-To: scalabrinecse@gmail.com\n"; // Reply address
-            $headers .= "Return-Path: scalabrinecse@gmail.com\n"; //Return Path for errors
-            $headers .= "Content-Type: text/html; charset=iso-8859-1"; //Enc-type
             $subject = "Reset Password";
             @mail($email,$subject,$message,$headers);
-            return str_replace("\r\n","<br/ >",$message);
         }
     }
 }
