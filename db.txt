@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS `recoveryemails` (
+  `ID` bigint(20) unsigned zerofill NOT NULL auto_increment,
+  `UserID` bigint(20) NOT NULL,
+  `Key` varchar(32) NOT NULL,
+  `expDate` datetime NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `organization` (
+  `ID` bigint(20) unsigned zerofill NOT NULL auto_increment,
+  `name` VARCHAR(20) NOT NULL, 
+  PRIMARY KEY(`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `ID` bigint(20) unsigned zerofill NOT NULL auto_increment,
+  `Username` varchar(20) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `admin` int NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `ID` bigint(20) unsigned zerofill NOT NULL auto_increment,
+  `userID` bigint(20) NOT NULL, 
+  `orgID` bigint(20) NOT NULL, 
+  PRIMARY KEY(`ID`),
+  FOREIGN KEY (`userID`) REFERENCES `user`(`ID`),
+  FOREIGN KEY (`orgID`) REFERENCES `organization`(`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
