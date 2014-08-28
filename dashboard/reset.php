@@ -29,7 +29,7 @@ function checkEmailKey($key,$userID)
     return false;
 }
  
-function updateUserPassword($userID,$password)
+function updateUserPassword($userID,$password, $key)
 {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("UPDATE `user` SET `Password` = ? WHERE `ID` = ?"))
