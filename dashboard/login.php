@@ -92,13 +92,13 @@ function checkEmail($email)
       $password = $_POST['password'];
       $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
           
-      $query = "SELECT username, email, password FROM user WHERE username='$username'";
+      $query = "SELECT `Username`, `Password`, `Email` FROM `user` WHERE `Username`='$username'";
 
       if($stmt = mysqli_prepare($con, $query))
       {
         mysqli_stmt_execute($stmt);
 
-        mysqli_stmt_bind_result($stmt, $db_username, $db_email, $db_password);
+        mysqli_stmt_bind_result($stmt, $db_username, $db_password, $db_email);
 
         mysqli_stmt_fetch($stmt);
 
