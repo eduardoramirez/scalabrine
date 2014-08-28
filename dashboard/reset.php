@@ -38,7 +38,7 @@ function updateUserPassword($userID,$password, $key)
           'cost' => 11,
           'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ]; 
-        $password = password_hash($password, PASSWORD_BCRYPT, $options);
+        //$password = password_hash($password, PASSWORD_BCRYPT, $options);
 
         $SQL->bind_param('si',$password,$userID);
         $SQL->execute();

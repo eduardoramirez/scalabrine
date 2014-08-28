@@ -69,7 +69,7 @@ function checkEmail($email)
 }
 
 
-    /*if(isset($_POST['login'])) 
+    if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
       if ($result['status'])
@@ -85,8 +85,8 @@ function checkEmail($email)
         // let user know somehow
         header("Location: /dashboard/signup");
       }
-    }
-    else */if(isset($_POST['login'])) {
+    }/*
+    else if(isset($_POST['login'])) {
       // need to escape characters
       $username = $_POST['username'];
       $password = $_POST['password'];
@@ -111,7 +111,8 @@ function checkEmail($email)
           exit();
         } 
 
-        if(password_verify($password, $db_password))
+        //if(password_verify($password, $db_password))
+        if(strcmp($password, $db_password) ===0)
         {
           $_SESSION['login'] = "1";
           $_SESSION['username'] = $username;
@@ -132,7 +133,7 @@ function checkEmail($email)
       }
 
       mysqli_close($con);
-    } 
+    } */
     else {
 ?>
 
