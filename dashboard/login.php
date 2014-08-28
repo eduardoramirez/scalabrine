@@ -57,41 +57,6 @@ error_reporting(-1);
 }
 
 
-function lookUpEmail($email)
-{
-  $con = return mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-
-  $error = array('status'=>false,'userID'=>0);
-
-  if (isset($email) && trim($email) != '') 
-  {
-    //email was entered
-    if ($SQL = $con->prepare("SELECT `ID` FROM `user` WHERE `Email` = ?"))
-    {
-      mysqli_stmt_bind_param('s', trim($email));
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_store_result($stmt);
-      $numRows = mysqli_stmt_num_rows($stmt); 
-      mysqli_stmt_bind_result($stmt, $db_userID);
-      mysqli_stmt_fetch($stmt);
-      mysqli_stmt_free_result($stmt);
-      mysqli_stmt_close($stmt);
-
-      if ($numRows >= 1) 
-      {
-        return array('status'=>true,'userID'=>$userID);
-      }
-    } 
-    else { return $error; }
-  } 
-  else 
-  {
-    //nothing was entered;
-    return $error;
-  }
-}
-
-
     if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
