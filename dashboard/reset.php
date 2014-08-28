@@ -62,7 +62,12 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
   else{
     // key is kewl
     $securityUser = $result['userID'];
-    header("Location: ../index");
+
+    if(isset($_POST['reset'])) {
+      header("Location: ../index");
+    }
+
+    
   }
   /*
   elseif ($result['status'] == true) 
