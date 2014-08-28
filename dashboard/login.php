@@ -88,7 +88,7 @@ if(isset($_POST['reset_pass']))
   {
     // email is not valid
     // let user know somehow
-    header("Location: /dashboard/signup");
+    header("Location: /dashboard/registration");
   }
 } 
 else if(isset($_POST['login'])) 
