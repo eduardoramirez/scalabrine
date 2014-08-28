@@ -2,12 +2,11 @@
 
 session_start();
 
-if(isset($_SESSION['login'] && $_SESSION['login'] === '1')) 
+if (isset($_SESSION['login']) && $_SESSION['login'] === '1') 
 {
   header("Location: /dashboard/index");
 }
-else
-{ 
+  //else{ 
 
 
 function sendPasswordEmail($userID)
@@ -139,8 +138,8 @@ else */if(isset($_POST['login']))
   }
 
   mysqli_close($con);
-}
 } 
+else {
 ?>
 
 <!DOCTYPE html>
@@ -233,7 +232,9 @@ else */if(isset($_POST['login']))
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="/dashboard/js/jquery.js"></script>
   <script src="/dashboard/js/bootstrap.min.js"></script>
-
+<?php
+  }
+?>
 
   </body>
 </html>
