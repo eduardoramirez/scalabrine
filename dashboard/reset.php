@@ -70,7 +70,7 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
       $confirm_password = $_POST['confirm_password'];
       
       // userid was empty and or key was empty
-      if ($securityUser =='' || $_POST['key'] == '') header("location: ../login");
+      if ($securityUser =='' || $_POST['key'] == '') header("location: ../index");
       
       if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
       {
