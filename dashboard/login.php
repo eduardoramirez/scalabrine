@@ -82,7 +82,7 @@ if(isset($_POST['reset_pass']))
     // email exists -- send email to user
     // let user know email was sent
     sendPasswordEmail($result['userID']);
-    $_SESSION['validemail'] = true;
+    $_SESSION['validemail'] = TRUE;
     header("Location: /dashboard/login");
     //header("Location: ../index");
   } 
@@ -90,7 +90,7 @@ if(isset($_POST['reset_pass']))
   {
     // email is not valid
     // let user know somehow
-    $_SESSION['validemail'] = false;
+    $_SESSION['validemail'] = FALSE;
     header("Location: /dashboard/login");
   }
 } 
@@ -184,7 +184,7 @@ else {
   }
   else if(isset($_SESSION['validemail']))
   {
-      if($_SESSION['validemail'] == true)
+      if($_SESSION['validemail'] == TRUE)
 ?>
     <div class="alert alert-info" role="alert">email sent</div>
 <?php
