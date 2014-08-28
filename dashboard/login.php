@@ -189,7 +189,7 @@ else {
     <div class="alert alert-info" role="alert">email sent</div>
 <?php
       }
-    else {
+    else if($_SESSION['validemail'] === false) {
 ?>
     <div class="alert alert-danger" role="alert">email address not found</div>
 <?php
