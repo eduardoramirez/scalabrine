@@ -184,7 +184,7 @@ else {
   }
   else if(isset($_SESSION['validemail']))
   {
-      if($_SESSION['validemail'] == TRUE)
+      if($_SESSION['validemail'] === TRUE)
 ?>
     <div class="alert alert-info" role="alert">email sent</div>
 <?php
