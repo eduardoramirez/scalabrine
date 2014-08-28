@@ -59,5 +59,5 @@ function checkEmail($email)
       //nothing was entered;
       return $error;
   }
-}s
+}
 ?>
