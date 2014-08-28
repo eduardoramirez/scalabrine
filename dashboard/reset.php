@@ -69,9 +69,6 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
       $password = $_POST['password'];
       $confirm_password = $_POST['confirm_password'];
       
-      // userid was empty and or key was empty
-      if ($securityUser =='' || $_POST['key'] == '') header("location: ../index");
-      
       if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
       {
         $_SESSION['pass_match'] = true;
