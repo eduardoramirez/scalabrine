@@ -59,17 +59,6 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
     // key does not match our key.. bad key
     header("Location: /dashboard/login");
   } 
-  else{
-    // key is kewl
-    $securityUser = $result['userID'];
-
-    if(isset($_POST['reset'])) {
-      header("Location: ../index");
-    }
-
-    
-  }
-  /*
   elseif ($result['status'] == true) 
   {
     // key is kewl
@@ -98,7 +87,7 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
       }
         
     }
-  }*/
+  }
   
 }
 
