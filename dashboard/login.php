@@ -5,7 +5,7 @@ error_reporting(-1);
       header("Location: /dashboard/index");
   }
   else{ */
-    include('helper.php');
+    include "helper.php";
     if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
