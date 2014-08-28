@@ -83,7 +83,7 @@ if(isset($_POST['reset_pass']))
     // let user know email was sent
     sendPasswordEmail($result['userID']);
 
-    <div class="alert alert-info" role="alert">'email sent.'</div>
+    //<div class="alert alert-info" role="alert">'email sent.'</div>
     //header("Location: ../index");
   } 
   else 
