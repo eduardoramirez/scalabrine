@@ -101,7 +101,7 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
   }*/
   
 }
-else {
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -158,9 +158,7 @@ else {
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="/dashboard/js/jquery.js"></script>
   <script src="/dashboard/js/bootstrap.min.js"></script>
-<?php
-  }
-?>
+
 
   </body>
 </html>
