@@ -60,6 +60,8 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
     header("Location: /dashboard/login");
   } 
   else{
+    // key is kewl
+    $securityUser = $result['userID'];
     header("Location: ../index");
   }
   /*
