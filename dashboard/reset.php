@@ -8,46 +8,46 @@ else
 */
 
 
-function checkEmailKey($key,$userID)
-{
+  function checkEmailKey($key,$userID)
+  {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     $curDate = date("Y-m-d H:i:s");
     if ($SQL = $con->prepare("SELECT `UserID` FROM `recoveryemails` WHERE `Key` = ? AND `UserID` = ? AND `expDate` >= ?"))
     {
-        $SQL->bind_param('sis',$key,$userID,$curDate);
-        $SQL->execute();
-        $SQL->store_result();
-        $numRows = $SQL->num_rows();
-        $SQL->bind_result($userID);
-        $SQL->fetch();
-        $SQL->close();
-        if ($numRows > 0 && $userID != '')
-        {
-            return array('status'=>true,'userID'=>$userID);
-        }
+      $SQL->bind_param('sis',$key,$userID,$curDate);
+      $SQL->execute();
+      $SQL->store_result();
+      $numRows = $SQL->num_rows();
+      $SQL->bind_result($userID);
+      $SQL->fetch();
+      $SQL->close();
+      if ($numRows > 0 && $userID != '')
+      {
+        return array('status'=>true,'userID'=>$userID);
+      }
     }
     return false;
-}
+  }
  
-function updateUserPassword($userID,$password, $key)
-{
+  function updateUserPassword($userID,$password, $key)
+  {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("UPDATE `user` SET `Password` = ? WHERE `ID` = ?"))
     {  
-        $options = [
-          'cost' => 11,
-          'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-        ]; 
-        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+      $options = [
+        'cost' => 11,
+        'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+      ]; 
+      $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-        $SQL->bind_param('si',$h_password,$userID);
-        $SQL->execute();
-        $SQL->close();
-        $SQL = $con->prepare("DELETE FROM `recoveryemails` WHERE `Key` = ?");
-        $SQL->bind_param('s',$key);
-        $SQL->execute();
+      $SQL->bind_param('si',$h_password,$userID);
+      $SQL->execute();
+      $SQL->close();
+      $SQL = $con->prepare("DELETE FROM `recoveryemails` WHERE `Key` = ?");
+      $SQL->bind_param('s',$key);
+      $SQL->execute();
     }
-}
+  }
 
 
 
@@ -71,12 +71,12 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
       
       if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
       {
+        // passwords dont match or password was empty
         $_SESSION['pass_match'] = true;
         header("Refresh:0");
       } 
       else 
       {
-        // user 
         updateUserPassword($securityUser, $password, $_GET['email']);
 
         // let user know it was successful and redirect to login
