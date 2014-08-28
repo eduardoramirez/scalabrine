@@ -75,7 +75,7 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
       if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
       {
         $_SESSION['pass_match'] = true;
-        header("Location: /dashboard/reset");
+        header("Refresh:0");
       } 
       else 
       {
