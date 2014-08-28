@@ -38,9 +38,9 @@ function updateUserPassword($userID,$password, $key)
           'cost' => 11,
           'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ]; 
-        //$password = password_hash($password, PASSWORD_BCRYPT, $options);
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-        $SQL->bind_param('si',$password,$userID);
+        $SQL->bind_param('si',$h_password,$userID);
         $SQL->execute();
         $SQL->close();
         $SQL = $con->prepare("DELETE FROM `recoveryemails` WHERE `Key` = ?");
