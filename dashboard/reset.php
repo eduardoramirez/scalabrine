@@ -1,13 +1,11 @@
 <?php
 session_start();
-/*if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) 
+if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) 
 {
   header("Location: /dashboard/index");
 }
 else
-*/
-
-
+{
   function checkEmailKey($key,$userID)
   {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
@@ -28,7 +26,7 @@ else
     }
     return false;
   }
- 
+
   function updateUserPassword($userID,$password, $key)
   {
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
@@ -51,44 +49,42 @@ else
 
 
 
-if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
-{
-  $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
-  if ($result == false)
+  if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
   {
-    // key does not match our key.. bad key
-    header("Location: /dashboard/login");
-  } 
-  elseif ($result['status'] == true) 
-  {
-    // key is kewl
-    $securityUser = $result['userID'];
+    $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
+    if ($result == false)
+    {
+      // key does not match our key.. bad key
+      header("Location: /dashboard/login");
+    } 
+    elseif ($result['status'] == true) 
+    {
+      // key is kewl
+      $securityUser = $result['userID'];
 
-    if(isset($_POST['reset'])) {
-      // need to escape characters
-      $password = $_POST['password'];
-      $confirm_password = $_POST['confirm_password'];
-      
-      if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
-      {
-        // passwords dont match or password was empty
-        $_SESSION['pass_match'] = true;
-        header("Refresh:0");
-      } 
-      else 
-      {
-        updateUserPassword($securityUser, $password, $_GET['email']);
-
-        // let user know it was successful and redirect to login
-        header("Location: /dashboard/login");
-      }
+      if(isset($_POST['reset'])) {
+        // need to escape characters
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
         
+        if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
+        {
+          // passwords dont match or password was empty
+          $_SESSION['pass_match'] = true;
+          header("Refresh:0");
+        } 
+        else 
+        {
+          updateUserPassword($securityUser, $password, $_GET['email']);
+          // let user know it was successful and redirect to login
+          header("Location: /dashboard/login");
+        }
+          
+      }
     }
   }
-  
-}
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +140,9 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
   <script src="/dashboard/js/jquery.js"></script>
   <script src="/dashboard/js/bootstrap.min.js"></script>
 
-
+<?php
+}
+?>
   </body>
 </html>
 
