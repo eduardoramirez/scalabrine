@@ -1,11 +1,12 @@
 <?php
-include("functions.php");
 session_start();
-if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) 
+/*if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) 
 {
   header("Location: /dashboard/index");
 }
-elseif (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
+else
+*/
+if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
 {
   $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
   if ($result == false)
