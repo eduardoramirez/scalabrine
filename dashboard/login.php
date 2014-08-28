@@ -111,8 +111,7 @@ function checkEmail($email)
           exit();
         } 
 
-        //if(password_verify($password, $db_password))
-        if(strcmp($password, $db_password) ===0)
+        if(password_verify($password, $db_password))
         {
           $_SESSION['login'] = "1";
           $_SESSION['username'] = $username;
