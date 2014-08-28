@@ -26,7 +26,7 @@ function sendPasswordEmail($userID)
             $SQL->bind_param('iss',$userID,$key,$expDate);
             $SQL->execute();
             $SQL->close();
-            $passwordLink = "http://104.131.195.41:9091/reset.php?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
+            $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
             $message = "Dear $uname,\r\n";
             $message .= "Please visit the following link to reset your password:\r\n";
             $message .= "-----------------------\r\n";
