@@ -7,7 +7,7 @@ error_reporting(-1);
   else{ */
 
 
-    function lookUpEmail($email)
+   /* function lookUpEmail($email)
 {
   $con = return mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
@@ -39,7 +39,7 @@ error_reporting(-1);
     //nothing was entered;
     return $error;
   }
-} 
+} */
 
 
     if(isset($_POST['login'])) 
