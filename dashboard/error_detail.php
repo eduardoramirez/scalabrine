@@ -1,7 +1,7 @@
 <?php
    session_start();
    if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-      header("Location: /dashboard/login.php");
+      header("Location: /dashboard/login");
    }
    else
    {
@@ -70,7 +70,7 @@
                   </a>
                   <ul class="dropdown-menu extended logout">
                      <li class="log-arrow-up"></li>
-                     <li><a href="/dashboard/logout.php"><i class="icon-key"></i> Log Out</a></li>
+                     <li><a href="/dashboard/logout"><i class="icon-key"></i> Log Out</a></li>
                   </ul>
                </li>
                <!-- user login dropdown end -->
@@ -86,14 +86,14 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a href="index.php">
+                  <a href="index">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
                </li>
 
                <li>
-                  <a class="active" href="error_detail.php">
+                  <a class="active" href="error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
