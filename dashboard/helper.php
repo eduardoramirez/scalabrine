@@ -1,6 +1,6 @@
 <?php
 
-define(PW_SALT,'(+3%_');
+//define(PW_SALT,'(+3%_');
 
 function sendEmail($userID)
 {
@@ -57,7 +57,7 @@ function lookUpEmail($email)
   $con = return mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
   $error = array('status'=>false,'userID'=>0);
-  
+
   if (isset($email) && trim($email) != '') 
   {
     //email was entered

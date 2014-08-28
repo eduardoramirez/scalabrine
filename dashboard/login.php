@@ -1,11 +1,11 @@
 <?php 
-error_reporting(E_ALL | E_STRICT);
+error_reporting(-1);
   session_start();
 /*  if (isset($_SESSION['login'] && $_SESSION['login'] === '1')) {
       header("Location: /dashboard/index");
   }
   else{ */
-
+    include('helper.php');
     if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
