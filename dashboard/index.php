@@ -71,9 +71,8 @@
                      <span class="username"><?php echo $_SESSION['username'] ?></span>
                      <b class="caret"></b>
                   </a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu extended logout">
                      <li class="log-arrow-up"></li>
-                     <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
                      <li><a href="/dashboard/logout"><i class="icon-key"></i> Log Out</a></li>
                   </ul>
                </li>
