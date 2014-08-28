@@ -6,7 +6,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 {
   header("Location: /dashboard/index");
 }
-  //else{ 
+else{ 
 
 
 function sendPasswordEmail($userID)
@@ -180,7 +180,6 @@ else {
 <?php
   }
   session_unset();
-//}
 ?>
     <form class="form-signin" method="post">
       <h2 class="form-signin-heading">login</h2>
@@ -234,6 +233,7 @@ else {
   <script src="/dashboard/js/bootstrap.min.js"></script>
 <?php
   }
+}
 ?>
 
   </body>
