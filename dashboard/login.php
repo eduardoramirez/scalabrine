@@ -189,10 +189,10 @@ else {
     <div class="alert alert-info" role="alert">email sent</div>
 <?php
       }
-    //else
-
-    //<div class="alert alert-danger" role="alert">email address not found</div>
-
+    else {
+?>
+    <div class="alert alert-danger" role="alert">email address not found</div>
+<?php
   }
 
   session_unset();
