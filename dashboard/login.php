@@ -29,14 +29,14 @@ function sendPasswordEmail($userID)
       $SQL->execute();
       $SQL->close();
       $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
-      $message = "Dear $uname,\r\n";
+      $message = "Dear $uname,\r\n\r\n";
       $message .= "Please visit the following link to reset your password:\r\n";
       $message .= "-----------------------\r\n";
       $message .= "$passwordLink\r\n";
-      $message .= "-----------------------\r\n";
+      $message .= "-----------------------\r\n\r\n";
       $message .= "Please be sure to copy the entire link into your browser. The link will expire after 3 days for security reasons.\r\n\r\n";
-      $message .= "If you did not request this forgotten password email, no action is needed, your password will not be reset as long as the link above is not visited.\r\n\r\n";
-      $message .= "Thanks,\r\n";
+      $message .= "If you did not request this forgotten password email, no action is needed, your password will not be reset as long as the link above is not visited.\r\n\r\n\r\n";
+      $message .= "Thanks,\r\n\r\n";
       $message .= "-- scalabrine";
       $headers .= "From: Scalabrine <scalabrinecse@gmail.com> \n";
       $headers .= "To: $db_email\n";
@@ -88,7 +88,7 @@ if(isset($_POST['reset_pass']))
   {
     // email is not valid
     // let user know somehow
-    header("Location: /dashboard/signup");
+    header("Location: /dashboard/login");
   }
 } 
 else if(isset($_POST['login'])) 
