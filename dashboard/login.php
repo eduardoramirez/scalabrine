@@ -74,9 +74,9 @@ function checkEmail($email)
 ////////////
 // listener for the modal button
 ////////////
-/*if(isset($_POST['reset_pass'])) 
+if(isset($_POST['reset_pass'])) 
 {
-  $result = checkEmail($_POST['username']);
+  $result = checkEmail($_POST['email']);
   if ($result['status'])
   {
     // email exists -- send email to user
@@ -91,7 +91,7 @@ function checkEmail($email)
     header("Location: /dashboard/signup");
   }
 } 
-else */if(isset($_POST['login'])) 
+else if(isset($_POST['login'])) 
 {
   // need to escape characters
   $username = $_POST['username'];
@@ -211,6 +211,7 @@ else {
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Forgot Password ?</h4>
               </div>
+            <form method="post">
               <div class="modal-body">
                 <p>Enter your e-mail address below to reset your password.</p>
                 <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
@@ -218,8 +219,9 @@ else {
               </div>
               <div class="modal-footer">
                 <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                <button class="btn btn-success" type="button" name="reset_pass">Submit</button>
+                <button class="btn btn-success" type="submit" name="reset_pass">Submit</button>
               </div>
+            </form>
           </div>
         </div>
       </div>
