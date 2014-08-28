@@ -82,16 +82,16 @@ if(isset($_POST['reset_pass']))
     // email exists -- send email to user
     // let user know email was sent
     sendPasswordEmail($result['userID']);
-?>
-<div class="alert alert-info" role="alert">email sent</div>
+    $_SESSION['validemail'] = true;
+    header("Location: /dashboard/login");
     //header("Location: ../index");
-<?php
   } 
   else 
   {
     // email is not valid
     // let user know somehow
-    header("Location: /dashboard/registration");
+    $_SESSION['validemail'] = false;
+    header("Location: /dashboard/login");
   }
 } 
 else if(isset($_POST['login'])) 
@@ -182,6 +182,18 @@ else {
   <div class="alert alert-danger" role="alert">incorrect password.</div>
 <?php
   }
+  else if(isset($_SESSION['validemail']))
+  {
+      if($_SESSION['validemail'] == true)
+?>
+    <div class="alert alert-info" role="alert">email sent</div>
+<?php
+      else
+?>
+    <div class="alert alert-danger" role="alert">email address not found</div>
+<?php
+  }
+
   session_unset();
 ?>
     <form class="form-signin" method="post">
