@@ -69,7 +69,7 @@ function checkEmail($email)
 }
 
 
-    if(isset($_POST['reset_pass'])) 
+    if(isset($_POST['login'])) 
     {
       $result = checkEmail($_POST['username']);
       if ($result['status'])
@@ -85,7 +85,7 @@ function checkEmail($email)
         // let user know somehow
         header("Location: /dashboard/signup");
       }
-    }
+    }/*
     else if(isset($_POST['login'])) {
       // need to escape characters
       $username = $_POST['username'];
@@ -132,7 +132,7 @@ function checkEmail($email)
       }
 
       mysqli_close($con);
-    }
+    } */
     else {
 ?>
 
