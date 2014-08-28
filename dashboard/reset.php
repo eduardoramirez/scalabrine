@@ -126,7 +126,6 @@ if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "")
   <div class="alert alert-danger" role="alert">passwords do not match.</div>
 <?php
   }
-  session_unset();
 ?>
     <form class="form-signin" method="post">
       <h2 class="form-signin-heading">reset password</h2>
