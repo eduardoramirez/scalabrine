@@ -2,6 +2,7 @@
 
 session_start();
 
+// If user is logged in, redirect to homepage
 if (isset($_SESSION['login']) && $_SESSION['login'] === '1') 
 {
   header("Location: /dashboard/index");
@@ -72,7 +73,7 @@ function checkEmail($email)
 }
 
 ////////////
-// listener for the modal button
+// listener for the reset password button
 ////////////
 if(isset($_POST['reset_pass'])) 
 {
@@ -80,16 +81,13 @@ if(isset($_POST['reset_pass']))
   if ($result['status'])
   {
     // email exists -- send email to user
-    // let user know email was sent
     sendPasswordEmail($result['userID']);
     $_SESSION['validemail'] = true;
     header("Location: /dashboard/login");
-    //header("Location: ../index");
   } 
   else 
   {
     // email is not valid
-    // let user know somehow
     $_SESSION['validemail'] = false;
     header("Location: /dashboard/login");
   }
