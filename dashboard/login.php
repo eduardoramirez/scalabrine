@@ -64,6 +64,7 @@ else if(isset($_POST['login']))
 
       $_SESSION['email'] = $db_email;
 
+      date_default_timezone_set('America/Los_Angeles');
       $date = new DateTime();
       $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
