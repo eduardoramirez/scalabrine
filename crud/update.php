@@ -22,6 +22,11 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
+		$options = [
+      		'cost' => 11,
+      		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+    	];
+
 		// validate input
 		$valid = true;
 		if (empty($name)) {
@@ -44,11 +49,12 @@
 		
 		// update data
 		if ($valid) {
+			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$email,$password,$id));
+			$q->execute(array($name,$email,$h_password,$id));
 			Database::disconnect();
 			header("Location: index.php");
 		}
