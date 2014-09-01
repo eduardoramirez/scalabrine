@@ -23,7 +23,7 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 	    $level = $_POST['level'];
-
+echo $level;
 		$options = [
       		'cost' => 11,
       		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
@@ -61,10 +61,10 @@
             }
 			$q = $pdo->prepare($sql);
             if ($_SESSION['admin'] == 1) {
-			$q->execute(array($name,$email,$h_password,$id));
+			$q->execute(array($name,$email,$h_password,$level,$id));
             }
             else {
-			$q->execute(array($name,$email,$h_password,$level,$id));
+			$q->execute(array($name,$email,$h_password,$id));
             }
 			Database::disconnect();
 			header("Location: index.php");
