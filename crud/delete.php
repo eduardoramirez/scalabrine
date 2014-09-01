@@ -1,25 +1,47 @@
-<?php 
+<?php
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+    header("Location: /dashboard/login");
+}
+else if ($_SESSION['admin'] == 0){
+    header("HTTP/1.1 403 Forbidden");
+    header("Location: /403");
+}
+else{
 	require 'database.php';
 	$id = 0;
 	
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
 	}
-	
-	if ( !empty($_POST)) {
-		// keep track post values
-		$id = $_POST['id'];
-		
-		// delete data
-		$pdo = Database::connect();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "DELETE FROM user WHERE ID = ?";
-		$q = $pdo->prepare($sql);
-		$q->execute(array($id));
-		Database::disconnect();
-		header("Location: index.php");
-		
-	} 
+
+    if ($_SESSION['admin'] == 1){
+        $orgID = $_SESSION['orgID'];
+
+        $sql = 'SELECT count(*) FROM user WHERE ID = ' . $id . ' and OrgID = ' . $_SESSION['orgID'];
+        $pdo = Database::connect();
+        $result = $pdo->query($sql);
+
+        if ($result == 0){
+            header("HTTP/1.1 403 Forbidden");
+            header("Location: /403");
+        }
+        else{
+            if ( !empty($_POST)) {
+                // keep track post values
+                $id = $_POST['id'];
+
+                // delete data
+                $pdo = Database::connect();
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "DELETE FROM user WHERE ID = ?";
+                $q = $pdo->prepare($sql);
+                $q->execute(array($id));
+                Database::disconnect();
+                header("Location: index.php");
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -51,3 +73,6 @@
     </div> <!-- /container -->
   </body>
 </html>
+<?php
+}
+?>
