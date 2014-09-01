@@ -1,6 +1,7 @@
 <?php
 
-$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
+//$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
+$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
 /* pull the error information from the query string */
 if (isset($_GET['url']))
