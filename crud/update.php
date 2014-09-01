@@ -129,7 +129,6 @@
 					      	<?php endif;?>
 					    </div>
                       </div>
-<?php echo here $_SESSION['admin'] ?>
 <?php if($_SESSION['admin']==="1"): ?>
 					    <label class="control-label">Level</label>
 <select class="form-control" name="level">
