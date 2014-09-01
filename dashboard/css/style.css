@@ -562,6 +562,16 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-radius: 0 0 3px 3px;
 }
 
+.settings a, .settings a:hover {
+    color: #fff;
+    border-bottom: none !important;
+    text-transform: uppercase;
+}
+
+.settings a:hover i{
+    color: #fff;
+}
+
 
 /************/
 
