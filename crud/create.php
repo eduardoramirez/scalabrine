@@ -1,5 +1,9 @@
-<?php 
-	
+<?php
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+    header("Location: /dashboard/login");
+}
+else{
 	require 'database.php';
 
 	if ( !empty($_POST)) {
@@ -12,6 +16,7 @@
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+        $orgID = $_SESSION['orgID'];
 
 		$options = [
       		'cost' => 11,
@@ -43,9 +48,9 @@
 			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO user (Username,Password,Email) values(?, ?, ?)";
+			$sql = "INSERT INTO user (Username,Password,Email,OrgID) values(?, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$h_password,$email));
+			$q->execute(array($name,$h_password,$email,$orgID));
 			Database::disconnect();
 			header("Location: index.php");
 		}
@@ -107,3 +112,6 @@
     </div> <!-- /container -->
   </body>
 </html>
+<?php
+}
+?>
