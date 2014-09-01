@@ -223,7 +223,7 @@
 <?php
    }
 ?>
-   <script src="../errorreporter.js" type="text/javascript"></script>
+
    <!-- js placed at the end of the document so the pages load faster -->
    <script src="/dashboard/js/jquery-1.8.3.min.js"></script>
    <script src="/dashboard/js/bootstrap.min.js"></script>
