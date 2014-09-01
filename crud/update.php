@@ -54,13 +54,13 @@
 			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if ($_SESSION['admin'] === "1") {
+            if ($_SESSION['admin'] == 1) {
                 $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
             } else {
                 $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
             }
 			$q = $pdo->prepare($sql);
-            if ($_SESSION['admin'] === "1") {
+            if ($_SESSION['admin'] == 1) {
 			$q->execute(array($name,$email,$h_password,$id));
             }
             else {
