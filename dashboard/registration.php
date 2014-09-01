@@ -8,6 +8,7 @@ else
 {
   if(isset($_POST['signup'])) 
   {
+    //$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     // need to escape characters
     $username = $_POST['username'];
