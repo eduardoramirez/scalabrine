@@ -38,13 +38,13 @@ else if(isset($_POST['login']))
   $password = $_POST['password'];
   $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
       
-  $query = "SELECT `Username`, `Password`, `Email` FROM `user` WHERE `Username`='$username'";
+  $query = "SELECT `Username`, `Password`, `Email`, `OrgID`, `admin` FROM `user` WHERE `Username`='$username'";
 
   if($stmt = mysqli_prepare($con, $query))
   {
     mysqli_stmt_execute($stmt);
 
-    mysqli_stmt_bind_result($stmt, $db_username, $db_password, $db_email);
+    mysqli_stmt_bind_result($stmt, $db_username, $db_password, $db_email, $db_orgID, $db_admin);
 
     mysqli_stmt_fetch($stmt);
 
@@ -61,8 +61,9 @@ else if(isset($_POST['login']))
     {
       $_SESSION['login'] = "1";
       $_SESSION['username'] = $username;
-
       $_SESSION['email'] = $db_email;
+      $_SESSION['orgID'] = $db_orgID;
+      $_SESSION['admin'] = $db_admin;
 
       date_default_timezone_set('America/Los_Angeles');
       $date = new DateTime();
