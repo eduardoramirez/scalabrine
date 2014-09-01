@@ -21,7 +21,8 @@
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		
+	    $level = $_POST['level'];
+
 		$options = [
       		'cost' => 11,
       		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
@@ -52,9 +53,18 @@
 			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
+            if ($_SESSION['admin'] === "1") {
+                $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
+            } else {
+                $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
+            }
 			$q = $pdo->prepare($sql);
+            if ($_SESSION['admin'] === "1") {
 			$q->execute(array($name,$email,$h_password,$id));
+            }
+            else {
+			$q->execute(array($name,$email,$h_password,$level,$id));
+            }
 			Database::disconnect();
 			header("Location: index.php");
 		}
@@ -67,7 +77,8 @@
 		$data = $q->fetch(PDO::FETCH_ASSOC);
 		$name = $data['Username'];
 		$email = $data['Email'];
-		$password = $data['Password'];
+        $password = $data['Password'];
+        $level = $data['admin'];
 		Database::disconnect();
 	}
 ?>
@@ -117,6 +128,13 @@
 					      	<?php endif;?>
 					    </div>
 					  </div>
+<?php if($_SESSION['admin']==="1"): ?>
+					    <label class="control-label">Level</label>
+<select class="form-control" name="level">
+  <option value="0">user</option>
+  <option value="1">admin</option>
+</select>
+<?php endif;?>
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Update</button>
 						  <a class="btn" href="index.php">Back</a>
