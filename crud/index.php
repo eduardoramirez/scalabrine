@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+    header("Location: /dashboard/login");
+}
+else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +36,7 @@
 		              <?php 
 					   include 'database.php';
 					   $pdo = Database::connect();
-					   $sql = 'SELECT * FROM user ORDER BY ID DESC';
+					   $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
 	 				   foreach ($pdo->query($sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
@@ -52,3 +59,6 @@
     </div> <!-- /container -->
   </body>
 </html>
+<?php
+}
+?>
