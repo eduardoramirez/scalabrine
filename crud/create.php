@@ -13,6 +13,11 @@
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 
+		$options = [
+      		'cost' => 11,
+      		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+    	];
+
 		// validate input
 		$valid = true;
 		if (empty($name)) {
@@ -35,11 +40,12 @@
 		
 		// insert data
 		if ($valid) {
+			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO user (Username,Password,Email) values(?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$password,$email));
+			$q->execute(array($name,$h_password,$email));
 			Database::disconnect();
 			header("Location: index.php");
 		}
