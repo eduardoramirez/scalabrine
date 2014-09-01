@@ -3,7 +3,7 @@ var ErrorTracking = {};
 
 
 /* URL of your server-side error recording script */
-ErrorTracking.errorReportingURL = "http://104.131.195.41:9091/seterrors.php";
+ErrorTracking.errorReportingURL = "104.131.195.41:9091/seterrors.php";
 
 
 
