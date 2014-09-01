@@ -554,7 +554,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 /******  settings button -eddy  ******/
 
-.dropdown-menu.extended.logout.settings {
+.settings {
     float: left;
     text-align: center;
     width: 100%;
@@ -562,13 +562,13 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-radius: 0 0 3px 3px;
 }
 
-.dropdown-menu.extended.logout > .settings > a, .dropdown-menu.extended.logout > .settings > a:hover {
+.settings > a, .settings > a:hover {
     color: #fff;
     border-bottom: none !important;
     text-transform: uppercase;
 }
 
-.dropdown-menu.extended.logout > .settings > a:hover > i{
+.settings > a:hover > i{
     color: #fff;
 }
 
