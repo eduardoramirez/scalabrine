@@ -1,8 +1,5 @@
 <?php
 
-$message = "wrong answer";
-echo "<script type='text/javascript'>alert('$message');</script>";
-
 //$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
 $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
@@ -34,8 +31,6 @@ $currentTime = date("Y-m-d H:i:s");
 /* add error to database */    
 if ($SQL = $con->prepare("INSERT INTO jserrors (userAgent, url, line, message, userIP, time) VALUES (?,?,?,?,?,?)"))
 {
-  $message = "wrong";
-  echo "<script type='text/javascript'>alert('$message');</script>";
   $SQL->bind_param('ssssss', $userAgent, $url, $line, $message, $userIP, $currentTime);
   $SQL->execute();
   $SQL->close();
