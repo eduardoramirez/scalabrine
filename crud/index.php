@@ -17,6 +17,8 @@ else{
     <div class="container">
     		<div class="row">
     			<h3>admin - CRUD</h3>
+                <h4>OrgID: <?php echo $_SESSION['orgID']?></h4>
+                <h4>role: <?php echo $_SESSION['admin']?></h4>
     		</div>
 			<div class="row">
 				<p>
