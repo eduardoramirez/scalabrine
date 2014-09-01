@@ -1,5 +1,6 @@
 <?php 
 	
+    session_start();
 	require 'database.php';
 
 	$id = null;
@@ -128,7 +129,8 @@
 					      	<?php endif;?>
 					    </div>
                       </div>
-<?php if($level==="1"): ?>
+<?php echo here $_SESSION['admin'] ?>
+<?php if($_SESSION['admin']==="1"): ?>
 					    <label class="control-label">Level</label>
 <select class="form-control" name="level">
   <option value="0">user</option>
