@@ -127,7 +127,8 @@
 					      		<span class="help-inline"><?php echo $passwordError;?></span>
 					      	<?php endif;?>
 					    </div>
-					  </div>
+                      </div>
+<?php echo $_SESSION['admin'] ?>
 <?php if($_SESSION['admin']==="1"): ?>
 					    <label class="control-label">Level</label>
 <select class="form-control" name="level">
