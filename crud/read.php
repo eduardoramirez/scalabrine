@@ -52,10 +52,23 @@
 					    </div>
 					  </div>
 					  <div class="control-group">
-					    <label class="control-label">Password</label>
+					    <label class="control-label">Role</label>
 					    <div class="controls">
 					      	<label class="checkbox">
-						     	<?php echo $data['Password'];?>
+						     	<?php
+                                    switch($row['admin']){
+                                        case 0:
+                                            $role = 'User';
+                                            break;
+                                        case 1:
+                                            $role = 'Admin';
+                                            break;
+                                        case 2:
+                                            $role = 'Developer';
+                                            break;
+                                    }
+                                    echo $role;
+                                ?>
 						    </label>
 					    </div>
 					  </div>
