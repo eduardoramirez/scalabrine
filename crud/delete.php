@@ -8,7 +8,7 @@ if ( !empty($_GET['id'])) {
 if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
-else if ($_SESSION['admin'] == 0 || empty($_GET['id'])){
+else if ($_SESSION['admin'] == 0){
     header("HTTP/1.1 403 Forbidden");
     header("Location: /403");
 }
