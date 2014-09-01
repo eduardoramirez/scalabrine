@@ -3,7 +3,7 @@ var ErrorTracking = {};
 
 
 /* URL of your server-side error recording script */
-ErrorTracking.errorReportingURL = "/seterrors";
+ErrorTracking.errorReportingURL = "/seterrors.php";
 
 
 
