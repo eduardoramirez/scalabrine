@@ -35,13 +35,13 @@
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
 							   	echo '<td>'. $row['Password'] . '</td>';
-							   	echo '<td>';
+							   	echo '<td><div class="row">';
 							   	echo '<a class="btn" href="read.php?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['ID'].'">Delete</a>';
-							   	echo '</td>';
+							   	echo '</div></td>';
 							   	echo '</tr>';
 					   }
 					   Database::disconnect();
