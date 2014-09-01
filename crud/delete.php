@@ -20,6 +20,8 @@ else if ($_SESSION['admin'] == 1){
     $pdo = Database::connect();
     $result = $pdo->query($sql);
 
+    echo $result;
+    
     if ($result == 0){
         header("HTTP/1.1 403 Forbidden");
         header("Location: /403");
