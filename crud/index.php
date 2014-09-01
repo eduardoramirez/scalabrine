@@ -32,6 +32,7 @@ else{
 		                <tr>
 		                  <th>Username</th>
 		                  <th>Email Address</th>
+                          <th>Role</th>
 		                  <th>Action</th>
 		                </tr>
 		              </thead>
@@ -49,7 +50,21 @@ else{
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
-							   	echo '<td style="white-space:nowrap;">';
+
+                                switch($row['admin']){
+                                    case 0:
+                                        $role = 'User';
+                                        break;
+                                    case 1:
+                                       $role = 'Admin';
+                                       break;
+                                    case 2:
+                                       $role = 'Developer';
+                                       break;
+                                }
+                                echo '<td>'. $role . '</td>';
+
+                                echo '<td style="white-space:nowrap;">';
 							   	echo '<a class="btn" href="read.php?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
