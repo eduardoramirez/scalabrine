@@ -3,6 +3,10 @@ session_start();
 if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
+else if ($_SESSION['admin'] == 0){
+    header("HTTP/1.1 403 Forbidden");
+    header("Location: /403");
+}
 else{
 ?>
 <!DOCTYPE html>
@@ -16,9 +20,7 @@ else{
 <body>
     <div class="container">
     		<div class="row">
-    			<h3>admin - CRUD</h3>
-                <h4>OrgID: <?php echo $_SESSION['orgID']?></h4>
-                <h4>role: <?php echo $_SESSION['admin']?></h4>
+    			<h3>User Management</h3>
     		</div>
 			<div class="row">
 				<p>
@@ -38,12 +40,16 @@ else{
 		              <?php 
 					   include 'database.php';
 					   $pdo = Database::connect();
-					   $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
+                       if ($_SESSION['admin'] == 2){
+					       $sql = 'SELECT * FROM user ORDER BY ID DESC';
+                       }
+                       else{
+                           $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
+                       }
 	 				   foreach ($pdo->query($sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
-							   	echo '<td>'. $row['Password'] . '</td>';
 							   	echo '<td style="white-space:nowrap;">';
 							   	echo '<a class="btn" href="read.php?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
