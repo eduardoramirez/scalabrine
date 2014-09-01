@@ -32,7 +32,6 @@ else{
 		                <tr>
 		                  <th>Username</th>
 		                  <th>Email Address</th>
-		                  <th>Password</th>
 		                  <th>Action</th>
 		                </tr>
 		              </thead>
