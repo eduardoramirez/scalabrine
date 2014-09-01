@@ -63,14 +63,6 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
   /* submit error message  */
   sendRequest(ErrorTracking.errorReportingURL,payload);
 
-
-  alert("error message: " + ErrorTracking.encodeValue(errorMessage));
-
-  alert("url: " + ErrorTracking.encodeValue(url));
-
-  alert("line: " + ErrorTracking.encodeValue(lineNumber));
-  
-
   alert("JavaScript Error Encountered.  \nSite Administrators have been notified.");
 
   return true; // suppress normal JS errors since we handled
