@@ -11,6 +11,8 @@ function badCode()
 {
   alert('Good code running when suddenly...');
   abooM('bad code!'); /* BAD CODE ON PURPOSE */ 
+  que;
+  ambd('ello');
 }
 
 </script>
