@@ -129,13 +129,17 @@ echo $level;
 					      	<?php endif;?>
 					    </div>
                       </div>
-<?php if($_SESSION['admin']==1): ?>
+                      <?php if($_SESSION['admin']==1): ?>
+					  <div class="control-group">
 					    <label class="control-label">Level</label>
-<select class="form-control" name="level">
-  <option value="0">user</option>
-  <option value="1">admin</option>
-</select>
-<?php endif;?>
+					    <div class="controls">
+                            <select class="form-control" name="level">
+                                 <option value="0">user</option>
+                                 <option value="1">admin</option>
+                            </select>
+					    </div>
+					  </div>
+                      <?php endif;?>
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Update</button>
 						  <a class="btn" href="index.php">Back</a>
