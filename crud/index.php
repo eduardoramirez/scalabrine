@@ -19,7 +19,7 @@
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
-		                  <th>Name</th>
+		                  <th>Username</th>
 		                  <th>Email Address</th>
 		                  <th>Password</th>
 		                  <th>Action</th>
@@ -35,7 +35,7 @@
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
 							   	echo '<td>'. $row['Password'] . '</td>';
-							   	echo '<td width=250>';
+							   	echo '<td width=450>';
 							   	echo '<a class="btn" href="read.php?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
