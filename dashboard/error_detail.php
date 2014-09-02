@@ -99,6 +99,13 @@
                      <span>error details</span>
                   </a>
                </li>
+               
+               <li>
+                  <a href="/crud/index">
+                     <i class="icon-gear"></i>
+                     <span>crud</span>
+                  </a>
+               </li>
 
                <li>
                   <a href="/index">
