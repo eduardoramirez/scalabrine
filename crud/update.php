@@ -97,7 +97,7 @@
       <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
       <!-- Bootstrap core CSS -->
-      <link href="/dashboard/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/crud/css/bootstrap.min.css" rel="stylesheet">
       <link href="/dashboard/css/bootstrap-reset.css" rel="stylesheet">
       <!--external css-->
       <link href="/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
