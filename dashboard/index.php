@@ -190,7 +190,7 @@
                     <?php 
                         include '/crud/database.php';
                         $pdo = Database::connect();
-                        $sql = 'SELECT * FROM user ORDER BY ID DESC';
+                        $sql = 'SELECT * FROM jserrors ORDER BY ID DESC';
    
                         foreach ($pdo->query($sql) as $row) {          
 
