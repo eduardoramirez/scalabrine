@@ -106,7 +106,7 @@ function badCode()
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a class="active" href="/dashboard/index">
+                  <a href="/dashboard/index">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
@@ -125,7 +125,12 @@ function badCode()
                      <span>crud</span>
                   </a>
                </li>
-
+               <li>
+                  <a class="active" href="/jserrorreporter">
+                     <i class="icon-exclamation"></i>
+                     <span>error reporter</span>
+                  </a>
+               </li>
                <li>
                   <a href="/index">
                      <i class="icon-user"></i>

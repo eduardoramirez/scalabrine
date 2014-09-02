@@ -189,7 +189,12 @@
                      <span>crud</span>
                   </a>
                </li>
-
+               <li>
+                  <a href="/jserrorreporter">
+                     <i class="icon-exclamation"></i>
+                     <span>error reporter</span>
+                  </a>
+               </li>
                <li>
                   <a href="/index">
                      <i class="icon-user"></i>
