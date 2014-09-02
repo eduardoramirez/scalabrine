@@ -183,31 +183,26 @@
                         <thead>
                            <tr>
                               <th>Error Message</th>
-                              <th>Times Occurred</th>
+                              <th>Line Number</th>
                            </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                              <td>[client 137.110.90.227:53661] referer: http://104.131.195.41:9091/piwik/index.php?module=CoreHome</td>
-                              <td>3</td>
-                           </tr>
-                           <tr>
-                              <td>[client 108.253.176.209:56081] [104.131.195.41/sid#7f5ada893868][rid#7f5adb1170a0/initial]</td>
-                              <td>4</td>
-                           </tr>
-                           <tr>
-                              <td>[client 108.253.176.209:50616] [rid#7fb3293880a0/subreq] local path result: /index.cgi.php</td>
-                              <td>1</td>
-                           </tr>
-                           <tr>
-                              <td>[client 137.110.90.227:60590] [rid#7fb32e2180a0/initial] init rewrite engine with requested uri /js/</td>
-                              <td>5</td>
-                           </tr>
-                           <tr>
-                              <td>[client 108.253.176.209:55348] [rid#7fb5dd2030a0/initial] applying pattern '^(.*)' to uri '/login'</td>
-                              <td>10</td>
-                           </tr>                                
-                        </tbody>
+                    <?php 
+                        include '/crud/database.php';
+                        $pdo = Database::connect();
+                        $sql = 'SELECT * FROM user ORDER BY ID DESC';
+   
+                        foreach ($pdo->query($sql) as $row) {          
+
+                           echo '<tr>';
+                           echo  '<td> [client'. $row['userIP'] .'] referer: '. $row['url'] .'</td>';
+                           echo '<td>'. $row['line'] .'</td>';
+                           echo '</tr>';
+                              
+                        }
+                        Database::disconnect();
+                     ?>                       
+                     </tbody>
                      </table>
 
                   </div>
