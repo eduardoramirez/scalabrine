@@ -188,7 +188,7 @@
                         </thead>
                         <tbody>
                     <?php 
-                        include '/crud/database.php';
+                        include 'database.php';
                         $pdo = Database::connect();
                         $sql = 'SELECT * FROM jserrors ORDER BY ID DESC';
    
