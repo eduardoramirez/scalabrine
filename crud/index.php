@@ -182,7 +182,7 @@ else{
                                 echo '<td>'. $role . '</td>';
 
                                 echo '<td style="white-space:nowrap;">';
-							   	echo '<a class="btn" href="read.php?id='.$row['ID'].'">Read</a>';
+							   	echo '<a class="btn btn-info" href="read.php?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
 							   	echo '&nbsp;';
