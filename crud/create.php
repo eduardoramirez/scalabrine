@@ -250,3 +250,6 @@ else{
    <script src="/dashboard/js/common-scripts.js"></script>      
   </body>
 </html>
+<?php
+}
+?>
