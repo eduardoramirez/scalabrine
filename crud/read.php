@@ -172,7 +172,7 @@
 					    <div class="controls">
 					      	<label class="checkbox">
 						     	<?php
-                                    switch($row['admin']){
+                                    switch($data['admin']){
                                         case 0:
                                             $role = 'User';
                                             break;
