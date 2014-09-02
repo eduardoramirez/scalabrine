@@ -195,7 +195,7 @@
                         foreach ($pdo->query($sql) as $row) {          
 
                            echo '<tr>';
-                           echo  '<td> [client'. $row['userIP'] .'] referer: '. $row['url'] .'</td>';
+                           echo  '<td> [client: '. $row['userIP'] .'] referer: '. $row['url'] .'</td>';
                            echo '<td>'. $row['line'] .'</td>';
                            echo '</tr>';
                               
@@ -250,7 +250,7 @@
       {
          var aData = oTable.fnGetData( nTr );
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-         sOut += '<tr><td>Number of occurrence:</td><td>'+aData[2]+'</td></tr>';
+         sOut += '<tr><td>Line Number:</td><td>'+aData[2]+'</td></tr>';
          sOut += '<tr><td>Link to error:</td><td>here</td></tr>';
          sOut += '<tr><td>Additional info:</td><td>details, images, etc</td></tr>';
          sOut += '</table>';
