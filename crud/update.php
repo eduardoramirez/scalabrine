@@ -32,7 +32,7 @@
 		// validate input
 		$valid = true;
 		if (empty($name)) {
-			$nameError = 'Please enter Name';
+			$nameError = 'Please enter Username';
 			$valid = false;
 		}
 		
@@ -239,7 +239,7 @@
     		
 	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-					    <label class="control-label">Name</label>
+					    <label class="control-label">Username</label>
 					    <div class="controls">
 					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>

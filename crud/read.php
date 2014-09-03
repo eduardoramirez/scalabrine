@@ -152,7 +152,7 @@
 		    		
 	    			<div class="form-horizontal" >
 					  <div class="control-group">
-					    <label class="control-label">Name</label>
+					    <label class="control-label">Username</label>
 					    <div class="controls">
 						    <label class="checkbox">
 						     	<?php echo $data['Username'];?>
