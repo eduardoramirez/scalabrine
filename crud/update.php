@@ -52,10 +52,10 @@
 
     $numRows1 = getNumRows('s', array(&$email), "SELECT username FROM user WHERE email=?");
 
-    $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID = ?");
+    echo " ---- "
 
-    echo $db_result['Username']; echo " u -";
-    echo $db_result['Email'];
+    $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID=?");
+
 
     if($valid)
     {
