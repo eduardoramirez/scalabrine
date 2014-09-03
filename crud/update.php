@@ -54,6 +54,11 @@ error_reporting(-1);
 
     $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID = ?");
 
+    echo $db_result['Username'];
+    echo $db_result['Email'];
+    echo $numRows;
+    echo $numRows1;
+
     if($valid)
     {
       // Username is free
