@@ -71,12 +71,12 @@ error_reporting(-1);
         {
           $params = array(&$name, &$email, &$h_password, &$level, &$id);
           $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
-          my_query('sssii', $params, $sql);
+          my_update('sssii', $params, $sql);
         } 
         else {
           $params = array(&$name, &$email, &$h_password, &$id);
           $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
-          my_query('sssi', $params, $sql);
+          my_update('sssi', $params, $sql);
         }
 
         $_SESSION['crud_update_success'] = true;
