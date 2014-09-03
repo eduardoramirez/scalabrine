@@ -48,11 +48,11 @@ error_reporting(-1);
 		
 		
 //////////
-    $numRows = getNumRows('s', array($name), "SELECT username FROM user WHERE username=?");
+    $numRows = getNumRows('s', array(&$name), "SELECT username FROM user WHERE username=?");
 
-    $numRows1 = getNumRows('s', array($email), "SELECT username FROM user WHERE email=?");
+    $numRows1 = getNumRows('s', array(&$email), "SELECT username FROM user WHERE email=?");
 
-    $db_result = my_query('i', array($id), "SELECT username, email FROM user where ID = ?");
+    $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
@@ -66,12 +66,12 @@ error_reporting(-1);
 
         if ($_SESSION['admin'] == 1) 
         {
-          $params = array($name, $email, $h_password, $level, $id);
+          $params = array(&$name, &$email, &$h_password, &$level, &$id);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password', admin = '$level' WHERE ID = '$id'";
           my_query('sssii', $params, $sql);
         } 
         else {
-          $params = array($name, $email, $h_password, $level);
+          $params = array(&$name, &$email, &$h_password, &$level);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
           my_query('sssi', $params, $sql);
         }
