@@ -10,7 +10,7 @@
 	if ( null==$id ) {
 		header("Location: index");
 	} else {
-		$data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?";
+		$data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
 		my_disconnect();
 	}
 ?>
