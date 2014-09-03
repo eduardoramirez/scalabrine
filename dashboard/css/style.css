@@ -319,7 +319,7 @@ ul.sidebar-menu li a.active i {
 /*main content*/
 
 #main-content {
-    margin-left: 210px;
+    margin-left: 225px;
 }
 
 .header, .footer {
@@ -700,7 +700,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .sidebar-closed #main-content {
-    margin-left: 0px;
+    margin-left: 15px;
 }
 
 .sidebar-closed #sidebar {
