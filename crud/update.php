@@ -48,13 +48,13 @@
 		
 		
 //////////
-    $numRows = getNumRows('s', array(&$name), "SELECT username FROM user WHERE username=?");
+    $numRows = getNumRows('s', array(&$name), "SELECT Username FROM user WHERE username=?");
 
-    $numRows1 = getNumRows('s', array(&$email), "SELECT username FROM user WHERE email=?");
+    $numRows1 = getNumRows('s', array(&$email), "SELECT Username FROM user WHERE email=?");
 
     echo " ---- ";
 
-    $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID=?");
+    $db_result = my_query('i', array(&$id), "SELECT Username, Email FROM user where ID=?");
 
 
     if($valid)
