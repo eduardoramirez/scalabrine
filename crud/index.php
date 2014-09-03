@@ -157,14 +157,18 @@ else{
 		              <tbody>
 		              <?php 
 					   include 'database.php';
-					   $pdo = Database::connect();
-                       if ($_SESSION['admin'] == 2){
-					       $sql = 'SELECT * FROM user ORDER BY ID DESC';
-                       }
-                       else{
-                           $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
-                       }
-	 				   foreach ($pdo->query($sql) as $row) {
+					   Database::connect();
+              if ($_SESSION['admin'] == 2){
+                $type = '';
+                $param = array();
+					      $sql = 'SELECT * FROM user ORDER BY ID DESC';
+              }
+              else{
+                $type = 'i';
+                $param = array($_SESSION['orgID']);
+                $sql = 'SELECT * FROM user WHERE OrgID = ? ORDER BY ID DESC';
+             }
+	 				   foreach (Database::query($type, $param, $sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
