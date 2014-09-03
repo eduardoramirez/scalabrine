@@ -142,7 +142,7 @@ else{
     		</div>
 			<div class="row">
 				<p>
-					<a href="create.php" class="btn btn-success">Create</a>
+					<a href="create" class="btn btn-success">Create</a>
 				</p>
 				
 				<table class="table table-striped table-bordered">
@@ -183,11 +183,11 @@ else{
                                 echo '<td>'. $role . '</td>';
 
                                 echo '<td style="white-space:nowrap;">';
-							   	echo '<a class="btn btn-info" href="read.php?id='.$row['ID'].'">Read</a>';
+							   	echo '<a class="btn btn-info" href="read?id='.$row['ID'].'">Read</a>';
 							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
+							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
 							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['ID'].'">Delete</a>';
+							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }

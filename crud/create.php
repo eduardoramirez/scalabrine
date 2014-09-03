@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
@@ -19,9 +20,9 @@ else{
     $orgID = $_SESSION['orgID'];
 
 		$options = [
-      		'cost' => 11,
-      		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-    	];
+  		'cost' => 11,
+  		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+    ];
 
 		// validate input
 		$valid = true;
@@ -45,15 +46,18 @@ else{
 
 		$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
-    $res = mysqli_query($con, "SELECT * FROM user WHERE username='$name'");
-    $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
+    $SQL = $con->prepare("SELECT username FROM user WHERE username=? OR email=?");
+    $SQL->bind_param('ss',$name, $email);
+    $SQL->execute();
+    $SQL->store_result();
+    $numRows = $SQL->num_rows();
+    $SQL->close();
 
     if($valid)
     {
       // Username is free
-      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+      if($numRows == 0) 
       {
-
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
         $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$name', '$email', '$h_password', '$orgID')";
 
@@ -199,13 +203,13 @@ else{
          <div class="wrapper">
           
         <?php
-            if($_SESSION['crud_already_username'] == true)
-            {
-              $_SESSION['crud_already_username'] = false;
+          if($_SESSION['crud_already_username'] == true)
+          {
+            $_SESSION['crud_already_username'] = false;
         ?>
             <div class="alert alert-info" role="alert">username/email already taken</div>    
         <?php
-            }
+          }
         ?>
 
     			<div class="span10 offset1">
