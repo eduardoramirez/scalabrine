@@ -1,8 +1,4 @@
-<?php 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
-	
+<?php 	
   session_start();
 	require 'database.php';
 
@@ -87,7 +83,7 @@ error_reporting(-1);
     }
 
 	} else {
-    data = my_query('i', array($id), "SELECT * FROM user where ID = ?");
+    data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
 		//$name = $data['Username'];
 		//$email = $data['Email'];
     //$h_password = $data['Password'];
