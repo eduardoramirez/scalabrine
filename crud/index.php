@@ -156,8 +156,7 @@ else{
 		              </thead>
 		              <tbody>
 		              <?php 
-					   require 'database.php';
-             $conn  = new mysqli('localhost','root','Tw0sof+9ly','scalabrinedb');
+					   require '../database.php';
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
