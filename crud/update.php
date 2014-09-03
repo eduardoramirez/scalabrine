@@ -48,11 +48,18 @@
 //////////
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
-    $SQL = $con->prepare("SELECT username FROM user WHERE username=? OR email=?");
-    $SQL->bind_param('ss',$name, $email);
+    $SQL = $con->prepare("SELECT username FROM user WHERE username=?");
+    $SQL->bind_param('s',$name);
     $SQL->execute();
     $SQL->store_result();
     $numRows = $SQL->num_rows();
+    $SQL->close();
+
+    $SQL = $con->prepare("SELECT username FROM user WHERE email=?");
+    $SQL->bind_param('s',$email);
+    $SQL->execute();
+    $SQL->store_result();
+    $numRows1 = $SQL->num_rows();
     $SQL->close();
 
     $SQL = $con->prepare("SELECT username, email FROM user where ID = ?");
@@ -66,7 +73,7 @@
     if($valid)
     {
       // Username is free
-      if($numRows == 0 || (strcmp($name, $db_name) == 0 || strcmp($email, $db_email) == 0)) 
+      if(($numRows == 0 && $numRows1 == 0) || (strcmp($name, $db_name) == 0 && strcmp($email, $db_email) == 0)) 
       {
         if(isset($_POST['password']))
         {
