@@ -26,12 +26,26 @@ function my_query($type, $param, $query)
   $stmt = $con->prepare($query);
   call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
   $stmt->execute();
-  $result = $stmt::get_result();
-  //$db_results = $result->fetch_array(MYSQLI_ASSOC);
-  $stmt->fetch();
+
+  $meta = $stmt->result_metadata(); 
+  while ($field = $meta->fetch_field()) 
+  { 
+      $params[] = &$row[$field->name]; 
+  } 
+
+  call_user_func_array(array($stmt, 'bind_result'), $params); 
+
+  while ($stmt->fetch()) { 
+      foreach($row as $key => $val) 
+      { 
+          $c[$key] = $val; 
+      } 
+      $result[] = $c; 
+  } 
+
   $stmt->close();
 
-  return $db_results;
+  return $results;
 }
 
 ?>
