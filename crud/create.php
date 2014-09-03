@@ -57,7 +57,7 @@ else{
         $param = (&$name, &$email, &$h_password, &$orgID);
         $sql="INSERT INTO user (username, email, password, orgID) VALUES (?, ?, ?, ?)";
 
-        my_update('sssi', $param, sql);
+        my_update('sssi', $param, $sql);
 
         header("Location: index");
       }
