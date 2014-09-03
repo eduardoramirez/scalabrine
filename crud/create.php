@@ -65,7 +65,7 @@ else{
       {
         //username is taken
         $_SESSION['crud_already_username'] = true;
-        header("Refresh:0");
+        header("Location: create.php");
       }
     }
 	}
