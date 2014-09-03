@@ -48,22 +48,25 @@ else{
     $res = mysqli_query($con, "SELECT * FROM user WHERE username='$name'");
     $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
 
-    // Username is free
-    if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0 && $valid) 
+    if($valid)
     {
+      // Username is free
+      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+      {
 
-      $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-      $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$name', '$email', '$h_password', '$orgID')";
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$name', '$email', '$h_password', '$orgID')";
 
-      mysqli_query($con, $sql);
+        mysqli_query($con, $sql);
 
-      header("Location: index");
-    }
-    else
-    {
-      //username is taken
-      $_SESSION['crud_already_username'] = true;
-      header("Location: create.php");
+        header("Location: index.php");
+      }
+      else
+      {
+        //username is taken
+        $_SESSION['crud_already_username'] = true;
+        header("Location: create.php");
+      }
     }
 	}
 ?>
