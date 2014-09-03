@@ -40,9 +40,9 @@ else if(isset($_POST['login']))
   $username = $_POST['username'];
   $password = $_POST['password'];
   
-  $sql = "SELECT * FROM user WHERE Username=?";
+  $q = "SELECT * FROM user WHERE Username=?";
 
-  $data = my_query('s', array(&$username), $sql);
+  $data = my_query('s', array(&$username), $q);
 
   if(strcmp($username, $data['Username']) !== 0)
   {
