@@ -70,12 +70,12 @@ error_reporting(-1);
         if ($_SESSION['admin'] == 1) 
         {
           $params = array(&$name, &$email, &$h_password, &$level, &$id);
-          $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password', admin = '$level' WHERE ID = '$id'";
+          $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
           my_query('sssii', $params, $sql);
         } 
         else {
           $params = array(&$name, &$email, &$h_password, &$id);
-          $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
+          $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
           my_query('sssi', $params, $sql);
         }
 
