@@ -86,6 +86,8 @@
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
           mysqli_query($con, $sql);
         }
+
+        $_SESSION['crud_update_already_username'] = false;
       }
       else
       {
