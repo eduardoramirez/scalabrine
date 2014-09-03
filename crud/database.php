@@ -10,12 +10,12 @@ $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
 function getNumRows($type, $param, $query)
 {
   global $con;
-  $SQL = $con->prepare($query);
-  call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
-  $SQL->execute();
-  $SQL->store_result();
-  $numRows = $SQL->num_rows();
-  $SQL->close();
+  $stmt = $con->prepare($query);
+  call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
+  $stmt->execute();
+  $stmt->store_result();
+  $numRows = $stmt->num_rows();
+  $stmt->close();
 
   return $numRows;
 }
@@ -23,12 +23,14 @@ function getNumRows($type, $param, $query)
 function my_query($type, $param, $query)
 {
   global $con;
-  $SQL = $con->prepare($query);
-  call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
-  $SQL->execute();
-  $result = $SQL->get_result();
-  $db_results = $result->fetch_array(MYSQLI_ASSOC);
-  $SQL->close();
+  $stmt = $con->prepare($query);
+  call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
+  $stmt->execute();
+  $stmt->bind_result($col1);
+  //$result = $stmt->get_result();
+  //$db_results = $result->fetch_array(MYSQLI_ASSOC);
+  $stmt->fetch();
+  $stmt->close();
 
   return $db_results;
 }
