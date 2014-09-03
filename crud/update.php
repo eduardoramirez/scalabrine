@@ -89,7 +89,8 @@ error_reporting(-1);
     function my_query($type, $param, $query)
 {
   $SQL = $con->prepare($query);
-  call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
+  //call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
+  $SQL->bind_param($type, $param);
   $SQL->execute();
   $SQL->store_result();
   $results = $SQL->fetch_assoc();
@@ -99,7 +100,7 @@ error_reporting(-1);
   return $results;
 }
 
-    data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
+    data = my_query('i', $id, "SELECT * FROM user where ID = ?");
 		//$name = $data['Username'];
 		//$email = $data['Email'];
     //$h_password = $data['Password'];
