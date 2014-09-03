@@ -9,6 +9,7 @@ $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
 
 function getNumRows($type, $param, $query)
 {
+  global $con;
   $SQL = $con->prepare($query);
   call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
   $SQL->execute();
@@ -19,8 +20,9 @@ function getNumRows($type, $param, $query)
   return $numRows;
 }
 
-/*function my_query($type, $param, $query)
+function my_query($type, $param, $query)
 {
+  global $con;
   $SQL = $con->prepare($query);
   call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
   $SQL->execute();
@@ -30,6 +32,6 @@ function getNumRows($type, $param, $query)
   $SQL->close();
 
   return $results;
-}*/
+}
 
 ?>
