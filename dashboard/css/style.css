@@ -708,7 +708,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .sidebar-closed #crud-main-content {
-    margin-left: 0px;
+    margin-left: 25px;
 }
 
 .sidebar-closed #sidebar {
