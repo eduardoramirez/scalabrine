@@ -26,8 +26,7 @@ function my_query($type, $param, $query)
   $stmt = $con->prepare($query);
   call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
   $stmt->execute();
-  $stmt->bind_result($col1);
-  //$result = $stmt->get_result();
+  $result = $stmt->get_result();
   //$db_results = $result->fetch_array(MYSQLI_ASSOC);
   $stmt->fetch();
   $stmt->close();
