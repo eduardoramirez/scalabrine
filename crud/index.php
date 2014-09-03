@@ -168,7 +168,8 @@ else{
                 $param = array($_SESSION['orgID']);
                 $sql = 'SELECT * FROM user WHERE OrgID = ? ORDER BY ID DESC';
              }
-	 				   foreach (Database::query($type, $param, $sql) as $row) {
+             $row = Database::query($type, $param, $sql)
+	 				   foreach ($row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
