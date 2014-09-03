@@ -43,7 +43,7 @@ function my_query($type, $param, $query)
     $result[] = $c; 
   } 
 
-  foreach($result as $key => $val) 
+  foreach($c as $key => $val) 
   { 
     echo $key; echo " "; echo $val; echo " ";
   } 
