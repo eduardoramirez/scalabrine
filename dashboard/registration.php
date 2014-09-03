@@ -24,7 +24,7 @@ else
     if(strcmp($password, $confirm_password) === 0)
     {
       $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
-      $res2 = $res = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
+      $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
       
       // Username is free
       if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
