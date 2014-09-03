@@ -4,7 +4,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
 else{
-	require 'database.php';
+	//require 'database.php';
 
 	if ( !empty($_POST)) {
 		// keep track validation errors
@@ -16,7 +16,7 @@ else{
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-        $orgID = $_SESSION['orgID'];
+    $orgID = $_SESSION['orgID'];
 
 		$options = [
       		'cost' => 11,
@@ -43,17 +43,27 @@ else{
 			$valid = false;
 		}
 		
-		// insert data
-		if ($valid) {
-			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-			$pdo = Database::connect();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO user (Username,Password,Email,OrgID) values(?, ?, ?, ?)";
-			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$h_password,$email,$orgID));
-			Database::disconnect();
-			header("Location: index.php");
-		}
+
+    $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
+    $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
+
+    // Username is free
+    if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0 && $valid) 
+    {
+
+      $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+      $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$username', '$email', '$h_password', '$orgID')";
+
+      mysqli_query($con, $sql);
+
+      header("Location: index");
+    }
+    else
+    {
+      //username is taken
+      $_SESSION['crud_already_username'] = true;
+      header("Location: create");
+    }
 	}
 ?>
 
@@ -184,7 +194,17 @@ else{
       <!--main content start-->
       <div id="main-content">
          <div class="wrapper">
-    
+          
+        <?php
+            if(isset($_SESSION['username']))
+            {
+              $_SESSION['username'] = false;
+          ?>
+            <div class="alert alert-info" role="alert">username/email already taken</div>    
+          <?php
+            }
+          ?>
+
     			<div class="span10 offset1">
     				<div class="row">
 		    			<h3>Create a User</h3>
