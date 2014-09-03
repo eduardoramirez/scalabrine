@@ -44,7 +44,7 @@ function my_query($type, $param, $query)
 
   $stmt->close();
 
-  return $results;
+  return $result;
 }
 
 ?>
