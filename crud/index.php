@@ -73,7 +73,7 @@ else{
                <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                      <img alt="" src="/dashboard/img/user.png" />
-                     <span class="username"><?php echo $_SESSION['admin'] ?></span>
+                     <span class="username"><?php echo $_SESSION['OrgID'] ?></span>
                      <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu extended logout">
