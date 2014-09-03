@@ -89,7 +89,7 @@
 
     $data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
 		
-    print_r($data);
+    echo $data['Username'];
 
     $name = $data['Username'];
 		$email = $data['Email'];
