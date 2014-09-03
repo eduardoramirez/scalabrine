@@ -21,7 +21,6 @@
 		// keep track post values
 		$name = $_POST['name'];
 		$email = $_POST['email'];
-		$password = $_POST['password'];
 	  $level = $_POST['level'];
 
 		$options = [
@@ -58,17 +57,21 @@
     if($valid)
     {
       // Username is free
-      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+      if((mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+        || (strcmp($name, $db_name) === 0 && strcmp($email, $db_email) === 0)) 
       {
-        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+        if(isset($_POST['password']))
+        {
+          $h_password = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
+        }
 
         if ($_SESSION['admin'] == 1) 
         {
-          $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
+          $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password', admin = '$level' WHERE ID = '$id'";
           mysqli_query($con, $sql);
         } 
         else {
-          $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
+          $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
           mysqli_query($con, $sql);
         }
       }
@@ -87,9 +90,11 @@
 		$q->execute(array($id));
 		$data = $q->fetch(PDO::FETCH_ASSOC);
 		$name = $data['Username'];
+    $db_name = $data['Username'];
 		$email = $data['Email'];
-        $password = $data['Password'];
-        $level = $data['admin'];
+    $db_email = $data['Email'];
+    $h_password = $data['Password'];
+    $level = $data['admin'];
 		Database::disconnect();
 	}
 ?>
@@ -259,10 +264,7 @@
 					  <div class="control-group <?php echo !empty($passwordError)?'error':'';?>">
 					    <label class="control-label">Password</label>
 					    <div class="controls">
-					      	<input name="password" type="password"  placeholder="Password" value="<?php echo !empty($password)?$password:'';?>">
-					      	<?php if (!empty($passwordError)): ?>
-					      		<span class="help-inline"><?php echo $passwordError;?></span>
-					      	<?php endif;?>
+					      	<input name="password" type="password"  placeholder="Password">
 					    </div>
                       </div>
                       <?php if($_SESSION['admin']==1): ?>
