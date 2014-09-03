@@ -45,7 +45,7 @@ else{
 
 		$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
-    $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
+    $res = mysqli_query($con, "SELECT * FROM user WHERE username='$name'");
     $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
 
     // Username is free
@@ -53,7 +53,7 @@ else{
     {
 
       $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-      $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$username', '$email', '$h_password', '$orgID')";
+      $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$name', '$email', '$h_password', '$orgID')";
 
       mysqli_query($con, $sql);
 
