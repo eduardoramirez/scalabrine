@@ -5,7 +5,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
 else{
-	require 'database.php';
+	require '../database.php';
 
 	if ( !empty($_POST)) {
 		// keep track validation errors
@@ -45,7 +45,6 @@ else{
 		}
 
     $sql = "SELECT Username FROM user WHERE username=? OR email=?";
-
     $numRows = getNumRows('ss', array(&$name, &$email), $sql);
 
     if($valid)

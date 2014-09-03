@@ -9,7 +9,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 }
 else{ 
 
-include 'functions.php';
+require('functions.php');
+require("../database.php")
 
 ////////////
 // listener for the reset password button
@@ -36,50 +37,40 @@ else if(isset($_POST['login']))
   // need to escape characters
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-      
-  $query = "SELECT `Username`, `Password`, `Email`, `OrgID`, `admin` FROM `user` WHERE `Username`='$username'";
+  
+  $sql = "SELECT Username, Password, Email, OrgID, admin FROM user WHERE Username=?";
 
-  if($stmt = mysqli_prepare($con, $query))
+  $data = my_query('s', array(&$username), $sql);
+
+  if(strcmp($data['Username'], $db_username) !== 0)
   {
-    mysqli_stmt_execute($stmt);
+    //no account
+    $_SESSION['no_account'] = true;
+    header("Location: /dashboard/login");
+  } 
 
-    mysqli_stmt_bind_result($stmt, $db_username, $db_password, $db_email, $db_orgID, $db_admin);
+  if(password_verify($password, $data['Password']))
+  {
+    $_SESSION['login'] = "1";
+    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $data['Email'];
+    $_SESSION['orgID'] = $data['OrgID'];
+    $_SESSION['admin'] = $data['admin'];
 
-    mysqli_stmt_fetch($stmt);
+    date_default_timezone_set('America/Los_Angeles');
+    $date = new DateTime();
+    $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
-    if(strcmp($username, $db_username) !== 0)
-    {
-      //should say something along the lines of .. no username found
-      $_SESSION['login'] = "";
-      header("HTTP/1.1 403 Forbidden");
-      header("Location: /403");
-      exit();
-    } 
-
-    if(password_verify($password, $db_password))
-    {
-      $_SESSION['login'] = "1";
-      $_SESSION['username'] = $username;
-      $_SESSION['email'] = $db_email;
-      $_SESSION['orgID'] = $db_orgID;
-      $_SESSION['admin'] = $db_admin;
-
-      date_default_timezone_set('America/Los_Angeles');
-      $date = new DateTime();
-      $_SESSION['time'] = $date->format('Y-m-d H:i:s');
-
-      header("Location: /dashboard/index");
-    }
-    else
-    {
-      //incorrect password
-      $_SESSION['incorrect_pass'] = true;
-      header("Location: /dashboard/login");
-    }
+    header("Location: /dashboard/index");
+  }
+  else
+  {
+    //incorrect password
+    $_SESSION['incorrect_pass'] = true;
+    header("Location: /dashboard/login");
   }
 
-  mysqli_close($con);
+  my_disconnect();
 } 
 else {
 ?>
@@ -121,14 +112,21 @@ else {
   <div class="alert alert-danger" role="alert">incorrect password.</div>
 <?php
   }
+  else if(isset($_SESSION['no_account']))
+  {
+    $_SESSION['no_account'] = false;
+?>
+    <div class="alert alert-danger" role="alert">no account found. sign up.</div>
+<?php
+  }
   else if(isset($_SESSION['validemail']))
   {
-      if($_SESSION['validemail'] === true) {
+    if($_SESSION['validemail'] === true) {
 ?>
     <div class="alert alert-info" role="alert">email sent</div>
 <?php
-      }
-     if($_SESSION['validemail'] === false) {
+    }
+    if($_SESSION['validemail'] === false) {
 ?>
     <div class="alert alert-danger" role="alert">email address not found</div>
 <?php

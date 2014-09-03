@@ -13,7 +13,7 @@ else if ($_SESSION['admin'] == 0){
     header("Location: /403");
 }
 else{
-	require 'database.php';
+	require '../database.php';
 
   $id = 0;
 	if ( !empty($_GET['id'])) {

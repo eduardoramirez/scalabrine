@@ -4,7 +4,10 @@ $dbName = 'scalabrinedb' ;
 $dbHost = 'localhost' ;
 $dbUsername = 'root';
 $dbUserPassword = 'Tw0sof+9Ly';
-	
+
+//$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
+
+
 $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
 
 function getNumRows($type, $param, $query)

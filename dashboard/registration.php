@@ -1,15 +1,14 @@
 <?php
-  session_start();
+session_start();
 if (isset($_SESSION['login']) && $_SESSION['login'] === '1') 
 {
   header("Location: /dashboard/index");
 }
 else
 {
+  require("../database.php");
   if(isset($_POST['signup'])) 
   {
-    //$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
-    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     // need to escape characters
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -23,17 +22,17 @@ else
 
     if(strcmp($password, $confirm_password) === 0)
     {
-      $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
-      $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
-      
+      $numRows = getNumRows('s', array(&$username), "SELECT Username FROM user WHERE username=?");
+
+      $numRows1 = getNumRows('s', array(&$email), "SELECT Username FROM user WHERE email=?");
+
       // Username is free
-      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+      if($numRows == 0 && $numRows1 == 0) 
       {
-
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-        $sql="INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$h_password')";
+        $sql="INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
 
-        mysqli_query($con, $sql);
+        my_update('sss', array(&$username, &$email, &$h_password), $sql);
 
         $_SESSION['signup'] = "";
         header("Location: /dashboard/index");
@@ -52,7 +51,7 @@ else
       header("Location: /dashboard/registration");
     }
 
-    mysqli_close($con);
+    my_disconnect();
   }
 
   else
