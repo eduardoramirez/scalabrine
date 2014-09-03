@@ -84,7 +84,7 @@
     }
 
 	} else {
-    //$data = my_query('i', $id, "SELECT * FROM user where ID = ?");
+    data = my_query('i', $id, "SELECT * FROM user where ID = ?");
 		//$name = $data['Username'];
 		//$email = $data['Email'];
     //$h_password = $data['Password'];
