@@ -33,9 +33,7 @@ function my_query($type, $param, $query)
     $params[] = &$row[$field->name];
   }
 
-foreach($params['data'] as $params) {
-    echo $params['type'];
-}
+  print_r($params);
 
   call_user_func_array(array($stmt, 'bind_result'), $params); 
 
