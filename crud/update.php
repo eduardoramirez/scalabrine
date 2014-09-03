@@ -52,29 +52,25 @@
 //////////
     $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
-    $SQL = $con->prepare("SELECT username FROM user WHERE username=?");
-    $SQL->bind_param('s',$name);
+    $SQL = $con->prepare("SELECT username FROM user WHERE username=? OR email=?");
+    $SQL->bind_param('ss',$name, $email);
     $SQL->execute();
     $SQL->store_result();
     $numRows = $SQL->num_rows();
-    $SQL->bind_result($retname);
-    $SQL->fetch();
     $SQL->close();
-    
-    $SQL = $con->prepare("SELECT email FROM user WHERE email=?");
-    $SQL->bind_param('s',$email);
+
+    $SQL = $con->prepare("SELECT username, email FROM user where ID = ?");
+    $SQL->bind_param('i',$id);
     $SQL->execute();
     $SQL->store_result();
-    $numRows1 = $SQL->num_rows();
-    $SQL->bind_result($retemail);
+    $SQL->bind_result($db_name,$db_email);
     $SQL->fetch();
     $SQL->close();
 
     if($valid)
     {
       // Username is free
-      if(($numRows == 0 && $numRows1 == 0) 
-        || (strcmp($retname, $db_name) == 0 && strcmp($retemail, $db_email) == 0)) 
+      if($numRows == 0 || (strcmp($name, $db_name) == 0 && strcmp($email, $db_email) == 0)) 
       {
         if(isset($_POST['password']))
         {
@@ -106,9 +102,7 @@
 		$q->execute(array($id));
 		$data = $q->fetch(PDO::FETCH_ASSOC);
 		$name = $data['Username'];
-    $db_name = $data['Username'];
 		$email = $data['Email'];
-    $db_email = $data['Email'];
     $h_password = $data['Password'];
     $level = $data['admin'];
 		Database::disconnect();
