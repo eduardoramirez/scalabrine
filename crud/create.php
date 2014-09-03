@@ -57,7 +57,7 @@ else{
       if($numRows == 0) 
       {
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-        $param = (&$name, &$email, &$h_password, &$orgID);
+        $param = array(&$name, &$email, &$h_password, &$orgID);
         $sql="INSERT INTO user (username, email, password, orgID) VALUES (?, ?, ?, ?)";
 
         my_update('sssi', $param, $sql);
