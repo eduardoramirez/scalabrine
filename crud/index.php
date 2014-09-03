@@ -73,7 +73,7 @@ else{
                <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                      <img alt="" src="/dashboard/img/user.png" />
-                     <span class="username"><?php echo $_SESSION['username'] ?></span>
+                     <span class="username"><?php echo $_SESSION['admin'] ?></span>
                      <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu extended logout">
@@ -157,7 +157,7 @@ else{
 		              <tbody>
 		              <?php 
 					   require 'database.php';
-             $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
+             //$con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
