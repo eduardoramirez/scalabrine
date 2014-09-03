@@ -48,11 +48,11 @@
 		
 		
 //////////
-    //$numRows = getNumRows('s', array($name), "SELECT username FROM user WHERE username=?");
+    $numRows = getNumRows('s', array($name), "SELECT username FROM user WHERE username=?");
 
-    //$numRows1 = getNumRows('s', array($email), "SELECT username FROM user WHERE email=?");
+    $numRows1 = getNumRows('s', array($email), "SELECT username FROM user WHERE email=?");
 
-    //$db_result = my_query('i', array($id), "SELECT username, email FROM user where ID = ?");
+    $db_result = my_query('i', array($id), "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
@@ -88,9 +88,6 @@
 	} else {
 
     $data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
-		
-    echo $data['Username'];
-
     $name = $data['Username'];
 		$email = $data['Email'];
     $h_password = $data['Password'];
@@ -224,7 +221,6 @@
 
       <!--main content start-->
       <div id="main-content">
-        <div class="alert alert-info" role="alert"><?php echo $data['Username']; echo "  d "; ?></div> 
          <div class="wrapper">
     
         <?php
