@@ -157,19 +157,14 @@ else{
 		              <tbody>
 		              <?php 
 					   include 'database.php';
-					   Database::connect();
+					   $db = Database::connect();
               if ($_SESSION['admin'] == 2){
-                $type = '';
-                $param = array();
-					      $sql = 'SELECT * FROM user ORDER BY ID DESC';
+					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
               else{
-                $type = 'i';
-                $param = array($_SESSION['orgID']);
-                $sql = 'SELECT * FROM user WHERE OrgID = ? ORDER BY ID DESC';
+                $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
              }
-             $row = Database::query($type, $param, $sql);
-	 				   foreach ($row) {
+	 				   foreach (mysqli_query($db, $sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
