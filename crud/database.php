@@ -23,16 +23,14 @@ function getNumRows($type, $param, $query)
 function my_query($type, $param, $query)
 {
   global $con;
-  $SQL = $con->stmt_init();
-  $SQL->prepare($query);
+  $SQL = $con->prepare($query);
   call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
   $SQL->execute();
   $result = $SQL->get_result();
-  $db_results = $result->fetch_assoc();
-  $SQL->free();
+  $db_results = $result->fetch_array(MYSQLI_ASSOC);
   $SQL->close();
 
-  return $results;
+  return $db_results;
 }
 
 ?>
