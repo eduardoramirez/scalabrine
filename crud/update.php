@@ -87,7 +87,7 @@
           mysqli_query($con, $sql);
         }
 
-        $_SESSION['crud_update_already_username'] = false;
+        $_SESSION['crud_update_success'] = true;
       }
       else
       {
@@ -248,6 +248,17 @@
         <?php
             }
         ?>
+
+         <?php
+            if($_SESSION['crud_update_success'] = true;)
+            {
+              $_SESSION['crud_update_success'] = false;
+        ?>
+            <div class="alert alert-info" role="alert">successful update</div>    
+        <?php
+            }
+        ?>
+
 
     			<div class="span10 offset1">
     				<div class="row">
