@@ -9,7 +9,7 @@
 	}
 	
 	if ( null==$id ) {
-		header("Location: index.php");
+		header("Location: index");
 	}
 	
 	if ( !empty($_POST)) {
@@ -262,7 +262,7 @@
 		    			<h3>Update a User</h3>
 		    		</div>
     		
-	    			<form class="form-horizontal" action="update.php?id=<?php echo $id?>" method="post">
+	    			<form class="form-horizontal" action="update?id=<?php echo $id?>" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Username</label>
 					    <div class="controls">
@@ -303,7 +303,7 @@
                       <?php endif;?>
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Update</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <a class="btn" href="index">Back</a>
 						</div>
 					</form>
 				</div>

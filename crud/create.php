@@ -63,7 +63,7 @@ else{
 
         mysqli_query($con, $sql);
 
-        header("Location: index.php");
+        header("Location: index");
       }
       else
       {
@@ -217,7 +217,7 @@ else{
 		    			<h3>Create a User</h3>
 		    		</div>
     		
-	    			<form class="form-horizontal" action="create.php" method="post">
+	    			<form class="form-horizontal" action="create" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
 					    <label class="control-label">Username</label>
 					    <div class="controls">
@@ -247,7 +247,7 @@ else{
 					  </div>
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Create</button>
-						  <a class="btn" href="index.php">Back</a>
+						  <a class="btn" href="index">Back</a>
 						</div>
 					</form>
 				</div>

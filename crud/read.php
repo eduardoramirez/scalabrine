@@ -8,7 +8,7 @@
 	}
 	
 	if ( null==$id ) {
-		header("Location: index.php");
+		header("Location: index");
 	} else {
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -191,7 +191,7 @@
 					    </div>
 					  </div>
 					    <div class="form-actions">
-						  <a class="btn" href="index.php">Back</a>
+						  <a class="btn" href="index">Back</a>
 					   </div>
 					
 					 
