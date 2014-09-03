@@ -25,7 +25,7 @@ function solo_query($sql)
   mysqli_query($con, $sql);
 }
 
-function query($type, $param, $query)
+function my_query($type, $param, $query)
 {
   $SQL = $con->prepare($query);
   call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
