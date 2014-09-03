@@ -33,8 +33,6 @@ function my_query($type, $param, $query)
     $params[] = &$row[$field->name]; 
   }
 
-  echo $params; 
-
   call_user_func_array(array($stmt, 'bind_result'), $params); 
 
   while ($stmt->fetch()) { 
