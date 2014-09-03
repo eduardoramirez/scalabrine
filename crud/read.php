@@ -1,7 +1,7 @@
 <?php 
   session_start();
 
-	require '../database.php';
+	require('../database.php');
 	$id = null;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
@@ -10,13 +10,8 @@
 	if ( null==$id ) {
 		header("Location: index");
 	} else {
-		$pdo = Database::connect();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "SELECT * FROM user where ID = ?";
-		$q = $pdo->prepare($sql);
-		$q->execute(array($id));
-		$data = $q->fetch(PDO::FETCH_ASSOC);
-		Database::disconnect();
+		$data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?";
+		my_disconnect();
 	}
 ?>
 
