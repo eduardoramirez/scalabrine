@@ -224,6 +224,7 @@
 
       <!--main content start-->
       <div id="main-content">
+        <div class="alert alert-info" role="alert"><?php echo $data['Username']; echo "  d "; ?></div> 
          <div class="wrapper">
     
         <?php
