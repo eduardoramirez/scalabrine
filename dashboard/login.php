@@ -70,7 +70,7 @@ else if(isset($_POST['login']))
     header("Location: /dashboard/login");
   }
 
-  my_disconnect();
+  //my_disconnect();
 } 
 else {
 ?>
