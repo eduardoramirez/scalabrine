@@ -38,16 +38,9 @@ function my_query($type, $param, $query)
   while ($stmt->fetch()) { 
     foreach($row as $key => $val) 
     { 
-        $c[$key] = $val; 
+      $result[$key] = $val; 
     } 
-    $result[] = $c; 
   } 
-
-  foreach($c as $key => $val) 
-  { 
-    echo $key; echo " "; echo $val; echo " ";
-  } 
-
 
   $stmt->close();
 
