@@ -24,10 +24,12 @@ else
     if(strcmp($password, $confirm_password) === 0)
     {
       $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
-
+      $res2 = $res = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
+      
       // Username is free
-      if(mysqli_num_rows($res) == 0) 
+      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
       {
+
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
         $sql="INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$h_password')";
 
@@ -92,7 +94,7 @@ else
     {
       $_SESSION['username'] = false;
   ?>
-    <div class="alert alert-info" role="alert">username is not available.</div>    
+    <div class="alert alert-info" role="alert">username/email already taken</div>    
   <?php
     }
     else if (isset($_SESSION['pass'])) 
