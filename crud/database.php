@@ -31,8 +31,11 @@ function my_query($type, $param, $query)
   while ($field = $meta->fetch_field()) 
   { 
     $params[] = &$row[$field->name];
-    echo $field->name; 
   }
+
+foreach($params['data'] as $params) {
+    echo $params['type'];
+}
 
   call_user_func_array(array($stmt, 'bind_result'), $params); 
 
