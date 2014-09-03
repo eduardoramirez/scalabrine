@@ -157,7 +157,8 @@ else{
 		              <tbody>
 		              <?php 
 					   include 'database.php';
-					   $db = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+					   //$db = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+              $db = Database::connect();
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
