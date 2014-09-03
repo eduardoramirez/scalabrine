@@ -156,16 +156,14 @@ else{
 		              </thead>
 		              <tbody>
 		              <?php 
-					   include 'database.php';
-					   //$db = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-              Database::connect();
+					   require 'database.php';
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
               else{
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
              }
-	 				   foreach (mysqli_query(Database::$con, $sql) as $row) {
+	 				   foreach (mysqli_query($con, $sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
@@ -192,7 +190,6 @@ else{
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }
-					   //Database::disconnect();
 					  ?>
 				      </tbody>
 	            </table>
