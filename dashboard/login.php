@@ -12,7 +12,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 else{ 
 
 require('functions.php');
-require("../database.php")
+require("../database.php");
 
 ////////////
 // listener for the reset password button
@@ -40,8 +40,7 @@ else if(isset($_POST['login']))
   $username = $_POST['username'];
   $password = $_POST['password'];
   
-  //$data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username=?");
-  $data = array("Username" => "lol", "Password" => "lol");
+  $data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username=?");
 
   if(strcmp($username, $data['Username']) !== 0)
   {
@@ -71,7 +70,7 @@ else if(isset($_POST['login']))
     header("Location: /dashboard/login");
   }
 
-  //my_disconnect();
+  my_disconnect();
 } 
 else {
 ?>
