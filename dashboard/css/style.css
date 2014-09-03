@@ -324,6 +324,7 @@ ul.sidebar-menu li a.active i {
 
 #crud-main-content {
     margin-left: 235px;
+    margin-right: 25px;
 }
 
 .header, .footer {
