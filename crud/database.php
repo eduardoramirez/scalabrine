@@ -5,7 +5,7 @@ $dbHost = 'localhost' ;
 $dbUsername = 'root';
 $dbUserPassword = 'Tw0sof+9Ly';
 	
-$con  = mysqli_connect($dbHost,$dbUsername,$dbUserPassword,$dbName);
+$con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
 
 function getNumRows($type, $param, $query)
 {

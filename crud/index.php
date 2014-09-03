@@ -163,7 +163,7 @@ else{
               else{
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
              }
-	 				   foreach (mysqli_query($con, $sql) as $row) {
+	 				   foreach ($con->query($con, $sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';
