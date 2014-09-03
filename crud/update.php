@@ -285,6 +285,9 @@
 					    <label class="control-label">Password</label>
 					    <div class="controls">
 					      	<input name="password" type="password"  placeholder="Password">
+                  <?php if (!empty($passwordError)): ?>
+                    <span class="help-inline"><?php echo $emailError;?></span>
+                  <?php endif;?>
 					    </div>
                       </div>
                       <?php if($_SESSION['admin']==1): ?>
