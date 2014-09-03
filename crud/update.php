@@ -247,10 +247,7 @@
             <div class="alert alert-info" role="alert">username/email already taken</div>    
         <?php
             }
-        ?>
-
-         <?php
-            if($_SESSION['crud_update_success'] = true;)
+            if($_SESSION['crud_update_success'] = true)
             {
               $_SESSION['crud_update_success'] = false;
         ?>
