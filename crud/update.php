@@ -22,12 +22,12 @@
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-	    $level = $_POST['level'];
+	  $level = $_POST['level'];
 
 		$options = [
-      		'cost' => 11,
-      		'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-    	];
+    	'cost' => 11,
+      'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+    ];
 
 		// validate input
 		$valid = true;
@@ -49,26 +49,36 @@
 			$valid = false;
 		}
 		
-		// update data
-		if ($valid) {
-			$h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-			$pdo = Database::connect();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if ($_SESSION['admin'] == 1) {
-                $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
-            } else {
-                $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
-            }
-			$q = $pdo->prepare($sql);
-            if ($_SESSION['admin'] == 1) {
-			$q->execute(array($name,$email,$h_password,$level,$id));
-            }
-            else {
-			$q->execute(array($name,$email,$h_password,$id));
-            }
-			Database::disconnect();
-			header("Location: index.php");
-		}
+//////////
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+
+    $res = mysqli_query($con, "SELECT * FROM user WHERE username='$name'");
+    $res2 = mysqli_query($con, "SELECT * FROM user WHERE email='$email'");
+
+    if($valid)
+    {
+      // Username is free
+      if(mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
+      {
+        $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+
+        if ($_SESSION['admin'] == 1) 
+        {
+          $sql = "UPDATE user set Username = ?, Email = ?, Password = ?, admin = ? WHERE ID = ?";
+          mysqli_query($con, $sql);
+        } 
+        else {
+          $sql = "UPDATE user set Username = ?, Email = ?, Password = ? WHERE ID = ?";
+          mysqli_query($con, $sql);
+        }
+      }
+      else
+      {
+        //username is taken
+        $_SESSION['crud_update_already_username'] = true;
+      }
+    }
+
 	} else {
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -212,6 +222,16 @@
       <div id="main-content">
          <div class="wrapper">
     
+        <?php
+            if($_SESSION['crud_update_already_username'] == true)
+            {
+              $_SESSION['crud_update_already_username'] = false;
+        ?>
+            <div class="alert alert-info" role="alert">username/email already taken</div>    
+        <?php
+            }
+        ?>
+
     			<div class="span10 offset1">
     				<div class="row">
 		    			<h3>Update a User</h3>
