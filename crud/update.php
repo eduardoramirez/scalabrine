@@ -46,13 +46,11 @@
 		
 		
 //////////
-    Database::connect();
+    $numRows = getNumRows('s', $name, "SELECT username FROM user WHERE username=?");
 
-    $numRows = Database::getNumRows('s', $name, "SELECT username FROM user WHERE username=?");
+    $numRows1 = getNumRows('s', $email, "SELECT username FROM user WHERE email=?");
 
-    $numRows1 = Database::getNumRows('s', $email, "SELECT username FROM user WHERE email=?");
-
-    $db_result = Database::query('i', $id, "SELECT username, email FROM user where ID = ?");
+    $db_result = my_query('i', $id, "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
@@ -68,12 +66,12 @@
         {
           $params = array($name, $email, $h_password, $level, $id);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password', admin = '$level' WHERE ID = '$id'";
-          Database::query('sssii', $params, $sql);
+          my_query('sssii', $params, $sql);
         } 
         else {
           $params = array($name, $email, $h_password, $level);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
-          Database::query('sssi', $params, $sql);
+          my_query('sssi', $params, $sql);
         }
 
         $_SESSION['crud_update_success'] = true;
@@ -85,16 +83,12 @@
       }
     }
 
-    Database::disconnect();
-
 	} else {
-		Database::connect();
-    $data = Database::query('i', $id, "SELECT * FROM user where ID = ?");
+    $data = my_query('i', $id, "SELECT * FROM user where ID = ?");
 		$name = $data['Username'];
 		$email = $data['Email'];
     $h_password = $data['Password'];
     $level = $data['admin'];
-		Database::disconnect();
 	}
 ?>
 
