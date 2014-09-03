@@ -158,14 +158,14 @@ else{
 		              <?php 
 					   include 'database.php';
 					   //$db = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-              $db = Database::connect();
+              Database::connect();
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
               else{
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
              }
-	 				   foreach (mysqli_query($db, $sql) as $row) {
+	 				   foreach (mysqli_query(Database::$con, $sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['Username'] . '</td>';
 							   	echo '<td>'. $row['Email'] . '</td>';

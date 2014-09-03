@@ -6,7 +6,7 @@ class Database
 	private static $dbUsername = 'root';
 	private static $dbUserPassword = 'Tw0sof+9Ly';
 	
-	private static $con  = null;
+	public static $con  = null;
 	
 	public function __construct() {
 		exit('Init function is not allowed');
@@ -24,8 +24,7 @@ class Database
       {
         die($e->getMessage());  
       }
-    } 
-   return &(self::$con);
+    }
 	}
 	
   public static function getNumRows($type, $param, $query)
