@@ -22,6 +22,7 @@
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 	  $level = $_POST['level'];
+    $password = $_POST['password'];
 
 		$options = [
     	'cost' => 11,
@@ -62,7 +63,7 @@
       {
         if(isset($_POST['password']))
         {
-          $h_password = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
+          $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
         }
 
         if ($_SESSION['admin'] == 1) 
