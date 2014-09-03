@@ -88,10 +88,10 @@ error_reporting(-1);
 	} else {
 
     $data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
-		//$name = $data['Username'];
-		//$email = $data['Email'];
-    //$h_password = $data['Password'];
-    //$level = $data['admin'];
+		$name = $data['Username'];
+		$email = $data['Email'];
+    $h_password = $data['Password'];
+    $level = $data['admin'];
 	}
 ?>
 
