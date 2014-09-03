@@ -196,14 +196,14 @@ else{
          <div class="wrapper">
           
         <?php
-            if(isset($_SESSION['crud_already_username']))
+            if($_SESSION['crud_already_username'] == true)
             {
               $_SESSION['crud_already_username'] = false;
-          ?>
+        ?>
             <div class="alert alert-info" role="alert">username/email already taken</div>    
-          <?php
+        <?php
             }
-          ?>
+        ?>
 
     			<div class="span10 offset1">
     				<div class="row">
