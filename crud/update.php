@@ -59,7 +59,7 @@
     {
       // Username is free
       if((mysqli_num_rows($res) == 0 && mysqli_num_rows($res2) == 0) 
-        || (strcmp($name, $db_name) === 0 && strcmp($email, $db_email) === 0)) 
+        || (strcmp($name, $db_name) == 0 && strcmp($email, $db_email) == 0)) 
       {
         if(isset($_POST['password']))
         {
