@@ -46,34 +46,18 @@
 		
 		
 //////////
-    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+    Database::connect();
 
-    $SQL = $con->prepare("SELECT username FROM user WHERE username=?");
-    $SQL->bind_param('s',$name);
-    $SQL->execute();
-    $SQL->store_result();
-    $numRows = $SQL->num_rows();
-    $SQL->close();
+    $numRows = Database::getNumRows('s', $name, "SELECT username FROM user WHERE username=?");
 
-    $SQL = $con->prepare("SELECT username FROM user WHERE email=?");
-    $SQL->bind_param('s',$email);
-    $SQL->execute();
-    $SQL->store_result();
-    $numRows1 = $SQL->num_rows();
-    $SQL->close();
+    $numRows1 = Database::getNumRows('s', $email, "SELECT username FROM user WHERE email=?");
 
-    $SQL = $con->prepare("SELECT username, email FROM user where ID = ?");
-    $SQL->bind_param('i',$id);
-    $SQL->execute();
-    $SQL->store_result();
-    $SQL->bind_result($db_name,$db_email);
-    $SQL->fetch();
-    $SQL->close();
+    $db_result = Database::query('i', $id, "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
       // Username is free
-      if(($numRows == 0 && $numRows1 == 0) || (strcmp($name, $db_name) == 0 && strcmp($email, $db_email) == 0)) 
+      if(($numRows == 0 && $numRows1 == 0) || (strcmp($name, $db_result['username']) == 0 && strcmp($email, $db_result['email']) == 0)) 
       {
         if(isset($_POST['password']))
         {
@@ -82,12 +66,14 @@
 
         if ($_SESSION['admin'] == 1) 
         {
+          $params = array($name, $email, $h_password, $level, $id);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password', admin = '$level' WHERE ID = '$id'";
-          mysqli_query($con, $sql);
+          Database::query('sssii', $params, $sql);
         } 
         else {
+          $params = array($name, $email, $h_password, $level);
           $sql = "UPDATE user set Username = '$name', Email = '$email', Password = '$h_password' WHERE ID = '$id'";
-          mysqli_query($con, $sql);
+          Database::query('sssi', $params, $sql);
         }
 
         $_SESSION['crud_update_success'] = true;
@@ -99,13 +85,11 @@
       }
     }
 
+    Database::disconnect();
+
 	} else {
-		$pdo = Database::connect();
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "SELECT * FROM user where ID = ?";
-		$q = $pdo->prepare($sql);
-		$q->execute(array($id));
-		$data = $q->fetch(PDO::FETCH_ASSOC);
+		Database::connect();
+    $data = Database::query('i', $id, "SELECT * FROM user where ID = ?");
 		$name = $data['Username'];
 		$email = $data['Email'];
     $h_password = $data['Password'];
