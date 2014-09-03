@@ -5,8 +5,8 @@ $dbHost = 'localhost' ;
 $dbUsername = 'root';
 $dbUserPassword = 'Tw0sof+9Ly';
 	
-//$con  = mysqli_connect($dbHost,$dbUsername,$dbUserPassword,$dbName);
-$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+$con  = mysqli_connect($dbHost,$dbUsername,$dbUserPassword,$dbName);
+//$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
 function getNumRows($type, $param, $query)
 {
