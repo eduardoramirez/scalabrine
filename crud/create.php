@@ -200,7 +200,7 @@ else{
          <div class="wrapper">
           
         <?php
-            if($_SESSION['crud_already_username'] === true)
+            if($_SESSION['crud_already_username'] == true)
             {
               $_SESSION['crud_already_username'] = false;
         ?>
