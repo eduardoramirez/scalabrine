@@ -15,7 +15,7 @@ else if ($_SESSION['admin'] == 0){
 else{
 	require 'database.php';
 
-    $id = 0;
+  $id = 0;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
 	}
@@ -27,22 +27,17 @@ else{
         // keep track post values
         $id = $_POST['id'];
 
-        // delete data
-        $pdo = Database::connect();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         if ($_SESSION['admin'] == 2){ //Developer
-            $sql = "DELETE FROM user WHERE ID = ?";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($id));
+          $sql = "DELETE FROM user WHERE ID = ?";
+
+          my_update('i', array($id), $sql);
         }
         else{ //Admin
-            $sql = "DELETE FROM user WHERE ID = ? AND OrgID = ?";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($id, $orgID));
+          $sql = "DELETE FROM user WHERE ID = ? AND OrgID = ?";
+          my_update('ii', array($id, $orgID), $sql);
         }
 
-        Database::disconnect();
+        my_disconnect();
         header("Location: index");
     }
 ?>

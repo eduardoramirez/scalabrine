@@ -1,10 +1,11 @@
 <?php 	
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
+//ini_set('display_errors',1);
+//ini_set('display_startup_errors',1);
+//error_reporting(-1);
   session_start();
 
   require 'database.php';
+
 	$id = null;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
@@ -46,13 +47,9 @@ error_reporting(-1);
 			$valid = false;
 		}
 		
-		
-//////////
     $numRows = getNumRows('s', array(&$name), "SELECT Username FROM user WHERE username=?");
 
     $numRows1 = getNumRows('s', array(&$email), "SELECT Username FROM user WHERE email=?");
-
-    echo " ---- ";
 
     $db_result = my_query('i', array(&$id), "SELECT Username, Email FROM user where ID=?");
 

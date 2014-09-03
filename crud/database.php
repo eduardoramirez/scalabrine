@@ -57,4 +57,11 @@ function my_query($type, $param, $query)
   return $result;
 }
 
+
+function my_disconnect()
+{
+  global $con;
+  $con->close();  
+}
+
 ?>

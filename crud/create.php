@@ -5,7 +5,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
     header("Location: /dashboard/login");
 }
 else{
-	//require 'database.php';
+	require 'database.php';
 
 	if ( !empty($_POST)) {
 		// keep track validation errors
@@ -44,14 +44,9 @@ else{
 			$valid = false;
 		}
 
-		$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+    $sql = "SELECT Username FROM user WHERE username=? OR email=?";
 
-    $SQL = $con->prepare("SELECT username FROM user WHERE username=? OR email=?");
-    $SQL->bind_param('ss',$name, $email);
-    $SQL->execute();
-    $SQL->store_result();
-    $numRows = $SQL->num_rows();
-    $SQL->close();
+    $numRows = getNumRows('ss', array(&$name, &$email), $sql);
 
     if($valid)
     {
@@ -59,9 +54,10 @@ else{
       if($numRows == 0) 
       {
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-        $sql="INSERT INTO user (username, email, password, orgID) VALUES ('$name', '$email', '$h_password', '$orgID')";
+        $param = (&$name, &$email, &$h_password, &$orgID);
+        $sql="INSERT INTO user (username, email, password, orgID) VALUES (?, ?, ?, ?)";
 
-        mysqli_query($con, $sql);
+        my_update('sssi', $param, sql);
 
         header("Location: index");
       }
@@ -71,6 +67,8 @@ else{
         $_SESSION['crud_already_username'] = true;
       }
     }
+
+    my_disconnect();
 	}
 ?>
 
