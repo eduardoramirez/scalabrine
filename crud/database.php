@@ -45,7 +45,7 @@ function my_query($type, $param, $query)
 
   foreach($result as $key => $val) 
   { 
-    echo $key; echo " "; echo $val; echo "\n";
+    echo $key; echo " "; echo $val; echo " ";
   } 
 
 
