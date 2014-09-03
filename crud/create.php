@@ -42,7 +42,7 @@ else{
 			$passwordError = 'Please enter Password';
 			$valid = false;
 		}
-    
+
 		$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
 
     $res = mysqli_query($con, "SELECT * FROM user WHERE username='$username'");
@@ -63,7 +63,7 @@ else{
     {
       //username is taken
       $_SESSION['crud_already_username'] = true;
-      header("Location: create.php);
+      header("Location: create.php");
     }
 	}
 ?>
