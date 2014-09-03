@@ -157,7 +157,7 @@ else{
 		              <tbody>
 		              <?php 
 					   include 'database.php';
-					   $db = Database::connect();
+					   $db = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
@@ -191,7 +191,7 @@ else{
 							   	echo '</td>';
 							   	echo '</tr>';
 					   }
-					   Database::disconnect();
+					   //Database::disconnect();
 					  ?>
 				      </tbody>
 	            </table>
