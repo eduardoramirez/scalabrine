@@ -44,7 +44,7 @@ else if(isset($_POST['login']))
 
   $data = my_query('s', array(&$username), $sql);
 
-  if(strcmp($data['Username'], $db_username) !== 0)
+  if(strcmp($username, $data['Username']) !== 0)
   {
     //no account
     $_SESSION['no_account'] = true;
