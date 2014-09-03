@@ -286,7 +286,7 @@
 					    <div class="controls">
 					      	<input name="password" type="password"  placeholder="Password">
                   <?php if (!empty($passwordError)): ?>
-                    <span class="help-inline"><?php echo $emailError;?></span>
+                    <span class="help-inline"><?php echo $passwordError;?></span>
                   <?php endif;?>
 					    </div>
                       </div>
