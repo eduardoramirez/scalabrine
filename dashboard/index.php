@@ -160,7 +160,7 @@
                         <span>
                            <i class="icon-bar-chart"></i>
                         </span>
-                        <h3>Types of Error</h3>
+                        <h3>Types of Errors</h3>
                         <span class="rev-combo pull-right">
                            August 2014
                         </span>
