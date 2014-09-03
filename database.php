@@ -50,8 +50,7 @@ function my_query($type, $param, $query)
   while ($stmt->fetch()) { 
     foreach($row as $key => $val) 
     { 
-      $result[$key] = $val; 
-      echo $key; echo "->"; echo $val; echo " ";
+      $result[$key] = $val;
     } 
   } 
 
