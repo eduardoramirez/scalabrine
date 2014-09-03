@@ -30,11 +30,11 @@ else{
         if ($_SESSION['admin'] == 2){ //Developer
           $sql = "DELETE FROM user WHERE ID = ?";
 
-          my_update('i', array($id), $sql);
+          my_update('i', array(&$id), $sql);
         }
         else{ //Admin
           $sql = "DELETE FROM user WHERE ID = ? AND OrgID = ?";
-          my_update('ii', array($id, $orgID), $sql);
+          my_update('ii', array(&$id, &$orgID), $sql);
         }
 
         my_disconnect();
