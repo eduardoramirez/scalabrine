@@ -43,7 +43,7 @@ else{
         }
 
         Database::disconnect();
-        header("Location: index.php");
+        header("Location: index");
     }
 ?>
 
@@ -179,12 +179,12 @@ else{
 		    			<h3>Delete a User</h3>
 		    		</div>
 		    		
-	    			<form class="form-horizontal" action="delete.php" method="post">
+	    			<form class="form-horizontal" action="delete" method="post">
 	    			  <input type="hidden" name="id" value="<?php echo $id;?>"/>
 					  <p class="alert alert-error">Are you sure you want to delete?</p>
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-danger">Yes</button>
-						  <a class="btn" href="index.php">No</a>
+						  <a class="btn" href="index">No</a>
 						</div>
 					</form>
 				</div>
