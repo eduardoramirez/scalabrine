@@ -3,8 +3,8 @@ class Database
 {
 	private static $dbName = 'scalabrinedb' ; 
 	private static $dbHost = 'localhost' ;
-	private static $dbUsername = 'scala_master';
-	private static $dbUserPassword = 'Tw3n+ysof+9Ly';
+	private static $dbUsername = 'root';
+	private static $dbUserPassword = 'Tw0sof+9Ly';
 	
 	private static $con  = null;
 	
