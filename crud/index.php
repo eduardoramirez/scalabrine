@@ -157,6 +157,7 @@ else{
 		              <tbody>
 		              <?php 
 					   require 'database.php';
+             $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
               if ($_SESSION['admin'] == 2){
 					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
               }
