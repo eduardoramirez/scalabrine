@@ -40,7 +40,7 @@ else if(isset($_POST['login']))
   $username = $_POST['username'];
   $password = $_POST['password'];
   
-  $sql = "SELECT Username, Password, Email, OrgID, admin FROM user WHERE Username=?";
+  $sql = "SELECT * FROM user WHERE Username=?";
 
   $data = my_query('s', array(&$username), $sql);
 
