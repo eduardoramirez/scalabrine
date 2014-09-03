@@ -17,13 +17,7 @@ class Database
 	   // One connection through whole application
     if ( null == self::$con )
     {      
-      try {
-        $con = mysqli_connect($dbHost,$dbUsername,$dbUserPassword,$dbName);
-      }
-      catch(PDOException $e) 
-      {
-        die($e->getMessage());  
-      }
+      $con = mysqli_connect($dbHost,$dbUsername,$dbUserPassword,$dbName);
     }
 	}
 	
