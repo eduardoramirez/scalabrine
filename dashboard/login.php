@@ -41,6 +41,7 @@ else if(isset($_POST['login']))
   $password = $_POST['password'];
   
   //$data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username=?");
+  $data = array("Username" => "lol", "Password" => "lol");
 
   if(strcmp($username, $data['Username']) !== 0)
   {
