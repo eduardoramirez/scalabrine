@@ -66,7 +66,7 @@
     if($valid)
     {
       // Username is free
-      if($numRows == 0 || (strcmp($name, $db_name) == 0 && strcmp($email, $db_email) == 0)) 
+      if($numRows == 0 || (strcmp($name, $db_name) == 0 || strcmp($email, $db_email) == 0)) 
       {
         if(isset($_POST['password']))
         {
