@@ -25,7 +25,7 @@ class Database
         die($e->getMessage());  
       }
     } 
-   return self::$con;
+   return self::&$con;
 	}
 	
   public static function getNumRows($type, $param, $query)
