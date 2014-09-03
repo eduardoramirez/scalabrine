@@ -46,11 +46,11 @@
 		
 		
 //////////
-    $numRows = getNumRows('s', array($name), "SELECT username FROM user WHERE username=?");
+    //$numRows = getNumRows('s', array($name), "SELECT username FROM user WHERE username=?");
 
-    $numRows1 = getNumRows('s', array($email), "SELECT username FROM user WHERE email=?");
+    //$numRows1 = getNumRows('s', array($email), "SELECT username FROM user WHERE email=?");
 
-    $db_result = my_query('i', array($id), "SELECT username, email FROM user where ID = ?");
+    //$db_result = my_query('i', array($id), "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
@@ -85,10 +85,10 @@
 
 	} else {
     data = my_query('i', array($id), "SELECT * FROM user where ID = ?");
-		$name = $data['Username'];
-		$email = $data['Email'];
-    $h_password = $data['Password'];
-    $level = $data['admin'];
+		//$name = $data['Username'];
+		//$email = $data['Email'];
+    //$h_password = $data['Password'];
+    //$level = $data['admin'];
 	}
 ?>
 
