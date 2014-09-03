@@ -46,16 +46,16 @@
 		
 		
 //////////
-    $numRows = getNumRows('s', $name, "SELECT username FROM user WHERE username=?");
+    //$numRows = getNumRows('s', $name, "SELECT username FROM user WHERE username=?");
 
-    $numRows1 = getNumRows('s', $email, "SELECT username FROM user WHERE email=?");
+    //$numRows1 = getNumRows('s', $email, "SELECT username FROM user WHERE email=?");
 
-    $db_result = my_query('i', $id, "SELECT username, email FROM user where ID = ?");
+    //$db_result = my_query('i', $id, "SELECT username, email FROM user where ID = ?");
 
     if($valid)
     {
       // Username is free
-      if(($numRows == 0 && $numRows1 == 0) || (strcmp($name, $db_result['username']) == 0 && strcmp($email, $db_result['email']) == 0)) 
+      if(($numRows == 0 && $numRows1 == 0) || (strcmp($name, $db_result['Username']) == 0 && strcmp($email, $db_result['Email']) == 0)) 
       {
         if(isset($_POST['password']))
         {
