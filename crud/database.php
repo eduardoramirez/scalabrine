@@ -23,7 +23,8 @@ function getNumRows($type, $param, $query)
 function my_query($type, $param, $query)
 {
   global $con;
-  $SQL = $con->prepare($query);
+  $SQL = $con->stmt_init();
+  $SQL->prepare($query);
   call_user_func_array(array($SQL, "bind_param"), array_merge(array($type), $param));
   $SQL->execute();
   $result = $SQL->get_result();
