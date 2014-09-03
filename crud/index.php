@@ -134,7 +134,7 @@ else{
       <!--sidebar end-->
 
       <!--main content start-->
-      <div id="main-content">
+      <div id="crud-main-content">
          <div class="wrapper">
 
     		<div class="row">
