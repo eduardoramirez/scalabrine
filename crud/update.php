@@ -52,7 +52,7 @@
 
     $numRows1 = getNumRows('s', array(&$email), "SELECT username FROM user WHERE email=?");
 
-    echo " ---- "
+    echo " ---- ";
 
     $db_result = my_query('i', array(&$id), "SELECT username, email FROM user where ID=?");
 
