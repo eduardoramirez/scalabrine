@@ -21,6 +21,7 @@ if(isset($_POST['reset_pass']))
   $result = checkEmail($_POST['email']);
   if ($result['status'])
   {
+    echo "LOLOLOLOL";
     // email exists -- send email to user
     sendPasswordEmail($result['userID']);
     $_SESSION['validemail'] = true;
