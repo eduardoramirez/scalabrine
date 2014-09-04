@@ -205,8 +205,7 @@
                     <?php 
                         include 'database.php';
                         $pdo = Database::connect();
-                        $errorOrgID=$_SESSION['orgID'];
-                        echo "here " . $errorOrgID;
+                        echo "here 2 " . $_SESSION['orgID'];
                         $sql = "SELECT * FROM jserrors WHERE OrgID='$orgid' ORDER BY ID DESC";
    
                         foreach ($pdo->query($sql) as $row) {         
