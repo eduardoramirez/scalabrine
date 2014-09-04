@@ -254,7 +254,7 @@ include('config2.php');
 
 
         </div><!-- /rate-result-cnt -->
-
+<!--
                                               <p>
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star-empty"></i>
@@ -262,7 +262,7 @@ include('config2.php');
                                                 <i class="icon-star-empty"></i>
                                                 <i class="icon-star-empty"></i>
                                               </p>
-
+-->
 
                                               <p><?php echo $comment; ?></p>
                                           </div>
@@ -291,6 +291,7 @@ include('config2.php');
             <div id="4" class="rate-btn-4 rate-btn"></div>
             <div id="5" class="rate-btn-5 rate-btn"></div>
         </div>
+        <br>
         <input type="hidden" id="name-com" name="name-com" value="<?php echo $_SESSION['username']; ?>" />
         <input type="hidden" id="mail-com" name="mail-com" value="<?php echo $_SESSION['email']; ?>" />
         <textarea class="the-new-com"></textarea>
