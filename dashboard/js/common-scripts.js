@@ -114,3 +114,34 @@ var Script = function () {
 
 
 }();
+
+
+$("#star1").hover(
+    function(){
+        $(this).toggleClass(".icon-star-full");
+    }
+);
+
+$("#star2").hover(
+    function(){
+        $(this).toggleClass(".icon-star-full");
+    }
+);
+
+$("#star3").hover(
+    function(){
+        $(this).toggleClass(".icon-star-full");
+    }
+);
+
+$("#star4").hover(
+    function(){
+        $(this).toggleClass(".icon-star-full");
+    }
+);
+
+$("#star5").hover(
+    function(){
+        $(this).toggleClass(".icon-star-full");
+    }
+);
