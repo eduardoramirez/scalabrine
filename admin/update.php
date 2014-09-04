@@ -136,14 +136,14 @@ else{
             <!-- sidebar menu start-->
              <ul class="sidebar-menu" id="nav-accordion">
                  <li>
-                     <a href="/admin/index">
+                     <a class="active" href="/admin/index">
                          <i class="icon-tasks"></i>
                          <span>clients</span>
                      </a>
                  </li>
 
                  <li>
-                     <a class="active" href="/admin/audit">
+                     <a href="/admin/audit">
                          <i class="icon-exclamation"></i>
                          <span>audit log</span>
                      </a>
