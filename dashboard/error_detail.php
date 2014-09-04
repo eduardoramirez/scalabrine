@@ -238,6 +238,7 @@ include('config2.php');
                 }
                 if(@count($rate_db)){
                     $rate_times = count($rate_db);
+                    echo "here " . $rate_times;
                     $sum_rates = array_sum($sum_rates);
                     $rate_value = $sum_rates/$rate_times;
                     $rate_bg = (($rate_value)/5)*100;
