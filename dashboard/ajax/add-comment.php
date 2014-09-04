@@ -7,7 +7,8 @@ if($_POST['act'] == 'add-com'):
 
     // Connect to the database
 	include('../config2.php'); 
-	
+	$name=$_SESSION['username'];
+	$email=$_SESSION['email'];
 	// Get gravatar Image 
 	// https://fr.gravatar.com/site/implement/images/php/
 	$default = "mm";
