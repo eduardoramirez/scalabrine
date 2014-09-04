@@ -136,8 +136,19 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <?php 
-$currOrgID=$_SESSION['orgID'];
+         <div class="col-lg-4">
+                  <!--table start-->
+                  <div class="panel">
+                     <div class="revenue-head">
+                        <span>
+                           <i class="icon-file"></i>
+                        </span>
+                        <h3>Paste this script into your site to begin tracking errors.</h3>
+                     </div>
+                     <div class="panel-body">
+                        <div class="col-lg-6 col-sm-6 text-center">
+                           <?php 
+                              $currOrgID=$_SESSION['orgID'];
          echo 
 '/* object literal wrapper to avoid namespace conflicts */
 var ErrorTracking = {};
@@ -233,6 +244,12 @@ ErrorTracking.registerErrorHandler = function ()
 /* bind the error handler */
 ErrorTracking.registerErrorHandler();'
 ?>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+         
       </div>
    
       </div>
