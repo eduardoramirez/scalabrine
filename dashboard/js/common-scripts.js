@@ -115,13 +115,13 @@ var Script = function () {
 
 }();
 
+var litt = function(st){
+        $(st).toggleClass("icon-star-empty");
+        $(st).toggleClass("icon-star");   
+    };
 
 $("#star1").click(
-    function(){
-        $(this).toggleClass("icon-star-empty");
-        $(this).toggleClass("icon-star");
-        alert( "Handler for .click() called." );
-    }
+    litt(this);
 );
 
 $("#star2").click(
