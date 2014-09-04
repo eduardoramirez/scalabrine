@@ -29,7 +29,7 @@ if($_POST['act'] == 'add-com'):
   
   $err = my_update('', array(&$name, &$email, &$comment, &$id_post), );
 
-  if(!$err)
+  if($err)
   {
 ?>
 
