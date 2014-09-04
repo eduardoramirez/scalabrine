@@ -411,7 +411,7 @@ include('config2.php');
               url: "ajax/remove-comment.php",
               data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
               success: function(html){
-                  alert("success: " + theId.val());
+                  alert("success: " + theId.val() + " " + theName.val() + " " + theMail.val());
                   $('.timeline-messages').remove('#'+theId.val());
               }  
           });
