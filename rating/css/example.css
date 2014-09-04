@@ -48,7 +48,9 @@ hr{ margin: 10px 0; border:none; border-top: #ccc 1px dotted;}
 .rate-ex3-cnt .rate-btn{
 	width: 17px; height:17px;
 	float: left;
-	background: url(../img/rate-btn3.png) no-repeat;
+	font-family: FontAwesome;
+	/*background: url(../img/rate-btn3.png) no-repeat;*/
+	content: "&#xf006";
 	cursor: pointer;
 }
 .rate-ex3-cnt .rate-btn:hover, .rate-ex3-cnt  .rate-btn-hover, .rate-ex3-cnt  .rate-btn-active{
