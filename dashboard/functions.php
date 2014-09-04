@@ -6,18 +6,14 @@ define('PW_SALT','(+3%_');
 
 function sendPasswordEmail($userID)
 {
-  $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-
-  $sql = "SELECT Username, Email FROM user WHERE ID = ? LIMIT 1";
-
-  $data = my_query('i', array(&$userID), $sql);
+  $data = my_query('i', array(&$userID), "SELECT Username, Email FROM user WHERE ID = ? LIMIT 1");
   $uname = $data['Username'];
   $email = $data['Email'];
 
   $expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+3, date("Y"));
   $expDate = date("Y-m-d H:i:s",$expFormat);
   $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
-  
+
   my_update('iss', array(&$userID, &$key, &$expDate), "INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)");
 
   $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
