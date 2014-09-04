@@ -136,30 +136,7 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <?php echo $_SESSION['orgID']; ?>
-<!--         function getScriptName($name){
-              return "http://104.131.195.41:9091/track/" . $_SESSION['username'] 
-                  . "_" . $name . ".js";    
-         }
-         <table class="table table-bordered table-striped table-responsive">
-           <th>Organization</th>
-           <th>Script</th>
-           <tr>
-             <td>app1</td>
-             <td><?php echo getScriptName("app1"); ?></td>
-           </tr>
-           <tr>
-             <td>app2</td>
-             <td><?php echo getScriptName("app2"); ?></td>
-           </tr>
-           <tr>
-             <td>app3</td>
-             <td><?php echo getScriptName("app3"); ?></td>
-           </tr>
-         </table>
--->
-
-
+         <?php echo 'here'. $_SESSION['orgID']; ?>
       </div>
    
       </div>
