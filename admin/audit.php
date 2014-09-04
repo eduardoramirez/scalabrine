@@ -145,16 +145,17 @@ else{
 
                       foreach ($con->query($sql) as $row) {
 
-                          switch($row['admin']){
-                              case 1:
+                          if(!isset($row['admin'])){
+                              $role = 'User';
+                          }
+                          elseif ($row['admin'] == 1){
                                   $role = 'Admin';
-                                  break;
-                              case 2:
-                                  $role = 'Developer';
-                                  break;
-                              default:
-                                  $role = 'User';
-                                  break;
+                          }
+                          elseif ($row['admin'] == 2){
+                              $role = 'Developer';
+                          }
+                          else{
+                              $role = 'User';
                           }
 
 						   		echo '<tr>';
