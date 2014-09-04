@@ -122,7 +122,8 @@ function lit(st)
 }
 
 $("#star1").click(
-    lit(this);
+        $(this).toggleClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
     alert("hr");
 );
 
