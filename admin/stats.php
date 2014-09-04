@@ -122,7 +122,9 @@ else{
       <!--main content start-->
       <div id="main-content">
         <div class="wrapper">
-          <h3>Stats</h3>
+            <div class="row">"
+                <h3>Stats</h3>
+            </div>
         </div>
       </div>
       <!--main content end-->
