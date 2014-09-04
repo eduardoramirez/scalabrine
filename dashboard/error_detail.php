@@ -228,7 +228,7 @@ include('config2.php');
                                             if($_SESSION['admin'] == 1)
                                             {
                                           ?>
-                                              <div class="bt-rm-com pull-right">
+                                              <div class="bt-rm-com pull-right" id="<?php echo $post_id; ?>">
                                                 <input type="hidden" id="name-rm-com" name="name-rm-com" value="<?php echo $name ?>" />
                                                 <input type="hidden" id="mail-rm-com" name="mail-rm-com" value="<?php echo $email ?>" />
                                                 <input type="hidden" id="id-rm-com" name="id-rm-com" value="<?php echo $post_id ?>" />
@@ -410,18 +410,18 @@ include('config2.php');
 
         // on post remove comment click 
         $('.bt-rm-com').click(function(){
-          var theId = $('#id-rm-com');
+          var theId = $(this).attr("id");
           var theName = $('#name-rm-com');
           var theMail = $('#mail-rm-com');
           alert("clicked");
           $.ajax({
               type: "POST",
               url: "ajax/remove-comment.php",
-              data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
+              data: 'act=rm-com&id_post='+theId.val(),
               success: function(html){
-                  alert("success: " + theId.val() + " " + theName.val() + " " + theMail.val());
-                  var toRm = "#"+theId.val();
-                  $(toRm).remove();
+                  alert("success: " + theId + " " + theName.val() + " " + theMail.val());
+                  var toRm = "#"+theId;
+                  //$(toRm).remove();
               }  
           });
             
