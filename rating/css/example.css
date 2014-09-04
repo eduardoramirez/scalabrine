@@ -50,7 +50,7 @@ hr{ margin: 10px 0; border:none; border-top: #ccc 1px dotted;}
 	float: left;
 	font-family: FontAwesome;
 	/*background: url(../img/rate-btn3.png) no-repeat;*/
-	content: "&#xf006";
+	content: "\25AE";
 	cursor: pointer;
 }
 .rate-ex3-cnt .rate-btn:hover, .rate-ex3-cnt  .rate-btn-hover, .rate-ex3-cnt  .rate-btn-active{
