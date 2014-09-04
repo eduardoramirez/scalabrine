@@ -145,7 +145,7 @@ function badCode()
 
 <form action="#">
 	<label>Do you dare press it?
-	<input type="button" value="BOOM!" onclic="badCode();" />
+	<input type="button" value="BOOM!" onclick="badCode();" />
 	</label>
 </form>
 
