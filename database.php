@@ -66,4 +66,10 @@ function my_disconnect()
   $con->close();  
 }
 
+function sanitize($str)
+{
+  global $con;
+  return $con->real_escape_string($str);
+}
+
 ?>

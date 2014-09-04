@@ -75,7 +75,6 @@ function updateUserPassword($userID, $password, $key)
   ]; 
 
   $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-  echo $userID;
 
   my_update('si', array(&$h_password, &$userID), "UPDATE user SET Password = ? WHERE ID = ?");
 

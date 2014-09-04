@@ -1,7 +1,7 @@
 <?php 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
+//ini_set('display_errors',1);
+//ini_set('display_startup_errors',1);
+//error_reporting(-1);
 session_start();
 
 // If user is logged in, redirect to homepage
@@ -18,7 +18,7 @@ require('functions.php');
 ////////////
 if(isset($_POST['reset_pass'])) 
 {
-  $result = checkEmail($_POST['email']);
+  $result = checkEmail(sanitize($_POST['email']));
   if ($result['status'])
   {
     // email exists -- send email to user
@@ -36,11 +36,11 @@ if(isset($_POST['reset_pass']))
 else if(isset($_POST['login'])) 
 {
   // need to escape characters
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+  $username = sanitize($_POST['username']);
+  $password = sanitize($_POST['password']);
   
   $data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username=?");
-    $id = $data['ID'];
+  $id = $data['ID'];
 
   if(strcmp($username, $data['Username']) !== 0)
   {
