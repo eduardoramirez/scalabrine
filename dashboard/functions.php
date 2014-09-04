@@ -61,7 +61,7 @@ function checkEmailKey($key,$userID)
 
   if ($numRows > 0 && $data['UserID'] != '')
   {
-    return array('status'=>true,'userID'=>$data['userID']);
+    return array('status'=>true,'userID'=>$data['UserID']);
   }
   
   return false;
