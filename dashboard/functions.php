@@ -5,17 +5,18 @@ require('../database.php');
 function sendPasswordEmail($userID)
 {
   $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-  if ($SQL = $con->prepare("SELECT `Username`,`Email`,`Password` FROM `user` WHERE `ID` = ? LIMIT 1"))
-  {
-    $SQL->bind_param('i',$userID);
-    $SQL->execute();
-    $SQL->store_result();
-    $SQL->bind_result($uname,$email,$pword);
-    $SQL->fetch();
-    $SQL->close();
+
+  $sql = "SELECT Username, Email FROM user WHERE ID = ? LIMIT 1";
+
+  $data = my_query('i', array(&$userID), $sql);
+  $uname = $data['Username'];
+  $email = $data['Email'];
+
     $expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+3, date("Y"));
     $expDate = date("Y-m-d H:i:s",$expFormat);
     $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
+
+    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
     if ($SQL = $con->prepare("INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)"))
     {
       $SQL->bind_param('iss',$userID,$key,$expDate);
@@ -37,7 +38,6 @@ function sendPasswordEmail($userID)
       $subject = "Reset Password";
       @mail($email,$subject,$message,$headers);
     }
-  }
 }
 
 function checkEmail($email)
