@@ -155,7 +155,9 @@ include('config2.php');
                               Error Incidents Occurred
                               <span class="tools pull-right">
                                 <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
+                                <form class="remove-error" method="post">
+                                  <a href="javascript:;" type ="submit" name="dismiss" class="icon-remove"></a>
+                                </form>
                             </span>
                           </header>
                           <div class="panel-body profile-activity">
