@@ -197,8 +197,8 @@
                         $pdo = Database::connect();
                         $sql = 'SELECT * FROM jserrors ORDER BY ID DESC';
    
-                        foreach ($pdo->query($sql) as $row) {          
-
+                        foreach ($pdo->query($sql) as $row) {  
+                        $msgBody = $row['message'];        
                            echo '<tr>';
                            echo  '<td> [client: '. $row['userIP'] .'] referer: '. $row['url'] .'</td>';
                            echo '<td>'. $row['line'] .'</td>';
@@ -257,7 +257,7 @@
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
          sOut += '<tr><td>Line Number:</td><td>'+aData[2]+'</td></tr>';
          sOut += '<tr><td>Link to error:</td><td>here</td></tr>';
-         sOut += '<tr><td>Additional info:</td><td>details, images, etc</td></tr>';
+         sOut += '<tr><td>Additional info:</td><td>'+<?php echo $msgBody; ?>+'</td></tr>';
          sOut += '</table>';
 
          return sOut;
