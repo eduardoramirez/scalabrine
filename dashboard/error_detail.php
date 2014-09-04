@@ -27,6 +27,10 @@
     <link href="/dashboard/css/style.css" rel="stylesheet">
     <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
 
+
+        <link type="text/css" rel="stylesheet" href="/comments/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -340,6 +344,17 @@ $id_post = "1"; //the post or the page id
 }
 ?>
 
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/dashboard/js/jquery.js"></script>
+    <script src="/dashboard/js/bootstrap.min.js"></script>
+    <script src="/dashboard/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/dashboard/js/jquery.scrollTo.min.js"></script>
+    <script src="/dashboard/js/jquery.nicescroll.js"></script>
+    <script src="/dashboard/js/respond.min.js" ></script>
+
+    <!--common script for all pages-->
+    <script src="/dashboard/js/common-scripts.js"></script>
+
 <script type="text/javascript">
    $(function(){ 
         //alert(event.timeStamp);
@@ -393,16 +408,6 @@ $id_post = "1"; //the post or the page id
     });
 </script>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="/dashboard/js/jquery.js"></script>
-    <script src="/dashboard/js/bootstrap.min.js"></script>
-    <script src="/dashboard/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="/dashboard/js/jquery.scrollTo.min.js"></script>
-    <script src="/dashboard/js/jquery.nicescroll.js"></script>
-    <script src="/dashboard/js/respond.min.js" ></script>
-
-    <!--common script for all pages-->
-    <script src="/dashboard/js/common-scripts.js"></script>
 
   </body>
 </html>
