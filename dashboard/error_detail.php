@@ -31,6 +31,9 @@
         <link type="text/css" rel="stylesheet" href="/comments/css/style.css">
         <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
 
+        <link type="text/css" rel="stylesheet" href="/rating/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -207,6 +210,7 @@ include('config2.php');
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
                                   $date = $affcom['date'];
+                                  $post_id = $affcom['id'];
 
                                   // Get gravatar Image 
                                   // https://fr.gravatar.com/site/implement/images/php/
@@ -217,12 +221,40 @@ include('config2.php');
                               ?>
 
                                   <!-- Comment -->
-                                  <div class="msg-time-chat">
+                                  <div class="msg-time-chat" id="<?php echo $post_id; ?>">
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
                                       <div class="message-body msg-in">
                                           <span class="arrow"></span>
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
+
+        <div class="box-result-cnt">
+            <?php
+                $query = mysql_query("SELECT * FROM ratings where id_post='$post_id'"); 
+                while($data = mysql_fetch_assoc($query)){
+                    $rate_db[] = $data;
+                    $sum_rates[] = $data['rate'];
+                }
+                if(@count($rate_db)){
+                    $rate_times = count($rate_db);
+                    $sum_rates = array_sum($sum_rates);
+                    $rate_value = $sum_rates/$rate_times;
+                    $rate_bg = (($rate_value)/5)*100;
+                }else{
+                    $rate_times = 0;
+                    $rate_value = 0;
+                    $rate_bg = 0;
+                }
+            ?>
+
+            <div class="rate-result-cnt">
+                <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
+                <div class="rate-stars"></div>
+            </div>
+
+
+        </div><!-- /rate-result-cnt -->
+<!--
                                               <p>
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star-empty"></i>
@@ -230,6 +262,8 @@ include('config2.php');
                                                 <i class="icon-star-empty"></i>
                                                 <i class="icon-star-empty"></i>
                                               </p>
+-->
+
                                               <p><?php echo $comment; ?></p>
                                           </div>
                                       </div>
@@ -250,6 +284,14 @@ include('config2.php');
         <span>Write a comment ...</span>
     </div>
     <div class="new-com-cnt">
+            <div class="rate-ex3-cnt">
+            <div id="1" class="rate-btn-1 rate-btn"></div>
+            <div id="2" class="rate-btn-2 rate-btn"></div>
+            <div id="3" class="rate-btn-3 rate-btn"></div>
+            <div id="4" class="rate-btn-4 rate-btn"></div>
+            <div id="5" class="rate-btn-5 rate-btn"></div>
+        </div>
+        <br>
         <input type="hidden" id="name-com" name="name-com" value="<?php echo $_SESSION['username']; ?>" />
         <input type="hidden" id="mail-com" name="mail-com" value="<?php echo $_SESSION['email']; ?>" />
         <textarea class="the-new-com"></textarea>
@@ -258,7 +300,7 @@ include('config2.php');
     </div>
     <div class="clear"></div>
 
-
+<!--
                                   <div class="form-group">
                                       <div class="pull-right chat-features">
                                           <a href="javascript:;">
@@ -274,7 +316,7 @@ include('config2.php');
                                           <a href="javascript:;" class="btn btn-danger">Send</a>
                                       </div>
                                   </div>
-
+-->
                               </div>
                           </div>
                       </div>
@@ -364,6 +406,35 @@ include('config2.php');
     });
 </script>
 
+
+    <script>
+        // rating script
+        $(function(){ 
+            $('.rate-btn').hover(function(){
+                $('.rate-btn').removeClass('rate-btn-hover');
+                var therate = $(this).attr('id');
+                for (var i = therate; i >= 0; i--) {
+                    $('.rate-btn-'+i).addClass('rate-btn-hover');
+                };
+            });
+                            
+            $('.rate-btn').click(function(){    
+                var therate = $(this).attr('id');
+                var dataRate = 'act=rate&post_id=<?php echo $post_id+1; ?>&rate='+therate; //
+                $('.rate-btn').removeClass('rate-btn-active');
+                for (var i = therate; i >= 0; i--) {
+                    $('.rate-btn-'+i).addClass('rate-btn-active');
+                };
+                $.ajax({
+                    type : "POST",
+                    url : "/rating/ajax.php",
+                    data: dataRate,
+                    success:function(){}
+                });
+                
+            });
+        });
+    </script>
 
   </body>
 </html>
