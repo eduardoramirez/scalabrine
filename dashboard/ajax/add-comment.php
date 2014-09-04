@@ -1,4 +1,5 @@
 <?php
+session_start();
 extract($_POST);
 if($_POST['act'] == 'add-com'):
 	$name = htmlentities($name);
