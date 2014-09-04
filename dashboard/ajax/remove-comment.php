@@ -10,7 +10,5 @@ if($_POST['act'] == 'rm-com')
   //insert the comment in the database
   my_update('i', array(&$id_post), "DELETE FROM comments WHERE id=?");
   my_update('i', array(&$id_post), "DELETE FROM ratings WHERE id_post=?");
-
-
 }
 ?>
