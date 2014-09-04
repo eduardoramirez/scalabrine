@@ -116,11 +116,12 @@ var Script = function () {
 }();
 
 
-
 $("#star1").click(
+    function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-    alert("hr");
+        alert( "Handler for .click() called." );
+    }
 );
 
 $("#star2").click(
