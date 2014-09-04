@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="error collecting script">
+    <meta name="description" content="error tracking script">
 
     <title>scalabrine | error tracking script</title>
 
@@ -94,7 +94,7 @@
                </li>
 
                <li>
-                  <a class="active" href="error_detail">
+                  <a href="error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
@@ -113,7 +113,7 @@
                   </a>
                </li>
                <li>
-                  <a href="/dashboard/config">
+                  <a class="active" href="/dashboard/config">
                      <i class="icon-file"></i>
                      <span>error tracking script</span>
                   </a>
