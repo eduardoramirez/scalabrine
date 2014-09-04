@@ -259,7 +259,6 @@ include('config2.php');
             <div id="3" class="rate-btn-3 rate-btn"></div>
             <div id="4" class="rate-btn-4 rate-btn"></div>
             <div id="5" class="rate-btn-5 rate-btn"></div>
-            </div>
         </div>
         <input type="hidden" id="name-com" name="name-com" value="<?php echo $_SESSION['username']; ?>" />
         <input type="hidden" id="mail-com" name="mail-com" value="<?php echo $_SESSION['email']; ?>" />
@@ -389,7 +388,7 @@ include('config2.php');
                             
             $('.rate-btn').click(function(){    
                 var therate = $(this).attr('id');
-                var dataRate = 'act=rate&post_id=<?php echo $post_id; ?>&rate='+therate; //
+                var dataRate = 'act=rate&post_id=<?php echo $id_post; ?>&rate='+therate; //
                 $('.rate-btn').removeClass('rate-btn-active');
                 for (var i = therate; i >= 0; i--) {
                     $('.rate-btn-'+i).addClass('rate-btn-active');
