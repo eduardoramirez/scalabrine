@@ -123,6 +123,27 @@ else{
       <div id="main-content">
         <div class="wrapper">
             <h3>Stats</h3>
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Organization</th>
+	          <th>Overall Usage</th>
+	          <th>Error Rates</th>
+                </tr>
+              </thead>
+              <tbody>
+		        <?php 
+					   require '../database.php';
+	
+	               $sql = 'SELECT * FROM organization ORDER BY name DESC';
+	
+	                foreach ($con->query($sql) as $row) {
+		   		echo '<tr>';
+			   	echo '<td>'. $row['name'] . '</td>';
+			   	echo '</tr>';
+			}
+			?>
+		</tbody>
         </div>
       </div>
       <!--main content end-->

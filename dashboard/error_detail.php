@@ -135,6 +135,12 @@
       </aside>
       <!--sidebar end-->
 
+<?php 
+// Connect to the database
+include('config2.php'); 
+//$id_post = "1"; //the post or the page id
+?>
+
       <!--main content start-->
       <div id="main-content">
           <div class="wrapper">
@@ -150,8 +156,17 @@
                             </span>
                           </header>
                           <div class="panel-body profile-activity">
-                              <h5 class="pull-right">21 August 2014</h5>
-                              <div class="activity terques">
+                              <!--<h5 class="pull-right">21 August 2014</h5>-->
+                              <?php 
+                                  $errorDetailID = $_SESSION['orgID'];
+                                  $sql = mysql_query("SELECT * FROM jserrors WHERE OrgID='$errorDetailID' ORDER BY ID DESC") or die(mysql_error());;
+                                  while($affcom = mysql_fetch_assoc($sql)){ 
+                                  $message = $affcom['message'];
+                                  $time = $affcom['time'];
+                                  $id_post = $affcom['ID'];
+                              ?>
+
+                              <div class="activity terques" id="<?php echo $id_post; ?>">
                                   <span>
                                       <i class="icon-bullhorn"></i>
                                   </span>
@@ -160,58 +175,15 @@
                                           <div class="panel-body">
                                               <div class="arrow"></div>
                                               <i class=" icon-time"></i>
-                                              <h4>10:00 AM</h4>
-                                              <p>Everyone likes to qq for no reason.</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="activity alt purple">
-                                  <span>
-                                      <i class="icon-bullhorn"></i>
-                                  </span>
-                                  <div class="activity-desk">
-                                      <div class="panel">
-                                          <div class="panel-body">
-                                              <div class="arrow-alt"></div>
-                                              <i class=" icon-time"></i>
-                                              <h4>12:21 PM</h4>
-                                              <p>trololol more problems</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="activity blue">
-                                  <span>
-                                      <i class="icon-bullhorn"></i>
-                                  </span>
-                                  <div class="activity-desk">
-                                      <div class="panel">
-                                          <div class="panel-body">
-                                              <div class="arrow"></div>
-                                              <i class=" icon-time"></i>
-                                              <h4>13:11 PM</h4>
-                                              <p>System crashed. Report #1337.</p>
+                                              <h4><?php echo $time; ?></h4>
+                                              <p><?php echo $message; ?></p>
                                           </div>
                                       </div>
                                   </div>
                               </div>
 
-                              <div class="activity alt green">
-                                  <span>
-                                      <i class="icon-bullhorn"></i>
-                                  </span>
-                                  <div class="activity-desk">
-                                      <div class="panel">
-                                          <div class="panel-body">
-                                              <div class="arrow-alt"></div>
-                                              <i class=" icon-time"></i>
-                                              <h4>14:04 PM</h4>
-                                              <p>gg.</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                              <?php } ?>
+
 
                           </div>
                       </div>
@@ -227,11 +199,6 @@
                           </header>
                           <div class="panel-body">
                               <div class="timeline-messages">
-<?php 
-// Connect to the database
-include('config2.php'); 
-$id_post = "1"; //the post or the page id
-?>
 
                               <?php 
                                   $sql = mysql_query("SELECT * FROM comments WHERE id_post = '$id_post'") or die(mysql_error());;
