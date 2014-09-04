@@ -13,3 +13,5 @@ function recordEvent($eventType, $userID){
 
     my_update('iss', $param, $sql);
 }
+
+?>
