@@ -106,7 +106,7 @@
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
-                     <span>crud</span>
+                     <span>User Management</span>
                   </a>
                </li>
                <li>
