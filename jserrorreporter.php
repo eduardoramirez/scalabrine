@@ -155,6 +155,7 @@ function badCode()
          <div class="wrapper">
           <div class="row">
           <h3>Locally Test the Error Tracking Service</h3>
+          <br>
           <form action="#">
           	<label>Do you dare press it?
             <button class="btn btn-success" type="submit" onclick="badCode();" >Uh oh</button>
