@@ -131,7 +131,7 @@ else{
          <div class="wrapper">
 
     		<div class="row">
-    			<h3>User Management</h3>
+    			<h3>Client Management</h3>
     		</div>
 			<div class="row">
 				<p>

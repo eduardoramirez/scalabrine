@@ -163,14 +163,14 @@ else{
 
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Create a User</h3>
+		    			<h3>Create an Organization</h3>
 		    		</div>
     		
 	    			<form class="form-horizontal" action="create" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-					    <label class="control-label">Username</label>
+					    <label class="control-label">Organization Name</label>
 					    <div class="controls">
-					      	<input name="name" type="text"  placeholder="Username" value="<?php echo !empty($name)?$name:'';?>">
+					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
 					      		<span class="help-inline"><?php echo $nameError;?></span>
 					      	<?php endif; ?>
