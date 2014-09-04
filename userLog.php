@@ -10,7 +10,7 @@ function recordEvent($eventType, $userID){
 
     $param = array(&$userID, &$eventType, &$date);
 
-    my_update('isd', $param, $sql);
+    my_update('iss', $param, $sql);
 }
 
 ?>
