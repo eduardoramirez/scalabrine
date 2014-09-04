@@ -91,19 +91,19 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a href="index">
+                  <a class="active" href="index">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
                </li>
-
+<!--
                <li>
                   <a class="active" href="error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
                </li>
-
+-->
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
@@ -138,7 +138,7 @@
 <?php 
 // Connect to the database
 include('config2.php'); 
-//$id_post = "1"; //the post or the page id
+
 ?>
 
       <!--main content start-->

@@ -186,14 +186,14 @@
                      <span>dashboard</span>
                   </a>
                </li>
-
+<!--
                <li>
                   <a href="/dashboard/error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
                </li>
-
+-->
                <li>
                   <a class="active" href="/crud/index">
                      <i class="icon-gear"></i>
