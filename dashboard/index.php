@@ -95,14 +95,14 @@
                      <span>dashboard</span>
                   </a>
                </li>
-
+<!--
                <li>
                   <a href="/dashboard/error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
                </li>
-
+-->
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
@@ -193,6 +193,7 @@
                      <table class="display table table-bordered" id="hidden-table-info">
                         <thead>
                            <tr>
+                              <th>ID</th>
                               <th>User Agent</th>
                               <th>URL</th>
                               <th>Line Number</th>
@@ -210,6 +211,7 @@
    
                         foreach ($pdo->query($sql) as $row) {         
                            echo '<tr>';
+                           echo '<td>'. $row['ID'] .'</td>';
                            echo '<td>'. $row['userAgent'] .'</td>';
                            echo '<td>'. $row['url'] .'</td>';
                            echo '<td>'. $row['line'] .'</td>';
@@ -269,12 +271,13 @@
       {
          var aData = oTable.fnGetData( nTr );
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-         sOut += '<tr><td>User Agent:</td><td>'+aData[1]+'</td></tr>';
-         sOut += '<tr><td>URL:</td><td>'+aData[2]+'</td></tr>';
-         sOut += '<tr><td>Line Number:</td><td>'+aData[3]+'</td></tr>';
-         sOut += '<tr><td>Message:</td><td>'+aData[4]+'</td></tr>';
-         sOut += '<tr><td>Client IP:</td><td>'+aData[5]+'</td></tr>';
-         sOut += '<tr><td>Time:</td><td>'+aData[6]+'</td></tr>';
+         sOut += '<tr><td>Error Detail URL:</td><td><a href="/dashboard/error_detail?id='+aData[1]+'">click here</a></td></tr>';
+         sOut += '<tr><td>User Agent:</td><td>'+aData[2]+'</td></tr>';
+         sOut += '<tr><td>Origin:</td><td>'+aData[3]+'</td></tr>';
+         sOut += '<tr><td>Line Number:</td><td>'+aData[4]+'</td></tr>';
+         sOut += '<tr><td>Message:</td><td>'+aData[5]+'</td></tr>';
+         sOut += '<tr><td>Client IP:</td><td>'+aData[6]+'</td></tr>';
+         sOut += '<tr><td>Time:</td><td>'+aData[7]+'</td></tr>';
          sOut += '</table>';
 
          return sOut;

@@ -92,14 +92,14 @@
                      <span>dashboard</span>
                   </a>
                </li>
-
+<!--
                <li>
                   <a href="error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
                </li>
-
+-->
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
@@ -136,7 +136,7 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <div class="col-lg-4">
+         <div class="col-lg-8">
                   <!--table start-->
                   <div class="panel">
                      <div class="revenue-head">
@@ -146,7 +146,7 @@
                         <h3>Paste this script into your site to begin tracking errors</h3>
                      </div>
                      <div class="panel-body">
-                        <div class="col-lg-6 col-sm-6 text-left">
+                        <div class="col-lg-8 col-sm-8 text-left">
                            <?php 
                               $currOrgID=$_SESSION['orgID'];
          echo 

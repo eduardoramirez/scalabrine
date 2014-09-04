@@ -91,19 +91,19 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a href="index">
+                  <a class="active" href="index">
                      <i class="icon-dashboard"></i>
                      <span>dashboard</span>
                   </a>
                </li>
-
+<!--
                <li>
                   <a class="active" href="error_detail">
                      <i class="icon-tasks"></i>
                      <span>error details</span>
                   </a>
                </li>
-
+-->
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
@@ -138,7 +138,7 @@
 <?php 
 // Connect to the database
 include('config2.php'); 
-//$id_post = "1"; //the post or the page id
+
 ?>
 
       <!--main content start-->
@@ -158,8 +158,8 @@ include('config2.php');
                           <div class="panel-body profile-activity">
                               <!--<h5 class="pull-right">21 August 2014</h5>-->
                               <?php 
-                                  $errorDetailID = $_SESSION['orgID'];
-                                  $sql = mysql_query("SELECT * FROM jserrors WHERE OrgID='$errorDetailID' ORDER BY ID DESC") or die(mysql_error());;
+                                  $errorDetailID = $_GET['id'];
+                                  $sql = mysql_query("SELECT * FROM jserrors WHERE ID='$errorDetailID'") or die(mysql_error());;
                                   while($affcom = mysql_fetch_assoc($sql)){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];

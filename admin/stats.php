@@ -144,6 +144,7 @@ else{
 			}
 			?>
 		</tbody>
+	     </table>
         </div>
       </div>
       <!--main content end-->
