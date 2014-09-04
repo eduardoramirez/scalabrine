@@ -27,7 +27,6 @@ function sendPasswordEmail($userID)
   $message .= "Thanks,\r\n\r\n";
   $message .= "-- scalabrine";
   $headers .= "From: Scalabrine <scalabrinecse@gmail.com> \n";
-  $headers .= "To: $email\n";
   $headers .= "X-Mailer: PHP\n"; // mailer
   $subject = "Reset Password";
   @mail($email,$subject,$message,$headers);
@@ -76,8 +75,8 @@ function updateUserPassword($userID, $password, $key)
   ]; 
 
   $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+  echo $userID;
 
-  echo $h_password;
   my_update('si', array(&$h_password, &$userID), "UPDATE user SET Password = ? WHERE ID = ?");
 
   my_update('s', array(&$key), "DELETE FROM `recoveryemails` WHERE `Key` = ?");
