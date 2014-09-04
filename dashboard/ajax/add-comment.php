@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
+
 session_start();
 extract($_POST);
 if($_POST['act'] == 'add-com'):
@@ -29,10 +34,9 @@ if($_POST['act'] == 'add-com'):
   
   $err = my_update('sssi', array(&$name, &$email, &$comment, &$id_post), $sql);
 
-  if($err)
+  if(!$err)
   {
 ?>
-
     <div class="cmt-cnt">
     	<img src="<?php echo $grav_url; ?>" alt="" />
 		<div class="thecom">
