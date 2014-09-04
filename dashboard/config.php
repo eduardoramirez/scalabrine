@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="error collecting script">
 
-    <title>scalabrine | error detail</title>
+    <title>scalabrine | error tracking script</title>
 
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
@@ -160,13 +160,6 @@
            </tr>
          </table>
       </div>
-      
-      <!-- Footer -->
-      <footer>
-         <div id="footer">
-            &copy; scalabrine.
-         </div>
-      </footer>
    
       </div>
       <!--main content end-->
