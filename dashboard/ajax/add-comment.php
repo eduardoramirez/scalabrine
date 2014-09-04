@@ -27,7 +27,7 @@ if($_POST['act'] == 'add-com'):
   //insert the comment in the database
   $sql = "INSERT INTO comments (name, email, comment, id_post) VALUES(?, ?, ?, ?)");
   
-  $err = my_update('', array(&$name, &$email, &$comment, &$id_post), );
+  $err = my_update('', array(&$name, &$email, &$comment, &$id_post), $sql);
 
   if($err)
   {
