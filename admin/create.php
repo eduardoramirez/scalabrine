@@ -135,7 +135,7 @@ else{
                  <li>
                      <a href="/admin/audit">
                          <i class="icon-exclamation"></i>
-                         <span>audit log</span>
+                         <span>session log</span>
                      </a>
                  </li>
                  <li>
