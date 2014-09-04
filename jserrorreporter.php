@@ -122,7 +122,7 @@ function badCode()
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
-                     <span>crud</span>
+                     <span>User Management</span>
                   </a>
                </li>
                <li>
@@ -145,33 +145,32 @@ function badCode()
       <!--sidebar end-->
       
       <!--main content start-->
-      <div id="main-content">
+      <div id="crud-main-content">
          <div class="wrapper">
-<div class="row">
-<h3>JavaScript - Silent Errors, Deadly Errors</h3>
-<form action="#">
-	<label>Do you dare press it?
-	<input type="button" value="BOOM!" onclick="badCode();" />
-	</label>
-</form>
-<br /><br />
-<a href="http://ajaxref.com/ch2/jserror.txt">See error file</a>
+          <div class="row">
+          <h3>JavaScript - Silent Errors, Deadly Errors</h3>
+          <form action="#">
+          	<label>Do you dare press it?
+          	<input type="button" value="BOOM!" onclick="badCode();" />
+          	</label>
+          </form>
+          <br /><br />
 
-   	</div> 
+         	</div> 
+      	</div>
     	</div>
-    	</div>
-    	<!-- /container -->
-          <!--main content end-->
-      <!--footer start-->
-      <footer class="site-footer">
-          <div class="text-center">
-              2014 &copy; scalabrine.
-              <a href="#" class="go-top">
-                  <i class="icon-angle-up"></i>
-              </a>
-          </div>
-      </footer>
-      <!--footer end-->
+              	<!-- /container -->
+                    <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2014 &copy; scalabrine.
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
       </div>
 <?php
 }
