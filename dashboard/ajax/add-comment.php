@@ -1,20 +1,13 @@
 <?php
-
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
-
 session_start();
 extract($_POST);
 if($_POST['act'] == 'add-com'):
+	$name = htmlentities($name);
+    $email = htmlentities($email);
+    $comment = htmlentities($comment);
 
-  // Connect to the database
-  require('../../database.php');
-	
-  $name = sanitize($name);
-  $email = sanitize($email);
-  $comment = sanitize($comment);
-
+    // Connect to the database
+	include('../config2.php'); 
 	$name=$_SESSION['username'];
 	$email=$_SESSION['email'];
 	// Get gravatar Image 
@@ -23,20 +16,12 @@ if($_POST['act'] == 'add-com'):
 	$size = 35;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . $default . "&s=" . $size;
 	date_default_timezone_set('America/Los_Angeles');
-	
-  if(strlen($name) <= '1')
-  { 
-    $name = 'Guest';
-  }
-
-  //insert the comment in the database
-  $sql = "INSERT INTO comments (name, email, comment, id_post) VALUES(?, ?, ?, ?)");
-  
-  $err = my_update('sssi', array(&$name, &$email, &$comment, &$id_post), $sql);
-
-  if(!$err)
-  {
+	if(strlen($name) <= '1'){ $name = 'Guest';}
+    //insert the comment in the database
+    mysql_query("INSERT INTO comments (name, email, comment, id_post)VALUES( '$name', '$email', '$comment', '$id_post')");
+    if(!mysql_errno()){
 ?>
+
     <div class="cmt-cnt">
     	<img src="<?php echo $grav_url; ?>" alt="" />
 		<div class="thecom">
@@ -46,7 +31,5 @@ if($_POST['act'] == 'add-com'):
 	    </div>
 	</div><!-- end "cmt-cnt" -->
 
-<?php 
-  } 
-?>
+	<?php } ?>
 <?php endif; ?>
