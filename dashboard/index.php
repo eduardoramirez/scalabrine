@@ -1,10 +1,10 @@
 <?php
    session_start();
-   //if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-   //   header("Location: /dashboard/login");
-   //}
-   //else
-   //{
+   if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+      header("Location: /dashboard/login");
+   }
+   else
+   {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -245,7 +245,7 @@
       <!--footer end-->
    </div>
 <?php
-//   }
+   }
 ?>
 
    <!-- js placed at the end of the document so the pages load faster -->
