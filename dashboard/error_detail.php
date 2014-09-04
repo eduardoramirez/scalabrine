@@ -412,7 +412,8 @@ include('config2.php');
               data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
               success: function(html){
                   alert("success: " + theId.val() + " " + theName.val() + " " + theMail.val());
-                  $('.msg-time-chat').remove();
+                  var toRm = "#"+theId.val();
+                  $(toRm).remove();
               }  
           });
             
