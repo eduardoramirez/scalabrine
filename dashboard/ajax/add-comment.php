@@ -28,6 +28,10 @@ if($_POST['act'] == 'add-com'):
 	        <h5><?php echo $name; ?></h5><span  class="com-dt"><?php echo date('d-m-Y H:i'); ?></span>
 	        <br/>
 	       	<p><?php echo $comment; ?></p>
+          <span class="tools pull-right">
+          <a href="javascript:;" class="icon-chevron-down"></a>
+          <!-- <a href="javascript:;" class="icon-remove"></a> -->
+          </span>
 	    </div>
 	</div><!-- end "cmt-cnt" -->
 
