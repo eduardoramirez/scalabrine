@@ -136,7 +136,7 @@
   <!-- js placed at the end of the document so the pages load faster -->
     <script src="/min/?f=/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/min/?f=/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
     
      <!--common script for all pages-->
     <script src="/min/?f=/js/common-scripts.js"></script>
