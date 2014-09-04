@@ -133,39 +133,33 @@
 
       <!--main content start-->
       <div id="main-content">
-      <!-- Hero -->
-      <section id="hero">
-         <h2>configuration</h2>
-         <p>Include the appropriate JavaScript in every page of your web application.</p>
-      </section>
+      
       <!-- Main -->
-      <article>
-         <div>
-             <?php
-             function getScriptName($name){
-                 return "http://104.131.195.41:9091/track/" . $_SESSION['username'] 
-                     . "_" . $name . ".js";    
-             }
-             ?>
+      <div class="wrapper">
+         <?php
+         function getScriptName($name){
+              return "http://104.131.195.41:9091/track/" . $_SESSION['username'] 
+                  . "_" . $name . ".js";    
+         }
+         ?>
 
-            <table class="table table-bordered table-striped table-responsive">
-              <th>Organization</th>
-              <th>Script</th>
-              <tr>
-                <td>app1</td>
-                <td><?php echo getScriptName("app1"); ?></td>
-              </tr>
-              <tr>
-                <td>app2</td>
-                <td><?php echo getScriptName("app2"); ?></td>
-              </tr>
-              <tr>
-                <td>app3</td>
-                <td><?php echo getScriptName("app3"); ?></td>
-              </tr>
-            </table>
-         </div>
-      </article>
+         <table class="table table-bordered table-striped table-responsive">
+           <th>Organization</th>
+           <th>Script</th>
+           <tr>
+             <td>app1</td>
+             <td><?php echo getScriptName("app1"); ?></td>
+           </tr>
+           <tr>
+             <td>app2</td>
+             <td><?php echo getScriptName("app2"); ?></td>
+           </tr>
+           <tr>
+             <td>app3</td>
+             <td><?php echo getScriptName("app3"); ?></td>
+           </tr>
+         </table>
+      </div>
       
       <!-- Footer -->
       <footer>
