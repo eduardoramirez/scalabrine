@@ -1,6 +1,8 @@
 <?php
 require("../database.php");
 
+define(PW_SALT,'(+3%_');
+
 function sendPasswordEmail($userID)
 {
   $sql = "SELECT Username, Email FROM user WHERE ID = ? LIMIT 1";
