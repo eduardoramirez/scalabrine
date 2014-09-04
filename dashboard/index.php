@@ -205,7 +205,8 @@
                     <?php 
                         include 'database.php';
                         $pdo = Database::connect();
-                        $sql = 'SELECT * FROM jserrors ORDER BY ID DESC';
+                        $orgid = $_SESSION['OrgID'];
+                        $sql = 'SELECT * FROM jserrors WHERE OrgID="$orgid" ORDER BY ID DESC';
    
                         foreach ($pdo->query($sql) as $row) {         
                            echo '<tr>';
