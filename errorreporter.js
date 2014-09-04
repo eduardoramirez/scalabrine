@@ -60,6 +60,8 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
 
   payload += "&line=" + ErrorTracking.encodeValue(lineNumber);
 
+  payload += "&orgID=1";
+
   /* submit error message  */
   sendRequest(ErrorTracking.errorReportingURL,payload);
 
