@@ -136,7 +136,7 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <div class="col-lg-4">
+         <div class="col-lg-8">
                   <!--table start-->
                   <div class="panel">
                      <div class="revenue-head">
