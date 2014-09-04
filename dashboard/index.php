@@ -258,7 +258,6 @@
       /* Formating function for row details */
       function fnFormatDetails ( oTable, nTr )
       {
-         var msb = <?php echo $msgBody; ?>;
          var aData = oTable.fnGetData( nTr );
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
          sOut += '<tr><td>Line Number:</td><td>'+aData[2]+'</td></tr>';
