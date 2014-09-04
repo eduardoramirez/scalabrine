@@ -232,7 +232,7 @@ include('config2.php');
                                                 <input type="hidden" id="name-rm-com" name="name-rm-com" value="<?php echo $name ?>" />
                                                 <input type="hidden" id="mail-rm-com" name="mail-rm-com" value="<?php echo $email ?>" />
                                                 <input type="hidden" id="id-rm-com" name="id-rm-com" value="<?php echo $post_id ?>" />
-                                                <i class="icon-gear"></i>  
+                                                <i class="icon-remove"></i>  
                                               </div>
                                           <?php 
                                            }
