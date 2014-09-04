@@ -227,6 +227,34 @@ include('config2.php');
                                           <span class="arrow"></span>
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
+
+        <div class="box-result-cnt">
+            <?php
+                $query = mysql_query("SELECT * FROM ratings where id_post='$post_id'"); 
+                while($data = mysql_fetch_assoc($query)){
+                    $rate_db[] = $data;
+                    $sum_rates[] = $data['rate'];
+                }
+                if(@count($rate_db)){
+                    $rate_times = count($rate_db);
+                    $sum_rates = array_sum($sum_rates);
+                    $rate_value = $sum_rates/$rate_times;
+                    $rate_bg = (($rate_value)/5)*100;
+                }else{
+                    $rate_times = 0;
+                    $rate_value = 0;
+                    $rate_bg = 0;
+                }
+            ?>
+
+            <div class="rate-result-cnt">
+                <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
+                <div class="rate-stars"></div>
+            </div>
+
+
+        </div><!-- /rate-result-cnt -->
+
                                               <p>
                                                 <i class="icon-star"></i>
                                                 <i class="icon-star-empty"></i>
@@ -234,6 +262,8 @@ include('config2.php');
                                                 <i class="icon-star-empty"></i>
                                                 <i class="icon-star-empty"></i>
                                               </p>
+
+
                                               <p><?php echo $comment; ?></p>
                                           </div>
                                       </div>
@@ -269,7 +299,7 @@ include('config2.php');
     </div>
     <div class="clear"></div>
 
-
+<!--
                                   <div class="form-group">
                                       <div class="pull-right chat-features">
                                           <a href="javascript:;">
@@ -285,7 +315,7 @@ include('config2.php');
                                           <a href="javascript:;" class="btn btn-danger">Send</a>
                                       </div>
                                   </div>
-
+->
                               </div>
                           </div>
                       </div>
