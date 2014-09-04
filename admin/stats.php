@@ -123,6 +123,16 @@ else{
       <div id="main-content">
         <div class="wrapper">
             <h3>Stats</h3>
+            <table class="table table-striped table-bordered">
+		              <thead>
+		                <tr>
+		                  <th>Organization</th>
+                          <th>Overall Usage</th>
+                          <th>Error Rates</th>
+		                </tr>
+		              </thead>
+		              <tbody>
+				      </tbody>
         </div>
       </div>
       <!--main content end-->
