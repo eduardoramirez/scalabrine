@@ -119,7 +119,7 @@ function lit(st)
 {
     $(st).toggleClass("icon-star-empty");
     $(st).toggleClass("icon-star");
-}
+};
 
 $("#star1").click(
         $(this).toggleClass("icon-star-empty");
