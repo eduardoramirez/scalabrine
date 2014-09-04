@@ -135,6 +135,7 @@ else{
 		              <thead>
 		                <tr>
 		                  <th>Organization</th>
+                            <th>Action</th>
 		                </tr>
 		              </thead>
 		              <tbody>
