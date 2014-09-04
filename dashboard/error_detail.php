@@ -210,6 +210,7 @@ include('config2.php');
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
                                   $date = $affcom['date'];
+                                  $post_id = $affcom['ID'];
 
                                   // Get gravatar Image 
                                   // https://fr.gravatar.com/site/implement/images/php/
@@ -220,7 +221,7 @@ include('config2.php');
                               ?>
 
                                   <!-- Comment -->
-                                  <div class="msg-time-chat">
+                                  <div class="msg-time-chat" id="<?php echo $post_id; ?>">
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
                                       <div class="message-body msg-in">
                                           <span class="arrow"></span>
@@ -388,7 +389,7 @@ include('config2.php');
                             
             $('.rate-btn').click(function(){    
                 var therate = $(this).attr('id');
-                var dataRate = 'act=rate&post_id=<?php echo $id_post; ?>&rate='+therate; //
+                var dataRate = 'act=rate&post_id=<?php echo $post_id+1; ?>&rate='+therate; //
                 $('.rate-btn').removeClass('rate-btn-active');
                 for (var i = therate; i >= 0; i--) {
                     $('.rate-btn-'+i).addClass('rate-btn-active');
