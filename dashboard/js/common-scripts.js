@@ -115,80 +115,35 @@ var Script = function () {
 
 }();
 
-var starlevel = 0;
 
 $("#star1").click(
     function(){
-        //$(this).toggleClass("icon-star-empty");
+        $(".chat-features")[0].reset();
+        $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-
-        if(starlevel > 1)
-        {
-            $("#star2").toggleClass("icon-star-empty");
-            $("#star2").toggleClass("icon-star");
-            $("#star3").toggleClass("icon-star-empty");
-            $("#star3").toggleClass("icon-star");
-            $("#star4").toggleClass("icon-star-empty");
-            $("#star4").toggleClass("icon-star");
-            $("#star5").toggleClass("icon-star-empty");
-            $("#star5").toggleClass("icon-star");
-        }
-        else if(starlevel < 1)
-        {
-            //toggle lowers
-        }
-        else{}
-        starlevel = 1;
     }
 );
 
 $("#star2").click(
     function(){
+        $(".chat-features")[0].reset();
+        $("#star1").toggleClass("icon-star-empty");
+        $("#star1").toggleClass("icon-star");
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-        if(starlevel > 2)
-        {
-            $("#star3").toggleClass("icon-star-empty");
-            $("#star3").toggleClass("icon-star");
-            $("#star4").toggleClass("icon-star-empty");
-            $("#star4").toggleClass("icon-star");
-            $("#star5").toggleClass("icon-star-empty");
-            $("#star5").toggleClass("icon-star");
-        }
-        else if(starlevel < 2)
-        {
-            //toggle lowers
-            $("#star1").toggleClass("icon-star-empty");
-            $("#star1").toggleClass("icon-star");
-        }
-        else{}
 
-        starlevel = 2;
     }
 );
 
 $("#star3").click(
     function(){
+        $(".chat-features")[0].reset();
+        $("#star1").toggleClass("icon-star-empty");
+        $("#star1").toggleClass("icon-star");
+        $("#star2").toggleClass("icon-star-empty");
+        $("#star2").toggleClass("icon-star");
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-        if(starlevel > 3)
-        {
-            $("#star4").toggleClass("icon-star-empty");
-            $("#star4").toggleClass("icon-star");
-            $("#star5").toggleClass("icon-star-empty");
-            $("#star5").toggleClass("icon-star");
-        }
-        else if(starlevel < 3)
-        {
-            //toggle lowers
-            $("#star1").toggleClass("icon-star-empty");
-            $("#star1").toggleClass("icon-star");
-            $("#star2").toggleClass("icon-star-empty");
-            $("#star2").toggleClass("icon-star");
-        }
-        else{}
-
-        starlevel = 3;
     }
 );
 
