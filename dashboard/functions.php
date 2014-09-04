@@ -45,11 +45,11 @@ function checkEmail($email)
   {
     //email was entered
     $email = trim($email);
-    my_query('s', array(&$email), "SELECT ID FROM user WHERE Email=? LIMIT 1");
+    $data = my_query('s', array(&$email), "SELECT ID FROM user WHERE Email=? LIMIT 1");
 
-    $numRows = getNumRows('s', array(&(trim($email))), "SELECT ID FROM user WHERE Email=? LIMIT 1");
+    $numRows = getNumRows('s', array(&$email), "SELECT ID FROM user WHERE Email=? LIMIT 1");
 
-    if ($numRows >= 1) return array('status'=>true,'userID'=>$userID);
+    if ($numRows >= 1) return array('status'=>true,'userID'=>$data['ID']);
     } else { return $error; }
   } else {
     //nothing was entered;
