@@ -44,7 +44,7 @@ function badCode()
   </head>
 
 
-   <body onload="badCode();">
+   <body>
 
    <div id="container" >
 
@@ -142,13 +142,13 @@ function badCode()
          <div class="wrapper">
 <div class="row">
 <h3>JavaScript - Silent Errors, Deadly Errors</h3>
-<!--
+
 <form action="#">
 	<label>Do you dare press it?
-	<input type="button" value="BOOM!" onload="badCode();" />
+	<input type="button" value="BOOM!" onclic="badCode();" />
 	</label>
 </form>
--->
+
 <br /><br />
 <a href="http://ajaxref.com/ch2/jserror.txt">See error file</a>
 
