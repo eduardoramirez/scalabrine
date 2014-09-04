@@ -6,12 +6,17 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 }
 else{
 
-    $username = $_SESSION['username'];
-    $data = my_query('s', array(&$username), "SELECT id FROM user WHERE Username = ?");
-    $id = $data['id'];
+    try{
+        $username = $_SESSION['username'];
+        $data = my_query('s', array(&$username), "SELECT id FROM user WHERE Username = ?");
+        $id = $data['id'];
 
-    require '../userLog.php';
-    recordEvent('log out', $id);
+        require '../userLog.php';
+        recordEvent('log out', $id);
+    }
+    catch (Exception $e){
+        echo $e->getMessage();
+    }
 
   if(session_destroy())
   {
