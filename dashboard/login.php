@@ -12,7 +12,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 else{ 
 
 require('functions.php');
-require("../database.php");
 
 ////////////
 // listener for the reset password button
@@ -22,6 +21,7 @@ if(isset($_POST['reset_pass']))
   $result = checkEmail($_POST['email']);
   if ($result['status'])
   {
+    echo "LOLOLOLOL";
     // email exists -- send email to user
     sendPasswordEmail($result['userID']);
     $_SESSION['validemail'] = true;
