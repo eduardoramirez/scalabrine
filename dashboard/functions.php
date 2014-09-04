@@ -19,7 +19,7 @@ function sendPasswordEmail($userID)
   $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
 
     //$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-    my_update('iss', array(&$userID, &$key, &$expDate), "INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)";
+    my_update('iss', array(&$userID, &$key, &$expDate), "INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)");
 
      // $SQL->bind_param('iss',$userID,$key,$expDate);
      // $SQL->execute();
