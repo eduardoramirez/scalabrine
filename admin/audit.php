@@ -126,6 +126,9 @@ else{
     		<div class="row">
     			<h3>Session Log</h3>
     		</div>
+             <div class="row">
+                 <h5>displaying 25 most recent session events</h5>
+             </div>
 			<div class="row">
 				<table class="table table-striped table-bordered">
 		              <thead>
