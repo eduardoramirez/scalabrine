@@ -68,7 +68,7 @@ function checkEmailKey($key,$userID)
   return false;
 }
 
-function updateUserPassword($userID,$password, $key)
+function updateUserPassword($userID, $password, $key)
 {
   $options = [
     'cost' => 11,
@@ -77,7 +77,8 @@ function updateUserPassword($userID,$password, $key)
 
   $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
 
-  my_update('si', array(&$h_password, &$userID), "UPDATE `user` SET `Password` = ? WHERE `ID` = ?");
+  echo $h_password;
+  my_update('si', array(&$h_password, &$userID), "UPDATE user SET Password = ? WHERE ID = ?");
 
   my_update('s', array(&$key), "DELETE FROM `recoveryemails` WHERE `Key` = ?");
 }

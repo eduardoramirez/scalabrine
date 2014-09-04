@@ -39,7 +39,7 @@ else
         {
           updateUserPassword($securityUser, $password, $_GET['email']);
           // let user know it was successful and redirect to login
-          header("Location: /dashboard/login");
+          //header("Location: /dashboard/login");
         }
           
       }
