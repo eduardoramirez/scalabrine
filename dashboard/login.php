@@ -61,6 +61,9 @@ else if(isset($_POST['login']))
     $date = new DateTime();
     $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
+    require '../userLog.php';
+    recordEvent('log in', $data['id']);
+
     header("Location: /dashboard/index");
   }
   else
