@@ -120,7 +120,7 @@ $("#star1").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-        alert( "Handler for .click() called." );
+        //alert( "Handler for .click() called." );
     }
 );
 
