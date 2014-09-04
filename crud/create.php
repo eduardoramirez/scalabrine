@@ -14,9 +14,9 @@ else{
 		$passwordError = null;
 		
 		// keep track post values
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$name = sanitize($_POST['name']);
+		$email = sanitize($_POST['email']);
+		$password = sanitize($_POST['password']);
     $orgID = $_SESSION['orgID'];
 
 		$options = [

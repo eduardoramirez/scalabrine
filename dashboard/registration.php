@@ -10,10 +10,10 @@ else
   if(isset($_POST['signup'])) 
   {
     // need to escape characters
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password']; 
+    $username = sanitize($_POST['username']);
+    $email = sanitize($_POST['email']);
+    $password = sanitize($_POST['password']);
+    $confirm_password = sanitize($_POST['confirm_password']); 
 
     $options = [
       'cost' => 11,

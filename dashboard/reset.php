@@ -10,7 +10,7 @@ else
  
   if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
   {
-    $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
+    $result = checkEmailKey(sanitize($_GET['email']),urldecode(base64_decode($_GET['u'])));
     if ($result == false)
     {
       // key does not match our key.. bad key
@@ -23,8 +23,8 @@ else
 
       if(isset($_POST['reset'])) {
         // need to escape characters
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirm_password'];
+        $password = sanitize($_POST['password']);
+        $confirm_password = sanitize($_POST['confirm_password']);
         
         if (strcmp($password,$confirm_password) !== 0 || trim($password) === '')
         {
@@ -34,7 +34,7 @@ else
         } 
         else 
         {
-          updateUserPassword($securityUser, $password, $_GET['email']);
+          updateUserPassword($securityUser, $password, sanitize($_GET['email']));
           // let user know it was successful and redirect to login
           header("Location: /dashboard/login");
         }

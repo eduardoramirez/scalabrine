@@ -22,10 +22,10 @@
 		$passwordError = null;
 		
 		// keep track post values
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-	  $level = $_POST['level'];
-    $password = $_POST['password'];
+		$name = sanitize($_POST['name']);
+		$email = sanitize($_POST['email']);
+	  $level = sanitize($_POST['level']);
+    $password = sanitize($_POST['password']);
 
 		$options = [
     	'cost' => 11,
