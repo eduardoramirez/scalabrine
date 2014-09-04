@@ -199,7 +199,7 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
 
   payload += "&line=" + ErrorTracking.encodeValue(lineNumber);
 
-  payload += "&orgID="'.echo $_SESSION['orgID'].'
+  payload += "&orgID="'.echo $_SESSION['orgID'];.'
 
   /* submit error message  */
   sendRequest(ErrorTracking.errorReportingURL,payload);
