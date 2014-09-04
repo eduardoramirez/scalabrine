@@ -226,6 +226,9 @@ include('config2.php');
                                           <span class="arrow"></span>
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
+                                              <span class="tools pull-right">
+                                                <a href="javascript:;" class="icon-chevron-down"></a>
+                                              </span>
 
         <div class="box-result-cnt">
             <?php
