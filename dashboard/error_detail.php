@@ -405,12 +405,13 @@ include('config2.php');
           var theId = $('#id-rm-com');
           var theName = $('#name-rm-com');
           var theMail = $('#mail-rm-com');
-
+          alert("clicked");
           $.ajax({
               type: "POST",
               url: "ajax/remove-comment.php",
               data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
               success: function(html){
+                  alert("success");
                   $('.timeline-messages').remove('#'+theId.val());
               }  
           });
