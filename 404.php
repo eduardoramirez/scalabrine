@@ -7,7 +7,7 @@
       <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
       <!--[if lte IE 8]><script src="js/html5shiv.js" type="text/javascript"></script><![endif]-->
-      <script type="text/javascript" src="/min/f=old/js/skel.min.js"></script>
+      <script type="text/javascript" src="/min/min/f=old/js/skel.min.js"></script>
       <script>
       skel.init({
          prefix: '/old/css/style',
