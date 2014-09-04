@@ -316,7 +316,7 @@ include('config2.php');
                                           <a href="javascript:;" class="btn btn-danger">Send</a>
                                       </div>
                                   </div>
-->
+-->
                               </div>
                           </div>
                       </div>
