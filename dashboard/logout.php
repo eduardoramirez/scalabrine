@@ -20,3 +20,4 @@ else{
         header("Location: /dashboard/login");
     }
 }
+?>
