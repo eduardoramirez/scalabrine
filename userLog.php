@@ -1,6 +1,6 @@
 <?php
 
-require 'database.php';
+require("database.php");
 
 function recordEvent($eventType, $userID){
     $sql = 'INSERT INTO audit(userID, event, timestamp) values (?,?,?)';
