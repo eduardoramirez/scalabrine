@@ -119,7 +119,7 @@ var starlevel = 0;
 
 $("#star1").click(
     function(){
-        $(this).toggleClass("icon-star-empty");
+        //$(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
 
         if(starlevel > 1)
