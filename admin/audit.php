@@ -95,14 +95,14 @@ else{
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a class="active" href="/admin/index">
+                  <a href="/admin/index">
                      <i class="icon-tasks"></i>
                      <span>clients</span>
                   </a>
                </li>
 
                <li>
-                  <a href="/admin/audit">
+                  <a class="active" href="/admin/audit">
                      <i class="icon-exclamation"></i>
                      <span>audit log</span>
                   </a>
@@ -124,7 +124,7 @@ else{
          <div class="wrapper">
 
     		<div class="row">
-    			<h3>Client Management</h3>
+    			<h3>Session Log</h3>
     		</div>
 			<div class="row">
 				<table class="table table-striped table-bordered">
