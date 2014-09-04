@@ -17,7 +17,7 @@ else{
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="dashboard">
 
-      <title>scalabrine | admin clients</title>
+      <title>scalabrine | stats</title>
 
       <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
@@ -95,7 +95,7 @@ else{
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
                <li>
-                  <a class="active" href="/admin/index">
+                  <a href="/admin/index">
                      <i class="icon-tasks"></i>
                      <span>clients</span>
                   </a>
@@ -108,7 +108,7 @@ else{
                   </a>
                </li>
                <li>
-                  <a href="/admin/stats">
+                  <a class="active" href="/admin/stats">
                      <i class="icon-file"></i>
                      <span>stats</span>
                   </a>
@@ -120,50 +120,12 @@ else{
       <!--sidebar end-->
 
       <!--main content start-->
-      <div id="crud-main-content">
-         <div class="wrapper">
-
-    		<div class="row">
-    			<h3>Client Management</h3>
-    		</div>
-			<div class="row">
-				<p>
-					<a href="create" class="btn btn-success">Create</a>
-				</p>
-				
-				<table class="table table-striped table-bordered">
-		              <thead>
-		                <tr>
-		                  <th>Organization</th>
-                            <th>Action</th>
-		                </tr>
-		              </thead>
-		              <tbody>
-		              <?php 
-					   require '../database.php';
-
-                       $sql = 'SELECT * FROM organization ORDER BY name DESC';
-
-                      foreach ($con->query($sql) as $row) {
-						   		echo '<tr>';
-							   	echo '<td>'. $row['name'] . '</td>';
-                                echo '<td style="white-space:nowrap;">';
-                                echo '<a class="btn btn-info" href="../crud/index?orgID='.$row['ID'].'">User Management</a>';
-                                echo '&nbsp;';
-							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
-							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
-							   	echo '</td>';
-							   	echo '</tr>';
-					   }
-					  ?>
-				      </tbody>
-	            </table>
-    		</div>
-    	</div> 
-    	</div>
-    	<!-- /container -->
-          <!--main content end-->
+      <div id="main-content">
+        <div class="wrapper">
+            <h3>Stats</h3>
+        </div>
+      </div>
+      <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
