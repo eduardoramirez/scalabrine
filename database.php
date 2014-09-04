@@ -28,8 +28,10 @@ function my_update($type, $param, $query)
   global $con;
   $stmt = $con->prepare($query);
   call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
-  $stmt->execute();
+  $fail = $stmt->execute();
   $stmt->close();
+
+  return $fail;
 }
 
 function my_query($type, $param, $query)
