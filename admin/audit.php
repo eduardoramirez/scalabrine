@@ -139,12 +139,26 @@ else{
 		              <?php 
 					   require '../database.php';
 
-                       $sql = 'SELECT u.username, a.event, a.timestamp FROM audit a join user u
+                       $sql = 'SELECT u.username, a.event, a.timestamp, a.admin FROM audit a join user u
                        on a.userID = u.ID ORDER BY a.id DESC limit 25';
 
                       foreach ($con->query($sql) as $row) {
+
+                          switch($row['admin']){
+                              case 1:
+                                  $role = 'Admin';
+                                  break;
+                              case 2:
+                                  $role = 'Developer';
+                                  break;
+                              default:
+                                  $role = 'User';
+                                  break;
+                          }
+
 						   		echo '<tr>';
 							   	echo '<td>'. $row['username'] . '</td>';
+                                echo '<td>'. $role . '</td>';
                                 echo '<td>'. $row['event'] . '</td>';
                                 echo '<td>'. $row['timestamp'] . '</td>';
 							   	echo '</td>';
