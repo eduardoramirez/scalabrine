@@ -131,6 +131,7 @@ else{
 		              <thead>
 		                <tr>
 		                  <th>User</th>
+                            <th>Role</th>
                             <th>Event</th>
                             <th>Timestamp</th>
 		                </tr>
