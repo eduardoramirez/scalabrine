@@ -146,7 +146,7 @@
                         <h3>Paste this script into your site to begin tracking errors.</h3>
                      </div>
                      <div class="panel-body">
-                        <div class="col-lg-6 col-sm-6 text-center">
+                        <div class="col-lg-6 col-sm-6 text-left">
                            <?php 
                               $currOrgID=$_SESSION['orgID'];
          echo 
