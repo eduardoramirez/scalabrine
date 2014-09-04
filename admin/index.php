@@ -102,13 +102,6 @@ else{
                </li>
 
                <li>
-                  <a href="/dashboard/users">
-                     <i class="icon-gear"></i>
-                     <span>users</span>
-                  </a>
-               </li>
-
-               <li>
                   <a class="active" href="/admin/audit">
                      <i class="icon-exclamation"></i>
                      <span>audit log</span>
@@ -153,8 +146,9 @@ else{
                       foreach ($con->query($sql) as $row) {
 						   		echo '<tr>';
 							   	echo '<td>'. $row['name'] . '</td>';
-
                                 echo '<td style="white-space:nowrap;">';
+                                echo '<a class="btn btn-info" href="../crud/index?orgID='.$row['ID'].'">User Management</a>';
+                                echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';

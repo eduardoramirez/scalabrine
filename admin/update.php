@@ -143,13 +143,6 @@ else{
                  </li>
 
                  <li>
-                     <a href="/dashboard/users">
-                         <i class="icon-gear"></i>
-                         <span>users</span>
-                     </a>
-                 </li>
-
-                 <li>
                      <a class="active" href="/admin/audit">
                          <i class="icon-exclamation"></i>
                          <span>audit log</span>

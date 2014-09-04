@@ -164,7 +164,13 @@ else{
 		              <?php 
 					   require '../database.php';
               if ($_SESSION['admin'] == 2){
-					     $sql = 'SELECT * FROM user ORDER BY ID DESC';
+                  if ( !empty($_GET['orgID'])) {
+                      $orgID = $_REQUEST['orgID'];
+                      $sql = 'SELECT * FROM user where orgID = ' . $orgID . ' ORDER BY ID DESC';
+                  }
+                  else {
+                      $sql = 'SELECT * FROM user ORDER BY ID DESC';
+                  }
               }
               else{
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
