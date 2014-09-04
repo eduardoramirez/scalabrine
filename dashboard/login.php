@@ -40,6 +40,7 @@ else if(isset($_POST['login']))
   $password = $_POST['password'];
   
   $data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username=?");
+    $id = $data['ID'];
 
   if(strcmp($username, $data['Username']) !== 0)
   {
@@ -61,7 +62,7 @@ else if(isset($_POST['login']))
     $_SESSION['time'] = $date->format('Y-m-d H:i:s');
 
     require '../userLog.php';
-    recordEvent('log in', $data['id']);
+    recordEvent('log in', $id);
 
     header("Location: /dashboard/index");
   }
