@@ -122,6 +122,7 @@ var litt = function(st){
 
 $("#star1").click(
     litt(this);
+    alert();
 );
 
 $("#star2").click(
