@@ -136,7 +136,7 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <?php echo 'here'. $_SESSION['orgID']; ?>
+         <?php echo "<script type='text/javascript' src='/errorreporter.js'></script>"; ?>
       </div>
    
       </div>
