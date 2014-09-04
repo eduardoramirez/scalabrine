@@ -3,10 +3,10 @@
 
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
-        $data = my_query('s', array(&$username), "SELECT ID FROM user WHERE Username=?");
-        $id = $data['ID'];
+        $data = my_query('s', array(&$username), "SELECT id FROM user WHERE Username = ?");
+        $id = $data['id'];
 
-        require '../database.php';
+        require '../userLog.php';
         recordEvent('log out', $id);
     }
 
