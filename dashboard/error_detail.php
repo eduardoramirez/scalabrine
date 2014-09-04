@@ -223,14 +223,15 @@ include('config2.php');
                                   <div class="msg-time-chat" id="<?php echo $post_id; ?>">
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
                                       <div class="message-body msg-in">
-                                          <span class="arrow"></span>
-                                          <div class="text">
-                                              <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
-                                              <span class="tools pull-right">
+                                        <span class="tools pull-right">
                                                 <a href="/crud/index">
                                                    <i class="icon-gear"></i>
                                                 </a>
                                               </span>
+                                          <span class="arrow"></span>
+                                          <div class="text">
+                                              <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
+                                              
 
         <div class="box-result-cnt">
             <?php
