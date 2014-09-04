@@ -223,10 +223,12 @@ include('config2.php');
                                   <div class="msg-time-chat" id="<?php echo $post_id; ?>">
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
                                       <div class="message-body msg-in">
-                                        <span class="tools pull-right">
-                                                <a href="/crud/index">
-                                                   <i class="icon-gear"></i>
-                                                </a>
+
+                                              <span class="bt-rm-com pull-right">
+                                                <input type="hidden" id="name-rm-com" name="name-rm-com" value="<?php echo $name ?>" />
+                                                <input type="hidden" id="mail-rm-com" name="mail-rm-com" value="<?php echo $email ?>" />
+                                                <input type="hidden" id="id-rm-com" name="id-rm-com" value="<?php echo $post_id ?>" />
+                                                <i class="icon-gear"></i>  
                                               </span>
                                           <span class="arrow"></span>
                                           <div class="text">
@@ -396,6 +398,23 @@ include('config2.php');
                     }  
                 });
             }
+        });
+
+        // on post remove comment click 
+        $('.bt-rm-com').click(function(){
+          var theId = $('#id-rm-com');
+          var theName = $('#name-rm-com');
+          var theMail = $('#mail-rm-com');
+
+          $.ajax({
+              type: "POST",
+              url: "ajax/remove-comment.php",
+              data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
+              success: function(html){
+                  $('.timeline-messages').remove('#'+theId.val());
+              }  
+          });
+            
         });
 
     });
