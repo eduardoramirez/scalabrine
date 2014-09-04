@@ -115,12 +115,13 @@ var Script = function () {
 
 }();
 
+var starlevel = 0;
 
 $("#star1").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
-        //alert( "Handler for .click() called." );
+        starlevel = 1;
     }
 );
 
@@ -128,6 +129,7 @@ $("#star2").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        starlevel = 2;
     }
 );
 
@@ -135,6 +137,7 @@ $("#star3").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        starlevel = 3;
     }
 );
 
@@ -142,6 +145,7 @@ $("#star4").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        starlevel = 4;
     }
 );
 
@@ -149,5 +153,6 @@ $("#star5").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        starlevel = 5;
     }
 );
