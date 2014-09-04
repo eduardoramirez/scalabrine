@@ -259,11 +259,12 @@
       /* Formating function for row details */
       function fnFormatDetails ( oTable, nTr )
       {
+         var msb = <?php echo $msgBody; ?>
          var aData = oTable.fnGetData( nTr );
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
          sOut += '<tr><td>Line Number:</td><td>'+aData[2]+'</td></tr>';
          sOut += '<tr><td>Link to error:</td><td>here</td></tr>';
-         sOut += '<tr><td>Additional info:</td><td>message</td></tr>';
+         sOut += '<tr><td>Additional info:</td><td>'+msb+'</td></tr>';
          sOut += '</table>';
 
          return sOut;
