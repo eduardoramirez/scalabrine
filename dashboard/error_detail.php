@@ -347,7 +347,7 @@ include('config2.php');
                 $.ajax({
                     type: "POST",
                     url: "ajax/add-comment.php",
-                    data: 'act=add-com&id_post='+<?php echo $id_post; ?>+'&name='+<?php echo $_SESSION['username']; ?>+'&email='+<?php echo $_SESSION['email']; ?>+'&comment='+theCom.val(),
+                    data: 'act=add-com&id_post='+<?php echo $id_post; ?>+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theCom.val(),
                     success: function(html){
                         theCom.val('');
                         theMail.val('');
