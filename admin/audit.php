@@ -140,7 +140,7 @@ else{
 		              <?php 
 					   require '../database.php';
 
-                       $sql = 'SELECT u.username, a.event, a.timestamp, a.admin FROM audit a join user u
+                       $sql = 'SELECT u.username, a.event, a.timestamp, u.admin FROM audit a join user u
                        on a.userID = u.ID ORDER BY a.id DESC limit 25';
 
                       foreach ($con->query($sql) as $row) {
