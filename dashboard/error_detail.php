@@ -412,13 +412,11 @@ include('config2.php');
         $('.bt-rm-com').click(function(){
           var theId = $(this).attr("id");
 
-          alert("clicked: " + theId);
           $.ajax({
               type: "POST",
               url: "ajax/remove-comment.php",
               data: 'act=rm-com&id_post='+String(theId),
               success: function(html){
-                  alert("success: " + theId );
                   var toRm = "#"+theId;
                   $(toRm).remove();
               }  
