@@ -144,7 +144,7 @@ else{
 
                       foreach ($con->query($sql) as $row) {
 						   		echo '<tr>';
-							   	echo '<td>'. $row['name'] . '</td>';
+							   	echo '<td>'. $row['username'] . '</td>';
                                 echo '<td>'. $row['event'] . '</td>';
                                 echo '<td>'. $row['timestamp'] . '</td>';
 							   	echo '</td>';
