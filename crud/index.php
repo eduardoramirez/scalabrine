@@ -194,8 +194,6 @@ else{
                                 echo '<td>'. $role . '</td>';
 
                                 echo '<td style="white-space:nowrap;">';
-							   	echo '<a class="btn btn-info" href="read?id='.$row['ID'].'">Read</a>';
-							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
 							   	echo '&nbsp;';
 							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
