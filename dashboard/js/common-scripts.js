@@ -118,30 +118,30 @@ var Script = function () {
 
 $("#star1").hover(
     function(){
-        $(this).toggleClass(".icon-star-full");
+        $(this).toggleClass(".icon-star");
     }
 );
 
 $("#star2").hover(
     function(){
-        $(this).toggleClass(".icon-star-full");
+        $(this).toggleClass(".icon-star");
     }
 );
 
 $("#star3").hover(
     function(){
-        $(this).toggleClass(".icon-star-full");
+        $(this).toggleClass(".icon-star");
     }
 );
 
 $("#star4").hover(
     function(){
-        $(this).toggleClass(".icon-star-full");
+        $(this).toggleClass(".icon-star");
     }
 );
 
 $("#star5").hover(
     function(){
-        $(this).toggleClass(".icon-star-full");
+        $(this).toggleClass(".icon-star");
     }
 );
