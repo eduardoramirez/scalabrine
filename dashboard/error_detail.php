@@ -224,12 +224,12 @@ include('config2.php');
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
                                       <div class="message-body msg-in">
 
-                                              <span class="bt-rm-com pull-right">
+                                              <div class="bt-rm-com pull-right">
                                                 <input type="hidden" id="name-rm-com" name="name-rm-com" value="<?php echo $name ?>" />
                                                 <input type="hidden" id="mail-rm-com" name="mail-rm-com" value="<?php echo $email ?>" />
                                                 <input type="hidden" id="id-rm-com" name="id-rm-com" value="<?php echo $post_id ?>" />
                                                 <i class="icon-gear"></i>  
-                                              </span>
+                                              </div>
                                           <span class="arrow"></span>
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
