@@ -143,7 +143,7 @@
                         <span>
                            <i class="icon-file"></i>
                         </span>
-                        <h3>Paste this script into your site to begin tracking errors.</h3>
+                        <h3>Paste this script into your site to begin tracking errors</h3>
                      </div>
                      <div class="panel-body">
                         <div class="col-lg-6 col-sm-6 text-left">
