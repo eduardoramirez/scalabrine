@@ -7,7 +7,7 @@ error_reporting(-1);
 $dbName = 'scalabrinedb' ; 
 $dbHost = 'localhost' ;
 $dbUsername = 'scala_master';  //'root';
-$dbUserPassword = 'Tw3n+ysof+9Ly' //'Tw0sof+9Ly';
+$dbUserPassword = 'Tw3n+ysof+9Ly'; //'Tw0sof+9Ly';
 
 //$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
 
