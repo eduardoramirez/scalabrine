@@ -131,6 +131,12 @@ function badCode()
                      <span>error reporter</span>
                   </a>
                </li>
+                <li>
+                  <a href="/dashboard/config">
+                     <i class="icon-file"></i>
+                     <span>error tracking script</span>
+                  </a>
+               </li>
                <li>
                   <a href="/index">
                      <i class="icon-user"></i>
@@ -148,10 +154,10 @@ function badCode()
       <div id="crud-main-content">
          <div class="wrapper">
           <div class="row">
-          <h3>JavaScript - Silent Errors, Deadly Errors</h3>
+          <h3>Locally Test the Error Tracking Service</h3>
           <form action="#">
           	<label>Do you dare press it?
-          	<input type="button" value="BOOM!" onclick="badCode();" />
+            <button class="btn btn-success" type="submit" onclick="badCode();" >Uh oh</button>
           	</label>
           </form>
           <br /><br />
