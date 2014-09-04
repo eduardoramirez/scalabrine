@@ -41,9 +41,9 @@ else{
 
     if($valid)
     {
-        $params = array(&$name);
-        $sql = "UPDATE organization set name = ?";
-        my_update('s', $params, $sql);
+        $params = array(&$name, &$id);
+        $sql = "UPDATE organization set name = ? where id = ?";
+        my_update('si', $params, $sql);
 
         $_SESSION['crud_update_success'] = true;
       }
