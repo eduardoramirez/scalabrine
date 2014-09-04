@@ -410,16 +410,16 @@ include('config2.php');
 
         // on post remove comment click 
         $('.bt-rm-com').click(function(){
-          var theId = <?php $id_post ?>;
-          var theName = <?php $name ?>;
-          var theMail = <?php $email ?>;
+          var theId = $('#id-rm-com');
+          var theName = $('#name-rm-com');
+          var theMail = $('#mail-rm-com');
           alert("clicked");
           $.ajax({
               type: "POST",
               url: "ajax/remove-comment.php",
-              data: 'act=rm-com&id_post='+theId+'&name='+theName+'&email='+theMail,
+              data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
               success: function(html){
-                  alert("success: " + <?php $id_post ?> + " " + <?php $name ?> + " " + <?php $email ?>);
+                  alert("success: " + theId.val() + " " + theName.val() + " " + theMail.val());
                   var toRm = "#"+theId.val();
                   $(toRm).remove();
               }  
