@@ -2,8 +2,8 @@
 
 $dbName = 'scalabrinedb' ; 
 $dbHost = 'localhost' ;
-$dbUsername = 'root';
-$dbUserPassword = 'Tw0sof+9Ly';
+$dbUsername = 'scala_master';  //'root';
+$dbUserPassword = 'Tw3n+ysof+9Ly' //'Tw0sof+9Ly';
 
 //$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
 
@@ -28,10 +28,11 @@ function my_update($type, $param, $query)
   global $con;
   $stmt = $con->prepare($query);
   call_user_func_array(array($stmt, "bind_param"), array_merge(array($type), $param));
-  $fail = $stmt->execute();
+  $stmt->execute();
+  $err = $con->errno;
   $stmt->close();
 
-  return $fail;
+  return $err;
 }
 
 function my_query($type, $param, $query)
@@ -60,6 +61,7 @@ function my_query($type, $param, $query)
 
   return $result;
 }
+
 
 
 function my_disconnect()
