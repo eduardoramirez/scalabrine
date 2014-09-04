@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="error tracking script">
+    <meta name="description" content="error collecting script">
 
     <title>scalabrine | error detail</title>
 
@@ -33,11 +33,12 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
-  
+
    <body>
-      
-      <div class="container">
-         <!--header start-->
+
+   <div id="container" >
+
+      <!--header start-->
       <header class="header white-bg">
          <div class="sidebar-toggle-box">
             <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
@@ -112,6 +113,12 @@
                   </a>
                </li>
                <li>
+                  <a href="/dashboard/config">
+                     <i class="icon-file"></i>
+                     <span>error tracking script</span>
+                  </a>
+               </li>
+               <li>
                   <a href="/index">
                      <i class="icon-user"></i>
                      <span>home</span>
@@ -123,8 +130,10 @@
          </div>
       </aside>
       <!--sidebar end-->
-      
-      <!-- Hero -->
+
+      <!--main content start-->
+      <div id="main-content">
+          <!-- Hero -->
       <section id="hero">
             <h2>configuration</h2>
             <p>Include the appropriate JavaScript in every page of your web application.</p>
@@ -165,24 +174,37 @@
             &copy; scalabrine.
          </div>
       </footer>
-   </div>
+   
+      </div>
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2014 &copy; scalabrine.
+              <a href="#" class="go-top">
+                  <i class="icon-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </div>
+<?php
+}
+?>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/dashboard/js/jquery.js"></script>
+    <script src="/dashboard/js/bootstrap.min.js"></script>
+    <script src="/dashboard/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/dashboard/js/jquery.scrollTo.min.js"></script>
+    <script src="/dashboard/js/jquery.nicescroll.js"></script>
+    <script src="/dashboard/js/respond.min.js" ></script>
 
-   <!-- Piwik -->
-   <script type="text/javascript">
-       var _paq = _paq || [];
-       _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-         (function() {
-            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://104.131.195.41:9091/piwik/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 1]);
-             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-                   g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-   </script>
-   <noscript><p><img src="http://104.131.195.41:9091/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-   <!-- End Piwik Code -->
+    <!--common script for all pages-->
+    <script src="/dashboard/js/common-scripts.js"></script>
 
-
-   </body>
+  </body>
 </html>
+
+
+
+      
