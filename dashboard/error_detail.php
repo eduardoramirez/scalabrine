@@ -228,7 +228,7 @@ include('config2.php');
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
                                               <span class="tools pull-right">
                                                 <a href="/crud/index">
-                                                   <i class="fa fa-times"></i>
+                                                   <i class="icon-gear"></i>
                                                 </a>
                                               </span>
 
