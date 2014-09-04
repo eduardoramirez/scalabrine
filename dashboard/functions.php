@@ -44,7 +44,8 @@ function checkEmail($email)
   if (isset($email) && trim($email) != '') 
   {
     //email was entered
-    my_query('s', array(&(trim($email))), "SELECT ID FROM user WHERE Email=? LIMIT 1");
+    $email = trim($email);
+    my_query('s', array(&$email), "SELECT ID FROM user WHERE Email=? LIMIT 1");
 
     $numRows = getNumRows('s', array(&(trim($email))), "SELECT ID FROM user WHERE Email=? LIMIT 1");
 
