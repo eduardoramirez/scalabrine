@@ -127,10 +127,6 @@ else{
     			<h3>Client Management</h3>
     		</div>
 			<div class="row">
-				<p>
-					<a href="create" class="btn btn-success">Create</a>
-				</p>
-				
 				<table class="table table-striped table-bordered">
 		              <thead>
 		                <tr>
@@ -143,7 +139,8 @@ else{
 		              <?php 
 					   require '../database.php';
 
-                       $sql = 'SELECT top 25 u.name, a.event, a.timestamp FROM audit a join user u on a.userID = u.ID ORDER BY a.id DESC';
+                       $sql = 'SELECT u.username, a.event, a.timestamp FROM audit a join user u
+                       on a.userID = u.ID ORDER BY a.id DESC limit 25';
 
                       foreach ($con->query($sql) as $row) {
 						   		echo '<tr>';
