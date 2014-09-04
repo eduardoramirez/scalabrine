@@ -12,7 +12,7 @@ echo 'trying';
     try{
         $username = $_SESSION['username'];
         echo $username;
-        $data = my_query('s', array(&$username), "SELECT id FROM user WHERE Username = ?");
+        $data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username = ?");
         $userID = $data['id'];
 echo $userID;
         require '../userLog.php';
