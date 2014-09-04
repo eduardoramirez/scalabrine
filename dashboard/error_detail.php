@@ -22,6 +22,7 @@
     <link href="/dashboard/css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
     <link href="/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
       <!-- Custom styles for this template -->
     <link href="/dashboard/css/style.css" rel="stylesheet">
