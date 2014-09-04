@@ -18,8 +18,8 @@ function sendPasswordEmail($userID)
 
   global $con;
 
-  $sql1 = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?, ?, ?)";
-  $stmt = $con->prepare($sql1);
+  //$sql1 = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?, ?, ?)";
+  $stmt = $con->prepare("INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?, ?, ?)");
   $stmt->bind_param('iss', $UserID, $key, $expDate);
   $stmt->execute();
   $stmt->close();
