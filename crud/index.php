@@ -17,7 +17,7 @@ else{
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="dashboard">
 
-      <title>scalabrine | crud</title>
+      <title>scalabrine | User Management</title>
 
       <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
@@ -111,7 +111,7 @@ else{
                <li>
                   <a class="active" href="/crud/index">
                      <i class="icon-gear"></i>
-                     <span>crud</span>
+                     <span>User Management</span>
                   </a>
                </li>
                <li>
