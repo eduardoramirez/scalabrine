@@ -15,18 +15,22 @@ else if ($_SESSION['admin'] != 2){
 else{
 	require '../database.php';
 
-  $id = 0;
+    $id = 0;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
 	}
-
 
     if ( !empty($_POST)) {
         // keep track post values
         $id = $_POST['id'];
 
-        $sql = "delete from user where orgID = ?; DELETE FROM organization WHERE ID = ?";
-        my_update('ii', array(&$id, &$id), $sql);
+        //delete users
+        $sql = "delete from user where orgID = ?";
+        my_update('i', array(&$id), $sql);
+
+        //delete organization
+        $sql = "DELETE FROM organization WHERE ID = ?";
+        my_update('i', array(&$id), $sql);
 
         my_disconnect();
         header("Location: index");
@@ -148,7 +152,7 @@ else{
     
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Delete a User</h3>
+		    			<h3>Delete an Organization</h3>
 		    		</div>
 		    		
 	    			<form class="form-horizontal" action="delete" method="post">
