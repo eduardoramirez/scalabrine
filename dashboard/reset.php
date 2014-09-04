@@ -6,49 +6,8 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 }
 else
 {
-  function checkEmailKey($key,$userID)
-  {
-    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-    $curDate = date("Y-m-d H:i:s");
-    if ($SQL = $con->prepare("SELECT `UserID` FROM `recoveryemails` WHERE `Key` = ? AND `UserID` = ? AND `expDate` >= ?"))
-    {
-      $SQL->bind_param('sis',$key,$userID,$curDate);
-      $SQL->execute();
-      $SQL->store_result();
-      $numRows = $SQL->num_rows();
-      $SQL->bind_result($userID);
-      $SQL->fetch();
-      $SQL->close();
-      if ($numRows > 0 && $userID != '')
-      {
-        return array('status'=>true,'userID'=>$userID);
-      }
-    }
-    return false;
-  }
-
-  function updateUserPassword($userID,$password, $key)
-  {
-    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-    if ($SQL = $con->prepare("UPDATE `user` SET `Password` = ? WHERE `ID` = ?"))
-    {  
-      $options = [
-        'cost' => 11,
-        'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-      ]; 
-      $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-
-      $SQL->bind_param('si',$h_password,$userID);
-      $SQL->execute();
-      $SQL->close();
-      $SQL = $con->prepare("DELETE FROM `recoveryemails` WHERE `Key` = ?");
-      $SQL->bind_param('s',$key);
-      $SQL->execute();
-    }
-  }
-
-
-
+  require('../database.php');
+ 
   if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
   {
     $result = checkEmailKey($_GET['email'],urldecode(base64_decode($_GET['u'])));
@@ -145,8 +104,3 @@ else
 ?>
   </body>
 </html>
-
-
-
-
-
