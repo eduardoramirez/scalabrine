@@ -1,6 +1,8 @@
 <?php
 session_start();
 extract($_POST);
+
+  echo "NOT WORKING";
 if($_POST['act'] == 'rm-com')
 {
   // Connect to the database
