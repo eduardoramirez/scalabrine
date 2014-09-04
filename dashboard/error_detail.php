@@ -417,7 +417,7 @@ include('config2.php');
           $.ajax({
               type: "POST",
               url: "ajax/remove-comment.php",
-              data: 'act=rm-com&id_post='+theId.val(),
+              data: 'act=r-com&id_post='+theId,
               success: function(html){
                   alert("success: " + theId + " " + theName.val() + " " + theMail.val());
                   var toRm = "#"+theId;
