@@ -51,4 +51,34 @@ function checkEmail($email)
     return $error;
   }
 }
+
+function checkEmailKey($key,$userID)
+{
+  $curDate = date("Y-m-d H:i:s");
+
+  $sql = "SELECT `UserID` FROM `recoveryemails` WHERE `Key` = ? AND `UserID` = ? AND `expDate` >= ?";
+  $data = my_query('sis', array(&$key, &$userID, &$curDate), $sql);
+  $numRows = getNumRows('sis', array(&$key, &$userID, &$curDate), $sql);
+
+  if ($numRows > 0 && $data['UserID'] != '')
+  {
+    return array('status'=>true,'userID'=>$data['userID']);
+  }
+  
+  return false;
+}
+
+function updateUserPassword($userID,$password, $key)
+{
+  $options = [
+    'cost' => 11,
+    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+  ]; 
+
+  $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
+
+  my_update('si', array(&$h_password, &$userID), "UPDATE `user` SET `Password` = ? WHERE `ID` = ?");
+
+  my_update('s', array(&$key), "DELETE FROM `recoveryemails` WHERE `Key` = ?");
+}
 ?>
