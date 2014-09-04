@@ -128,7 +128,7 @@ function badCode()
                <li>
                   <a class="active" href="/jserrorreporter">
                      <i class="icon-exclamation"></i>
-                     <span>error reporter</span>
+                     <span> error reporter</span>
                   </a>
                </li>
                 <li>
