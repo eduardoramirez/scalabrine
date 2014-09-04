@@ -11,9 +11,10 @@ else{
 echo 'trying';
     try{
         $username = $_SESSION['username'];
+        echo $username;
         $data = my_query('s', array(&$username), "SELECT id FROM user WHERE Username = ?");
         $id = $data['id'];
-
+echo $id;
         require '../userLog.php';
         recordEvent('log out', $id);
     }
