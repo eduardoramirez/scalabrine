@@ -13,12 +13,10 @@ function sendPasswordEmail($userID)
   $expDate = date("Y-m-d H:i:s",$expFormat);
   $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
     
-  $sql = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?,?,?)";
+  $sql1 = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?,?,?)";
 
+  my_update('iss', array(&$userID, &$key, &$expDate), $sql1);
 
-  my_update('iss', array(&$userID, &$key, &$expDate), $sql);
-  echo $key;
-  
   $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
   $message = "Dear $uname,\r\n\r\n";
   $message .= "Please visit the following link to reset your password:\r\n";
