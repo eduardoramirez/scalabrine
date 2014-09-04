@@ -229,9 +229,6 @@ include('config2.php');
                                             {
                                           ?>
                                               <div class="bt-rm-com pull-right" id="<?php echo $post_id; ?>">
-                                                <input type="hidden" id="name-rm-com" name="name-rm-com" value="<?php echo $name ?>" />
-                                                <input type="hidden" id="mail-rm-com" name="mail-rm-com" value="<?php echo $email ?>" />
-                                                <input type="hidden" id="id-rm-com" name="id-rm-com" value="<?php echo $post_id ?>" />
                                                 <a href="javascript:;"><i class="icon-remove"></i></a>
                                               </div>
                                           <?php 
