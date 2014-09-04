@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="services">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
 
     <title>scalabrine | services</title>
 
@@ -136,7 +136,7 @@
   <!-- js placed at the end of the document so the pages load faster -->
     <script src="/min/?f=/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/min/?f=/js/jquery.easing.min.js"></script>
     
      <!--common script for all pages-->
     <script src="/min/?f=/js/common-scripts.js"></script>
