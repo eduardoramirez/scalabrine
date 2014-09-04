@@ -1,4 +1,11 @@
-
+<?php
+   session_start();
+   if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+      header("Location: /dashboard/login");
+   }
+   else
+   {
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -142,13 +149,11 @@ function badCode()
          <div class="wrapper">
 <div class="row">
 <h3>JavaScript - Silent Errors, Deadly Errors</h3>
-
 <form action="#">
 	<label>Do you dare press it?
 	<input type="button" value="BOOM!" onclick="badCode();" />
 	</label>
 </form>
-
 <br /><br />
 <a href="http://ajaxref.com/ch2/jserror.txt">See error file</a>
 
