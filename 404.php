@@ -10,7 +10,7 @@
       <script src="/old/js/skel.min.js"></script>
       <script>
       skel.init({
-         prefix: '/old/css/style',
+         prefix: '/min/?f=old/css/style',
          preloadStyleSheets: true,
          resetCSS: true,
          boxModel: 'border',
