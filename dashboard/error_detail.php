@@ -158,9 +158,8 @@ include('config2.php');
                           <div class="panel-body profile-activity">
                               <!--<h5 class="pull-right">21 August 2014</h5>-->
                               <?php 
-                              echo $_GET['id'];
-                                  $errorDetailID = $_SESSION['orgID'];
-                                  $sql = mysql_query("SELECT * FROM jserrors WHERE OrgID='$errorDetailID' ORDER BY ID DESC") or die(mysql_error());;
+                                  $errorDetailID = $_GET['id'];
+                                  $sql = mysql_query("SELECT * FROM jserrors WHERE ID='$errorDetailID'") or die(mysql_error());;
                                   while($affcom = mysql_fetch_assoc($sql)){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];
