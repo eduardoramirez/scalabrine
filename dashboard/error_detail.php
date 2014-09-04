@@ -210,7 +210,7 @@ include('config2.php');
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
                                   $date = $affcom['date'];
-                                  $post_id = $affcom['ID'];
+                                  $post_id = $affcom['id'];
 
                                   // Get gravatar Image 
                                   // https://fr.gravatar.com/site/implement/images/php/
