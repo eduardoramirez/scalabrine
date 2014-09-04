@@ -121,6 +121,23 @@ $("#star1").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+
+        if(starlevel > 1)
+        {
+            $("#star2").toggleClass("icon-star-empty");
+            $("#star2").toggleClass("icon-star");
+            $("#star3").toggleClass("icon-star-empty");
+            $("#star3").toggleClass("icon-star");
+            $("#star4").toggleClass("icon-star-empty");
+            $("#star4").toggleClass("icon-star");
+            $("#star5").toggleClass("icon-star-empty");
+            $("#star5").toggleClass("icon-star");
+        }
+        else if(starlevel < 1)
+        {
+            //toggle lowers
+        }
+        else{}
         starlevel = 1;
     }
 );
@@ -129,6 +146,23 @@ $("#star2").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        if(starlevel > 2)
+        {
+            $("#star3").toggleClass("icon-star-empty");
+            $("#star3").toggleClass("icon-star");
+            $("#star4").toggleClass("icon-star-empty");
+            $("#star4").toggleClass("icon-star");
+            $("#star5").toggleClass("icon-star-empty");
+            $("#star5").toggleClass("icon-star");
+        }
+        else if(starlevel < 2)
+        {
+            //toggle lowers
+            $("#star2").toggleClass("icon-star-empty");
+            $("#star2").toggleClass("icon-star");
+        }
+        else{}
+
         starlevel = 2;
     }
 );
@@ -137,6 +171,23 @@ $("#star3").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        if(starlevel > 3)
+        {
+            $("#star4").toggleClass("icon-star-empty");
+            $("#star4").toggleClass("icon-star");
+            $("#star5").toggleClass("icon-star-empty");
+            $("#star5").toggleClass("icon-star");
+        }
+        else if(starlevel < 3)
+        {
+            //toggle lowers
+            $("#star2").toggleClass("icon-star-empty");
+            $("#star2").toggleClass("icon-star");
+            $("#star3").toggleClass("icon-star-empty");
+            $("#star3").toggleClass("icon-star");
+        }
+        else{}
+
         starlevel = 3;
     }
 );
@@ -145,6 +196,23 @@ $("#star4").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        if(starlevel > 4)
+        {
+            $("#star5").toggleClass("icon-star-empty");
+            $("#star5").toggleClass("icon-star");
+        }
+        else if(starlevel < 4)
+        {
+            //toggle lowers
+            $("#star2").toggleClass("icon-star-empty");
+            $("#star2").toggleClass("icon-star");
+            $("#star3").toggleClass("icon-star-empty");
+            $("#star3").toggleClass("icon-star");
+            $("#star4").toggleClass("icon-star-empty");
+            $("#star4").toggleClass("icon-star");
+        }
+        else{}
+
         starlevel = 4;
     }
 );
@@ -153,6 +221,22 @@ $("#star5").click(
     function(){
         $(this).toggleClass("icon-star-empty");
         $(this).toggleClass("icon-star");
+        if(starlevel > 5)
+        {
+        }
+        else if(starlevel < 5)
+        {
+            //toggle lowers
+            $("#star2").toggleClass("icon-star-empty");
+            $("#star2").toggleClass("icon-star");
+            $("#star3").toggleClass("icon-star-empty");
+            $("#star3").toggleClass("icon-star");
+            $("#star4").toggleClass("icon-star-empty");
+            $("#star4").toggleClass("icon-star");
+            $("#star5").toggleClass("icon-star-empty");
+            $("#star5").toggleClass("icon-star");
+        }
+        else{}
         starlevel = 5;
     }
 );
