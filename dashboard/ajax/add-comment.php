@@ -28,16 +28,6 @@ if($_POST['act'] == 'add-com'):
 	        <h5><?php echo $name; ?></h5><span  class="com-dt"><?php echo date('d-m-Y H:i'); ?></span>
 	        <br/>
 	       	<p><?php echo $comment; ?></p>
-          <?php 
-            if($_SESSION['admin'] == 1)
-            {
-          ?>
-              <div class="bt-rm-com pull-right" id="<?php echo $id_post; ?>">
-                <a href="javascript:;"><i class="icon-remove"></i></a>
-              </div>
-          <?php 
-           }
-          ?>
           
 	    </div>
 	</div><!-- end "cmt-cnt" -->
