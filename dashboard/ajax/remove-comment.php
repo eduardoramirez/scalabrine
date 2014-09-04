@@ -10,7 +10,7 @@ if($_POST['act'] == 'rm-com')
 
 echo "<script type='text/javascript'>alert('$name $email $id_post');</script>";
   //insert the comment in the database
-  my_update('i', array(&$id_post), "DELETE FROM comments WHERE id_post=?");
+  my_update('i', array(&$id_post), "DELETE FROM comments WHERE id=?");
 
 }
 ?>
