@@ -6,7 +6,7 @@ if($_POST['act'] == 'add-com'):
     $comment = htmlentities($comment);
 
     // Connect to the database
-	include('../config.php'); 
+	include('../config2.php'); 
 	
 	// Get gravatar Image 
 	// https://fr.gravatar.com/site/implement/images/php/
