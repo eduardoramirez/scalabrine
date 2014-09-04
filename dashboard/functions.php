@@ -3,8 +3,6 @@ require("../database.php");
 
 function sendPasswordEmail($userID)
 {
-  global $con;
-
   $sql = "SELECT Username, Email FROM user WHERE ID = ? LIMIT 1";
 
   $data = my_query('i', array(&$userID), $sql);
@@ -38,8 +36,6 @@ function sendPasswordEmail($userID)
 
 function checkEmail($email)
 {
-  global $con;
-
   $error = array('status'=>false,'userID'=>0);
   if (isset($email) && trim($email) != '') 
   {
@@ -50,10 +46,9 @@ function checkEmail($email)
     $numRows = getNumRows('s', array(&$email), "SELECT ID FROM user WHERE Email=? LIMIT 1");
 
     if ($numRows >= 1) return array('status'=>true,'userID'=>$data['ID']);
-    } else { return $error; }
+    else { return $error; }
   } else {
     //nothing was entered;
-    return $error;
-  }
+  return $error;
 }
 ?>
