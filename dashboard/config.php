@@ -136,7 +136,9 @@
       
       <!-- Main -->
       <div class="wrapper">
-         <?php echo 
+         <?php 
+$currOrgID=$_SESSION['orgID'];
+         echo 
 '/* object literal wrapper to avoid namespace conflicts */
 var ErrorTracking = {};
 
@@ -199,7 +201,7 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
 
   payload += "&line=" + ErrorTracking.encodeValue(lineNumber);
 
-  payload += "&orgID="'.echo $_SESSION['orgID'];.'
+  payload += "&orgID="'.$currOrgID.'
 
   /* submit error message  */
   sendRequest(ErrorTracking.errorReportingURL,payload);
