@@ -138,7 +138,7 @@
 <?php 
 // Connect to the database
 include('config2.php'); 
-
+$userName = $_SESSION['username'];
 ?>
 
       <!--main content start-->
@@ -347,7 +347,7 @@ include('config2.php');
                 $.ajax({
                     type: "POST",
                     url: "ajax/add-comment.php",
-                    data: 'act=add-com&id_post='+<?php echo $id_post; ?>+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theCom.val(),
+                    data: 'act=add-com&id_post='+<?php echo $id_post; ?>+'&name='+<?php echo $userName; ?>+'&email='+theMail.val()+'&comment='+theCom.val(),
                     success: function(html){
                         theCom.val('');
                         theMail.val('');
