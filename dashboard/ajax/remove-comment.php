@@ -5,12 +5,12 @@ extract($_POST);
 if($_POST['act'] == 'rm-com')
 {
   // Connect to the database
-  include('../config2.php'); 
+  include('../../database.php'); 
 
 
 echo "<script type='text/javascript'>alert('$name $email $id_post');</script>";
   //insert the comment in the database
-  mysql_query("DELETE FROM comments WHERE name='$name' and email='$email' and id_post='$id_post')");
+  my_update('ssi', array(&$name, &$email, &$id_post), "DELETE FROM comments WHERE name=? and email=? and id_post=?");
 
 }
 ?>
