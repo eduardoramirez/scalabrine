@@ -113,6 +113,12 @@
                   </a>
                </li>
                <li>
+                  <a href="/dashboard/config">
+                     <i class="icon-file"></i>
+                     <span>error tracking script</span>
+                  </a>
+               </li>
+               <li>
                   <a href="/index">
                      <i class="icon-user"></i>
                      <span>home</span>
