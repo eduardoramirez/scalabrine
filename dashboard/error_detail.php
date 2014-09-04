@@ -248,7 +248,7 @@ include('config2.php');
                 }
             ?>
 
-            <div class="rate-result-cnt">
+            <div class="rate-result-cnt" id="<?php echo $post_id ?>">
                 <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
                 <div class="rate-stars"></div>
             </div>
