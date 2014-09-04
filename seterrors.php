@@ -19,6 +19,10 @@ if (isset($_GET['line']))
 else
   $line = "";
 
+if (isset($_GET['orgID']))
+  $orgid = htmlentities(substr(urldecode($_GET['orgID']),0,1024));
+else
+  $orgid = "";
 
 /* record the Browser, IP address and time */
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
@@ -29,9 +33,9 @@ $currentTime = date("Y-m-d H:i:s");
 
 
 /* add error to database */    
-if ($SQL = $con->prepare("INSERT INTO jserrors (userAgent, url, line, message, userIP, time) VALUES (?,?,?,?,?,?)"))
+if ($SQL = $con->prepare("INSERT INTO jserrors (userAgent, url, line, message, userIP, time, OrgID) VALUES (?,?,?,?,?,?,?)"))
 {
-  $SQL->bind_param('ssssss', $userAgent, $url, $line, $message, $userIP, $currentTime);
+  $SQL->bind_param('ssssss', $userAgent, $url, $line, $message, $userIP, $currentTime, $orgid);
   $SQL->execute();
   $SQL->close();
 }
