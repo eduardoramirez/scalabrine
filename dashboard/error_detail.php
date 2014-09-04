@@ -227,7 +227,9 @@ include('config2.php');
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
                                               <span class="tools pull-right">
-                                                <a href="javascript:;" class="icon-chevron-down"></a>
+                                                <a href="/crud/index">
+                                                   <i class="fa fa-times"></i>
+                                                </a>
                                               </span>
 
         <div class="box-result-cnt">
