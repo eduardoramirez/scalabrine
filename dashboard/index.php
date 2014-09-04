@@ -21,12 +21,12 @@
       <link href="/dashboard/css/bootstrap.min.css" rel="stylesheet">
       <link href="/dashboard/css/bootstrap-reset.css" rel="stylesheet">
       <!--external css-->
-      <link href="/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+      <link href="/min/?f=/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
       <!-- Custom styles for this template -->
-      <link href="/dashboard/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />    
-      <link href="/dashboard/css/style.css" rel="stylesheet">
-      <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
+      <link href="/min/?f=/dashboard/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />    
+      <link href="/min/?f=/dashboard/css/style.css" rel="stylesheet">
+      <link href="/min/?f=/dashboard/css/style-responsive.css" rel="stylesheet" />
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
       <!--[if lt IE 9]>
@@ -251,19 +251,19 @@
    <!-- js placed at the end of the document so the pages load faster -->
    <script src="/dashboard/js/jquery-1.8.3.min.js"></script>
    <script src="/dashboard/js/bootstrap.min.js"></script>
-   <script src="/dashboard/js/jquery.dcjqaccordion.2.7.js"></script>
+   <script src="/min/?f=/dashboard/js/jquery.dcjqaccordion.2.7.js"></script>
    <script src="/dashboard/js/jquery.scrollTo.min.js"></script>
-   <script src="/dashboard/js/jquery.nicescroll.js"></script>
-   <script src="/dashboard/js/jquery.sparkline.js"></script>
-   <script src="/dashboard/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+   <script src="/min/?f=/dashboard/js/jquery.nicescroll.js"></script>
+   <script src="/min/?f=/dashboard/js/jquery.sparkline.js"></script>
+   <script src="/min/?f=/dashboard/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
    <script src="/dashboard/js/jquery.customSelect.min.js" ></script>
    <script src="/dashboard/js/respond.min.js" ></script>
 
    <!--common script for all pages-->
-   <script src="/dashboard/js/common-scripts.js"></script>
+   <script src="/min/?f=/dashboard/js/common-scripts.js"></script>
 
    <!--script for this page-->
-   <script src="/dashboard/js/sparkline-chart.js"></script>
+   <script src="/min/?f=/dashboard/js/sparkline-chart.js"></script>
 
    <script>
       /* Formating function for row details */
