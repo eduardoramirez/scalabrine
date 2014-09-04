@@ -134,41 +134,34 @@ else{
       <aside>
          <div id="sidebar"  class="nav-collapse ">
             <!-- sidebar menu start-->
-            <ul class="sidebar-menu" id="nav-accordion">
-               <li>
-                  <a href="/dashboard/index">
-                     <i class="icon-dashboard"></i>
-                     <span>dashboard</span>
-                  </a>
-               </li>
+             <ul class="sidebar-menu" id="nav-accordion">
+                 <li>
+                     <a href="/admin/index">
+                         <i class="icon-tasks"></i>
+                         <span>clients</span>
+                     </a>
+                 </li>
 
-               <li>
-                  <a href="/dashboard/error_detail">
-                     <i class="icon-tasks"></i>
-                     <span>error details</span>
-                  </a>
-               </li>
+                 <li>
+                     <a href="/dashboard/users">
+                         <i class="icon-gear"></i>
+                         <span>users</span>
+                     </a>
+                 </li>
 
-               <li>
-                  <a class="active" href="/crud/index">
-                     <i class="icon-gear"></i>
-                     <span>crud</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="/jserrorreporter">
-                     <i class="icon-exclamation"></i>
-                     <span>error reporter</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="/index">
-                     <i class="icon-user"></i>
-                     <span>home</span>
-                  </a>
-               </li>
-
-            </ul>
+                 <li>
+                     <a class="active" href="/admin/audit">
+                         <i class="icon-exclamation"></i>
+                         <span>audit log</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="/admin/stats">
+                         <i class="icon-file"></i>
+                         <span>stats</span>
+                     </a>
+                 </li>
+             </ul>
             <!-- sidebar menu end-->
          </div>
       </aside>
@@ -177,15 +170,8 @@ else{
       <!--main content start-->
       <div id="main-content">
          <div class="wrapper">
-    
+
         <?php
-            if($_SESSION['crud_update_already_username'] == true)
-            {
-              $_SESSION['crud_update_already_username'] = false;
-        ?>
-            <div class="alert alert-info" role="alert">username/email already taken</div>    
-        <?php
-            }
             if($_SESSION['crud_update_success'] == true)
             {
               $_SESSION['crud_update_success'] = false;
@@ -198,14 +184,14 @@ else{
 
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Update a User</h3>
+		    			<h3>Update an Organization</h3>
 		    		</div>
     		
 	    			<form class="form-horizontal" action="update?id=<?php echo $id?>" method="post">
 					  <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-					    <label class="control-label">Username</label>
+					    <label class="control-label">Organization Name</label>
 					    <div class="controls">
-					      	<input name="name" type="text"  placeholder="Username" value="<?php echo !empty($name)?$name:'';?>">
+					      	<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
 					      	<?php if (!empty($nameError)): ?>
 					      		<span class="help-inline"><?php echo $nameError;?></span>
 					      	<?php endif; ?>
