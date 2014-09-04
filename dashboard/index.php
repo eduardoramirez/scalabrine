@@ -1,7 +1,7 @@
 <?php
    session_start();
    if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-      header("Location: /dashboard/login");
+      //header("Location: /dashboard/login");
    }
    else
    {
