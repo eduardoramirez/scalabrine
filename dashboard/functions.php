@@ -1,7 +1,7 @@
 <?php
 require("../database.php");
 
-define(PW_SALT,'(+3%_');
+define('PW_SALT','(+3%_');
 
 function sendPasswordEmail($userID)
 {
