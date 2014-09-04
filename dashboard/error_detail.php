@@ -229,7 +229,7 @@ include('config2.php');
                                           <div class="text">
                                               <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
 
-        <div class="box-result-cnt pull-right">
+        <div class="box-result-cnt">
             <?php
                 $query = mysql_query("SELECT * FROM ratings where id_post='$post_id'"); 
                 while($data = mysql_fetch_assoc($query)){
