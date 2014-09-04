@@ -133,6 +133,11 @@
 
       <!--main content start-->
       <div id="main-content">
+      <!-- Hero -->
+      <section id="hero">
+         <h2>configuration</h2>
+         <p>Include the appropriate JavaScript in every page of your web application.</p>
+      </section>
       <!-- Main -->
       <article>
          <div>
