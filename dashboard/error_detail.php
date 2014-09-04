@@ -412,7 +412,7 @@ include('config2.php');
               data: 'act=rm-com&id_post='+theId.val()+'&name='+theName.val()+'&email='+theMail.val(),
               success: function(html){
                   alert("success: " + theId.val() + " " + theName.val() + " " + theMail.val());
-                  $('.timeline-messages').remove('#'+theId.val());
+                  $('.timeline-messages').remove('#4');
               }  
           });
             
