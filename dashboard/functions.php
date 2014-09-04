@@ -14,10 +14,16 @@ function sendPasswordEmail($userID)
   $expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+3, date("Y"));
   $expDate = date("Y-m-d H:i:s",$expFormat);
   $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
-    
-  $sql1 = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?,?,?)";
+   
 
-  my_query('iss', array(&$userID, &$key, &$expDate), $sql1);
+  global $con;
+
+  $sql1 = "INSERT INTO recoveryemails (UserID, Key, expDate) VALUES (?, ?, ?)";
+  $stmt = $con->prepare($sql1);
+  $stmt->bind_param('iss', $UserID, $key, $expDate);
+  $stmt->execute();
+  $stmt->close();
+  //my_update('iss', array(&$userID, &$key, &$expDate), $sql1);
 
   $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
   $message = "Dear $uname,\r\n\r\n";
