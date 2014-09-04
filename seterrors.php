@@ -33,7 +33,7 @@ $currentTime = date("Y-m-d H:i:s");
 
 
 /* add error to database */    
-if ($SQL = $con->prepare("INSERT INTO jserrors (userAgent, url, line, message, userIP, time, OrgID) VALUES (?,?,?,?,?,?,?)"))
+if ($SQL = $con->prepare("INSERT INTO jserrors (userAgent, url, line, message, userIP, time, orgid) VALUES (?,?,?,?,?,?,?)"))
 {
   $SQL->bind_param('ssssss', $userAgent, $url, $line, $message, $userIP, $currentTime, $orgid);
   $SQL->execute();
