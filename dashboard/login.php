@@ -12,7 +12,6 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 else{ 
 
 require('functions.php');
-require("../database.php");
 
 ////////////
 // listener for the reset password button
