@@ -2,6 +2,8 @@
 
 require('../database.php');
 
+define('PW_SALT','(+3%_');
+
 function sendPasswordEmail($userID)
 {
   $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
@@ -12,16 +14,16 @@ function sendPasswordEmail($userID)
   $uname = $data['Username'];
   $email = $data['Email'];
 
-    $expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+3, date("Y"));
-    $expDate = date("Y-m-d H:i:s",$expFormat);
-    $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
+  $expFormat = mktime(date("H"), date("i"), date("s"), date("m")  , date("d")+3, date("Y"));
+  $expDate = date("Y-m-d H:i:s",$expFormat);
+  $key = md5($uname . '_' . $email . rand(0,10000) .$expDate . PW_SALT);
 
-    $con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
-    if ($SQL = $con->prepare("INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)"))
-    {
-      $SQL->bind_param('iss',$userID,$key,$expDate);
-      $SQL->execute();
-      $SQL->close();
+    //$con = mysqli_connect('localhost','root','Tw0sof+9Ly','scalabrinedb');
+    my_update('iss', array(&$userID, &$key, &$expDate), "INSERT INTO `recoveryemails` (`UserID`,`Key`,`expDate`) VALUES (?,?,?)";
+
+     // $SQL->bind_param('iss',$userID,$key,$expDate);
+     // $SQL->execute();
+     // $SQL->close();
       $passwordLink = "http://104.131.195.41:9091/dashboard/reset?a=recover&email=" . $key . "&u=" . urlencode(base64_encode($userID));
       $message = "Dear $uname,\r\n\r\n";
       $message .= "Please visit the following link to reset your password:\r\n";
@@ -37,7 +39,7 @@ function sendPasswordEmail($userID)
       $headers .= "X-Mailer: PHP\n"; // mailer
       $subject = "Reset Password";
       @mail($email,$subject,$message,$headers);
-    }
+
 }
 
 function checkEmail($email)
