@@ -248,17 +248,6 @@ $id_post = "1"; //the post or the page id
                                   $grav_url = "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".$default."&s=".$size;
 
                               ?>
-                              <!--
-                                <div class="cmt-cnt">
-                                    <img src="<?php echo $grav_url; ?>" />
-                                    <div class="thecom">
-                                        <h5><?php echo $name; ?></h5><span data-utime="1371248446" class="com-dt"><?php echo $date; ?></span>
-                                        <br/>
-                                        <p>
-                                          <?php echo $comment; ?>
-                                        </p>
-                                    </div>
-                                </div>end "cmt-cnt" -->
 
                                   <!-- Comment -->
                                   <div class="msg-time-chat">

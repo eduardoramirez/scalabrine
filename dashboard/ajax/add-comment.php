@@ -13,7 +13,7 @@ if($_POST['act'] == 'add-com'):
 	$default = "mm";
 	$size = 35;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . $default . "&s=" . $size;
-
+	date_default_timezone_set('America/Los_Angeles');
 	if(strlen($name) <= '1'){ $name = 'Guest';}
     //insert the comment in the database
     mysql_query("INSERT INTO comments (name, email, comment, id_post)VALUES( '$name', '$email', '$comment', '$id_post')");
