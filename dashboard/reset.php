@@ -9,7 +9,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] === '1')
 }
 else
 {
-  require('../database.php');
+  require('functions.php');
  
   if (isset($_GET['a']) && $_GET['a'] == 'recover' && $_GET['email'] != "") 
   {
