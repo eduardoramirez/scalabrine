@@ -297,7 +297,7 @@ $id_post = "1"; //the post or the page id
         <input type="hidden" id="name-com" name="name-com" value="<?php echo $_SESSION['username']; ?>" />
         <input type="hidden" id="mail-com" name="mail-com" value="<?php echo $_SESSION['email']; ?>" />
         <textarea class="the-new-com"></textarea>
-        <div class="bt-add-com">Post comment</div>
+        <div class="btn btn-danger">Post comment</div>
         <div class="bt-cancel-com">Cancel</div>
     </div>
     <div class="clear"></div>
