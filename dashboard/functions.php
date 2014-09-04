@@ -49,6 +49,9 @@ function checkEmail($email)
     else { return $error; }
   } else {
     //nothing was entered;
-  return $error;
+    return $error;
+  }
 }
+
+
 ?>
