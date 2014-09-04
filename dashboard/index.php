@@ -203,8 +203,7 @@
                         $pdo = Database::connect();
                         $sql = 'SELECT * FROM jserrors ORDER BY ID DESC';
    
-                        foreach ($pdo->query($sql) as $row) {  
-                        $msgBody = $row['message'];        
+                        foreach ($pdo->query($sql) as $row) {         
                            echo '<tr>';
                            echo  '<td> [client: '. $row['userIP'] .'] referer: '. $row['url'] .'</td>';
                            echo '<td>'. $row['line'] .'</td>';
