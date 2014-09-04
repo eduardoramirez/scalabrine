@@ -197,7 +197,6 @@ include('config2.php');
                               Comments
                               <span class="tools pull-right">
                                 <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
                             </span>
                           </header>
                           <div class="panel-body">
