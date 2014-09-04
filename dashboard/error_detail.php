@@ -224,12 +224,7 @@ include('config2.php');
                                   <!-- Comment -->
                                   <div class="msg-time-chat" id="<?php echo $post_id; ?>">
                                       <a class="message-img" href="#"><img alt="" src="<?php echo $grav_url; ?>" class="avatar"></a>
-                                      <div class="message-body msg-in">
-                                          <span class="arrow"></span>
-                                          <div class="text">
-                                              <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
-
-        <div class="box-result-cnt">
+                                              <div class="box-result-cnt">
             <?php
                 $query = mysql_query("SELECT * FROM ratings where id_post='$post_id'"); 
                 while($data = mysql_fetch_assoc($query)){
@@ -248,13 +243,18 @@ include('config2.php');
                 }
             ?>
 
-            <div class="rate-result-cnt">
+            <div class="rate-result-cnt pull-right">
                 <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
                 <div class="rate-stars"></div>
             </div>
 
 
         </div><!-- /rate-result-cnt -->
+                                      <div class="message-body msg-in">
+                                          <span class="arrow"></span>
+                                          <div class="text">
+                                              <p class="attribution"><a href="#"><?php echo $name; ?></a> at <?php echo $date; ?></p>
+
 <!--
                                               <p>
                                                 <i class="icon-star"></i>
