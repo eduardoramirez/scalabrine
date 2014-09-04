@@ -265,7 +265,7 @@ include('config2.php');
                                               <i class="icon-camera"></i>
                                           </a>
                                           <a href="javascript:;">
-                                            <i id="star1" class="icon-star"></i>
+                                            <i id="star1" class="icon-star-empty"></i>
                                             <i id="star2" class="icon-star-empty"></i>
                                             <i id="star3" class="icon-star-empty"></i>
                                             <i id="star4" class="icon-star-empty"></i>

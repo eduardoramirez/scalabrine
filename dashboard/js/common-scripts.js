@@ -116,32 +116,36 @@ var Script = function () {
 }();
 
 
-$("#star1").hover(
+$("#star1").click(
     function(){
-        $(this).toggleClass(".icon-star");
+        $(this).removeClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
     }
 );
 
-$("#star2").hover(
+$("#star2").click(
     function(){
-        $(this).toggleClass(".icon-star");
+        $(this).removeClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
     }
 );
 
-$("#star3").hover(
+$("#star3").click(
     function(){
-        $(this).toggleClass(".icon-star");
+        $(this).removeClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
     }
 );
 
-$("#star4").hover(
+$("#star4").click(
     function(){
-        $(this).toggleClass(".icon-star");
-    }
+        $(this).removeClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
 );
 
-$("#star5").hover(
+$("#star5").click(
     function(){
-        $(this).toggleClass(".icon-star");
+        $(this).removeClass("icon-star-empty");
+        $(this).toggleClass("icon-star");
     }
 );
