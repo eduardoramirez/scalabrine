@@ -7,8 +7,9 @@ function recordEvent($eventType, $userID){
 
     date_default_timezone_set('America/Los_Angeles');
     $date = new DateTime();
+    $time = $date->format('Y-m-d H:i:s');
 
-    $param = array(&$userID, &$eventType, &$date);
+    $param = array(&$userID, &$eventType, &$time);
 
     my_update('iss', $param, $sql);
 }
