@@ -158,8 +158,8 @@ $("#star2").click(
         else if(starlevel < 2)
         {
             //toggle lowers
-            $("#star2").toggleClass("icon-star-empty");
-            $("#star2").toggleClass("icon-star");
+            $("#star1").toggleClass("icon-star-empty");
+            $("#star1").toggleClass("icon-star");
         }
         else{}
 
@@ -181,10 +181,10 @@ $("#star3").click(
         else if(starlevel < 3)
         {
             //toggle lowers
+            $("#star1").toggleClass("icon-star-empty");
+            $("#star1").toggleClass("icon-star");
             $("#star2").toggleClass("icon-star-empty");
             $("#star2").toggleClass("icon-star");
-            $("#star3").toggleClass("icon-star-empty");
-            $("#star3").toggleClass("icon-star");
         }
         else{}
 
@@ -204,12 +204,12 @@ $("#star4").click(
         else if(starlevel < 4)
         {
             //toggle lowers
+            $("#star1").toggleClass("icon-star-empty");
+            $("#star1").toggleClass("icon-star");
             $("#star2").toggleClass("icon-star-empty");
             $("#star2").toggleClass("icon-star");
             $("#star3").toggleClass("icon-star-empty");
             $("#star3").toggleClass("icon-star");
-            $("#star4").toggleClass("icon-star-empty");
-            $("#star4").toggleClass("icon-star");
         }
         else{}
 
@@ -227,14 +227,14 @@ $("#star5").click(
         else if(starlevel < 5)
         {
             //toggle lowers
+            $("#star1").toggleClass("icon-star-empty");
+            $("#star1").toggleClass("icon-star");
             $("#star2").toggleClass("icon-star-empty");
             $("#star2").toggleClass("icon-star");
             $("#star3").toggleClass("icon-star-empty");
             $("#star3").toggleClass("icon-star");
             $("#star4").toggleClass("icon-star-empty");
             $("#star4").toggleClass("icon-star");
-            $("#star5").toggleClass("icon-star-empty");
-            $("#star5").toggleClass("icon-star");
         }
         else{}
         starlevel = 5;
