@@ -13,7 +13,12 @@ echo 'trying';
         $username = $_SESSION['username'];
         echo $username;
         $data = my_query('s', array(&$username), "SELECT * FROM user WHERE Username = ?");
-        $userID = $data['id'];
+
+        $admin = $data['admin'];
+        echo $admin;
+        $userID = $data['ID'];
+
+
 echo $userID;
         require '../userLog.php';
         recordEvent('log out', $userID);
