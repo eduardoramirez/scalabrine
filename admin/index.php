@@ -139,23 +139,23 @@ else{
 		                </tr>
 		              </thead>
 		              <tbody>
-		              <?php 
-					   require '../database.php';
+            <?php 
+		          require '../database.php';
 
-                       $sql = 'SELECT * FROM organization ORDER BY name DESC';
+              $sql = 'SELECT * FROM organization ORDER BY name DESC';
 
-                      foreach ($con->query($sql) as $row) {
-						   		echo '<tr>';
-							   	echo '<td>'. $row['name'] . '</td>';
-                                echo '<td style="white-space:nowrap;">';
-                                echo '<a class="btn btn-info" href="../crud/index?orgID='.$row['ID'].'">User Management</a>';
-                                echo '&nbsp;';
-							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
-							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
-							   	echo '</td>';
-							   	echo '</tr>';
-					   }
+              foreach ($con->query($sql) as $row) {
+					   		echo '<tr>';
+						   	echo '<td>'. $row['name'] . '</td>';
+                              echo '<td style="white-space:nowrap;">';
+                              echo '<a class="btn btn-info" href="../crud/index?orgID='.$row['ID'].'">User Management</a>';
+                              echo '&nbsp;';
+						   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
+						   	echo '&nbsp;';
+						   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
+						   	echo '</td>';
+						   	echo '</tr>';
+              }
 					  ?>
 				      </tbody>
 	            </table>

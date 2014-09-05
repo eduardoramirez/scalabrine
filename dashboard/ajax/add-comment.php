@@ -1,10 +1,5 @@
 <?php
 
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(-1);
-
-
 session_start();
 extract($_POST);
 if($_POST['act'] == 'add-com')
@@ -12,7 +7,6 @@ if($_POST['act'] == 'add-com')
 	$name = htmlentities($name);
   $email = htmlentities($email);
   $comment = htmlentities($comment);
-
 
 	require('../../database.php'); 
 

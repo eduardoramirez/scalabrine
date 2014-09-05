@@ -38,16 +38,15 @@ else{
 
     $db_result = my_query('i', array(&$id), "SELECT name FROM organization where ID=?");
 
-
     if($valid)
     {
-        $params = array(&$name, &$id);
-        $sql = "UPDATE organization set name = ? where id = ?";
-        my_update('si', $params, $sql);
+      $params = array(&$name, &$id);
+      $sql = "UPDATE organization set name = ? where id = ?";
+      my_update('si', $params, $sql);
 
-        $_SESSION['crud_update_success'] = true;
-      }
+      $_SESSION['crud_update_success'] = true;
     }
+  }
 ?>
 
 

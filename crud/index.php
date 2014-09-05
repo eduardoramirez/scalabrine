@@ -13,31 +13,31 @@ else{
 <html lang="en">
 <head>
 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="dashboard">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="dashboard">
 
-      <title>scalabrine | User Management</title>
+    <title>scalabrine | User Management</title>
 
-      <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-      <!-- Bootstrap core CSS -->
-      <link href="/dashboard/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/dashboard/css/bootstrap-reset.css" rel="stylesheet">
-      <!--external css-->
-      <link href="/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+    <link href="/dashboard/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dashboard/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/dashboard/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
-      <!-- Custom styles for this template -->
-      <link href="/dashboard/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />    
-      <link href="/dashboard/css/style.css" rel="stylesheet">
-      <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="/dashboard/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />    
+    <link href="/dashboard/css/style.css" rel="stylesheet">
+    <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
 
 
-      <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-      <!--[if lt IE 9]>
-         <script src="/login/js/html5shiv.js"></script>
-         <script src="/login/js/respond.min.js"></script>
-      <![endif]-->    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+       <script src="/login/js/html5shiv.js"></script>
+       <script src="/login/js/respond.min.js"></script>
+    <![endif]-->    
 </head>
 
 <body>
@@ -162,44 +162,44 @@ else{
 		              </thead>
 		              <tbody>
 		              <?php 
-					   require '../database.php';
+					    require '../database.php';
               if ($_SESSION['admin'] == 2){
-                  if ( !empty($_GET['orgID'])) {
-                      $orgID = $_REQUEST['orgID'];
-                      $sql = 'SELECT * FROM user where orgID = ' . $orgID . ' ORDER BY ID DESC';
-                  }
-                  else {
-                      $sql = 'SELECT * FROM user ORDER BY ID DESC';
-                  }
+                if ( !empty($_GET['orgID'])) {
+                  $orgID = $_REQUEST['orgID'];
+                  $sql = 'SELECT * FROM user where orgID = ' . $orgID . ' ORDER BY ID DESC';
+                }
+                else {
+                  $sql = 'SELECT * FROM user ORDER BY ID DESC';
+                }
               }
               else{
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' ORDER BY ID DESC';
-             }
-	 				   foreach ($con->query($sql) as $row) {
-						   		echo '<tr>';
-							   	echo '<td>'. $row['Username'] . '</td>';
-							   	echo '<td>'. $row['Email'] . '</td>';
+              }
+	 				    foreach ($con->query($sql) as $row) {
+					   		echo '<tr>';
+						   	echo '<td>'. $row['Username'] . '</td>';
+						   	echo '<td>'. $row['Email'] . '</td>';
 
-                                switch($row['admin']){
-                                    case 0:
-                                        $role = 'User';
-                                        break;
-                                    case 1:
-                                       $role = 'Admin';
-                                       break;
-                                    case 2:
-                                       $role = 'Developer';
-                                       break;
-                                }
-                                echo '<td>'. $role . '</td>';
+                switch($row['admin']){
+                  case 0:
+                    $role = 'User';
+                    break;
+                  case 1:
+                    $role = 'Admin';
+                    break;
+                  case 2:
+                    $role = 'Developer';
+                    break;
+                }
+                echo '<td>'. $role . '</td>';
 
-                                echo '<td style="white-space:nowrap;">';
-							   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
-							   	echo '&nbsp;';
-							   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
-							   	echo '</td>';
-							   	echo '</tr>';
-					   }
+                echo '<td style="white-space:nowrap;">';
+						   	echo '<a class="btn btn-success" href="update?id='.$row['ID'].'">Update</a>';
+						   	echo '&nbsp;';
+						   	echo '<a class="btn btn-danger" href="delete?id='.$row['ID'].'">Delete</a>';
+						   	echo '</td>';
+						   	echo '</tr>';
+					    }
 					  ?>
 				      </tbody>
 	            </table>

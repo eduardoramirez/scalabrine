@@ -135,14 +135,14 @@ else{
 		        <?php 
 					   require '../database.php';
 	
-	               $sql = 'SELECT * FROM organization ORDER BY name DESC';
-	
-	                foreach ($con->query($sql) as $row) {
-		   		echo '<tr>';
-			   	echo '<td>'. $row['name'] . '</td>';
-			   	echo '</tr>';
-			}
-			?>
+             $sql = 'SELECT * FROM organization ORDER BY name DESC';
+
+              foreach ($con->query($sql) as $row) {
+      		   		echo '<tr>';
+      			   	echo '<td>'. $row['name'] . '</td>';
+      			   	echo '</tr>';
+        			}
+          	?>
 		</tbody>
 	     </table>
         </div>

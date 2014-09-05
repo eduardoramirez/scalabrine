@@ -20,26 +20,25 @@ else{
 		$id = $_REQUEST['id'];
 	}
 
-    $orgID = $_SESSION['orgID'];
+  $orgID = $_SESSION['orgID'];
 
+  if ( !empty($_POST)) {
+    // keep track post values
+    $id = $_POST['id'];
 
-    if ( !empty($_POST)) {
-        // keep track post values
-        $id = $_POST['id'];
+    if ($_SESSION['admin'] == 2){ //Developer
+      $sql = "DELETE FROM user WHERE ID = ?";
 
-        if ($_SESSION['admin'] == 2){ //Developer
-          $sql = "DELETE FROM user WHERE ID = ?";
-
-          my_update('i', array(&$id), $sql);
-        }
-        else{ //Admin
-          $sql = "DELETE FROM user WHERE ID = ? AND OrgID = ?";
-          my_update('ii', array(&$id, &$orgID), $sql);
-        }
-
-        my_disconnect();
-        header("Location: index");
+      my_update('i', array(&$id), $sql);
     }
+    else{ //Admin
+      $sql = "DELETE FROM user WHERE ID = ? AND OrgID = ?";
+      my_update('ii', array(&$id, &$orgID), $sql);
+    }
+
+    my_disconnect();
+    header("Location: index");
+  }
 ?>
 
 <!DOCTYPE html>

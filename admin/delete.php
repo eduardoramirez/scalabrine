@@ -2,38 +2,38 @@
 session_start();
 
 if ( !empty($_GET['id'])) {
-    $id = $_REQUEST['id'];
+  $id = $_REQUEST['id'];
 }
 
 if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-    header("Location: /dashboard/login");
+  header("Location: /dashboard/login");
 }
 else if ($_SESSION['admin'] != 2){
-    header("HTTP/1.1 403 Forbidden");
-    header("Location: /403");
+  header("HTTP/1.1 403 Forbidden");
+  header("Location: /403");
 }
 else{
 	require '../database.php';
 
-    $id = 0;
+  $id = 0;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
 	}
 
     if ( !empty($_POST)) {
-        // keep track post values
-        $id = $_POST['id'];
+      // keep track post values
+      $id = $_POST['id'];
 
-        //delete users
-        $sql = "delete from user where orgID = ?";
-        my_update('i', array(&$id), $sql);
+      //delete users
+      $sql = "delete from user where orgID = ?";
+      my_update('i', array(&$id), $sql);
 
-        //delete organization
-        $sql = "DELETE FROM organization WHERE ID = ?";
-        my_update('i', array(&$id), $sql);
+      //delete organization
+      $sql = "DELETE FROM organization WHERE ID = ?";
+      my_update('i', array(&$id), $sql);
 
-        my_disconnect();
-        header("Location: index");
+      my_disconnect();
+      header("Location: index");
     }
 ?>
 
