@@ -36,7 +36,7 @@ else
         
         $data = my_query('s', array(&$username), $norgid);
 
-        $orgid = $data['OrgID'] + 1;
+        $orgid = $data['OrgID'] + 2;
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
 
