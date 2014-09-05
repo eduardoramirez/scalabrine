@@ -51,7 +51,7 @@
             <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
          </div>
          <!--logo start-->
-         <a href="index.html" class="logo"><span>scalabrine</span></a>
+         <a href="index" class="logo"><span>scalabrine</span></a>
          <!--logo end-->
 
          <div class="nav notify-row" id="top_menu">
