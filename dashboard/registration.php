@@ -36,7 +36,7 @@ else
         $con  = new mysqli("localhost","root","Tw0sof+9Ly","scalabrinedb");
         $stuff = $con->query("SELECT MAX(OrgID) AS orgid FROM user");
 
-        $orgid = $stuff['orgid'];
+        $orgid = $stuff->fetch_object()->orgid + 1;
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
         $stuff->close();
