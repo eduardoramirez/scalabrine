@@ -33,9 +33,8 @@ else
         $sql="INSERT INTO user (username, email, password, admin, OrgID) VALUES (?, ?, ?, ?, ?)";
         $norgid="SELECT MAX(OrgID) AS orgid FROM user";
         $roleAdmin = "1";
-        $wildcard = "*";
         
-        $data = my_query('s', array(&$wildcard), $norgid);
+        $data = my_query($norgid);
 
         $orgid = $data['OrgID'] + 1;
 

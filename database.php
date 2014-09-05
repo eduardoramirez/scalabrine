@@ -22,6 +22,18 @@ function getNumRows($type, $param, $query)
   return $numRows;
 }
 
+function getOrgID($query)
+{
+  global $con;
+  $stmt = $con->prepare($query);
+  $stmt->execute();
+  $stmt->bind_result($orgid);
+
+  $stmt->fetch();
+
+  return $orgid;
+}
+
 function my_update($type, $param, $query)
 {
   global $con;
