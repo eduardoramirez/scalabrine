@@ -36,7 +36,7 @@ else
         
         $data = getOrgID();
 
-        $orgid = $data + 1;
+        $orgid = $data['orgid'] + 1;
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
 
