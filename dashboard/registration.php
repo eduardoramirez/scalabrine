@@ -30,10 +30,11 @@ else
       if($numRows == 0 && $numRows1 == 0) 
       {
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
-        $sql="INSERT INTO user (username, email, password, admin) VALUES (?, ?, ?, ?)";
+        $sql="INSERT INTO user (username, email, password, admin, OrgID) VALUES (?, ?, ?, ?, ?)";
         $roleAdmin = "1";
+        $orgid = "1";
 
-        my_update('ssss', array(&$username, &$email, &$h_password, &$roleAdmin), $sql);
+        my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
 
         $_SESSION['signup'] = "";
         header("Location: /dashboard/index");
