@@ -32,7 +32,7 @@ else
         $h_password = password_hash($password, PASSWORD_BCRYPT, $options);
         $sql="INSERT INTO user (username, email, password, admin) VALUES (?, ?, ?, ?)";
 
-        my_update('ssss', array(&$username, &$email, &$h_password, 1), $sql);
+        my_update('ssss', array(&$username, &$email, &$h_password, "1"), $sql);
 
         $_SESSION['signup'] = "";
         header("Location: /dashboard/index");
