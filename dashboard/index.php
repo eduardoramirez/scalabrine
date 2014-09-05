@@ -204,12 +204,13 @@
                         </thead>
                         <tbody>
                     <?php 
-                        include 'database.php';
-                        $pdo = Database::connect();
+                        //include 'database.php';
+                        require("../database.php");
+                        //$pdo = Database::connect();
                         $errorOrgID=$_SESSION['orgID'];
                         $sql = "SELECT * FROM jserrors WHERE OrgID='$errorOrgID' ORDER BY ID DESC";
    
-                        foreach ($pdo->query($sql) as $row) {         
+                        foreach ($con->query($sql) as $row) {         
                            echo '<tr>';
                            echo '<td>'. $row['ID'] .'</td>';
                            echo '<td>'. $row['userAgent'] .'</td>';
@@ -221,7 +222,8 @@
                            echo '</tr>';
                               
                         }
-                        Database::disconnect();
+                        //Database::disconnect();
+                        my_disconnect();
                      ?>                       
                      </tbody>
                      </table>
