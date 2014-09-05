@@ -25,13 +25,9 @@ function getNumRows($type, $param, $query)
 function getOrgID($query)
 {
   global $con;
-  $stmt = $con->prepare($query);
-  $stmt->execute();
-  $stmt->bind_result($orgid);
+  $data = $con->query("SELECT MAX(OrgID) AS orgid FROM user");
 
-  $stmt->fetch();
-
-  return $orgid;
+  return $data['orgid'];
 }
 
 function my_update($type, $param, $query)
