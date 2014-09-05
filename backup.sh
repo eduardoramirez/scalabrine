@@ -2,7 +2,7 @@
 
 # Path to backup directories
 DIR1="/var/www/html/"
-DIR2= "/etc"
+DIR2="/etc"
  
 # Store todays date
 NOW=$(date +"%F")
