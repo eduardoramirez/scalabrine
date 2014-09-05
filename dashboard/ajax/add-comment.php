@@ -51,6 +51,8 @@ if($_POST['act'] == 'add-com')
 
 <?php 
   }
+
+  my_disconnect();
 }
 ?>
 

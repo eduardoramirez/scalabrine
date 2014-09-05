@@ -1,10 +1,8 @@
 <?php
-$dbName = 'scalabrinedb' ; 
-$dbHost = 'localhost' ;
-$dbUsername = 'scala_master';  //'root';
-$dbUserPassword = 'Tw3n+ysof+9Ly'; //'Tw0sof+9Ly';
-
-//$con = mysqli_connect('localhost','scala_master','Tw3n+ysof+9ly','scalabrinedb');
+$dbName = 'scalabrinedb'; 
+$dbHost = 'localhost';
+$dbUsername = 'scala_master';  
+$dbUserPassword = 'Tw3n+ysof+9Ly'; 
 
 
 $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
@@ -60,8 +58,6 @@ function my_query($type, $param, $query)
 
   return $result;
 }
-
-
 
 function my_disconnect()
 {
