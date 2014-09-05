@@ -122,7 +122,7 @@ function badCode()
                <li>
                   <a href="/crud/index">
                      <i class="icon-gear"></i>
-                     <span>User Management</span>
+                     <span>user management</span>
                   </a>
                </li>
                <li>
