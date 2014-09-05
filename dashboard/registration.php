@@ -35,8 +35,8 @@ else
         $roleAdmin = "1";
         $con  = new mysqli("localhost","root","Tw0sof+9Ly","scalabrinedb");
         $stuff = $con->query("SELECT MAX(OrgID) AS orgid FROM user");
-        echo $stuff;
-        $orgid = "1";
+
+        $orgid = stuff['orgid'];
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
         $stuff->close();
