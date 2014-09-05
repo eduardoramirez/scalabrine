@@ -204,9 +204,7 @@
                         </thead>
                         <tbody>
                     <?php 
-                        //include 'database.php';
                         require("../database.php");
-                        //$pdo = Database::connect();
                         $errorOrgID=$_SESSION['orgID'];
                         $sql = "SELECT * FROM jserrors WHERE OrgID='$errorOrgID' ORDER BY ID DESC";
    
@@ -222,7 +220,6 @@
                            echo '</tr>';
                               
                         }
-                        //Database::disconnect();
                         my_disconnect();
                      ?>                       
                      </tbody>
