@@ -1,21 +1,22 @@
 <?php
-require_once 'config.php';
+//require_once 'config.php';
+require("../database.php");
 
 if($_POST['act'] == 'rate'){
 	//search if the user(ip) has already gave a note
 	$ip = $_SERVER["REMOTE_ADDR"];
-	$therate = $_POST['rate'];
-	$thepost = $_POST['post_id'];
+	$therate = sanitize($_POST['rate']);
+	$thepost = sanitize($_POST['post_id']);
 
-	$query = mysql_query("SELECT * FROM ratings where id_post= '$thepost'  "); 
-	while($data = mysql_fetch_assoc($query)){
-		$rate_db[] = $data;
+	$data = my_query('i', array(&$thepost), "SELECT * FROM ratings WHERE id_post=?");
+
+	if(@count($data) == 0 )
+	{
+		$param = array(&$thepost, &$ip, &$therate);
+		my_update('isi', "INSERT INTO ratings (id_post, ip, rate) VALUES (?,?,?)");
 	}
-
-	if(@count($rate_db) == 0 ){
-		mysql_query("INSERT INTO ratings (id_post, ip, rate)VALUES('$thepost', '$ip', '$therate')");
-	}else{
-		mysql_query("UPDATE ratings SET rate= '$therate' WHERE id_post = '$thepost'");
+	else{
+		my_update('ii', array(&$therate, &$thepost), "UPDATE ratings SET rate=? WHERE id_post=?");
 	}
 } 
 ?>
