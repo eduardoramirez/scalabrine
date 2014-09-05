@@ -34,9 +34,9 @@ else
         $norgid="SELECT MAX(OrgID) AS orgid FROM user";
         $roleAdmin = "1";
         
-        $data = my_query($norgid);
+        $data = getOrgID($norgid);
 
-        $orgid = $data + 1;
+        $orgid = $data['orgid'] + 1;
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
 
