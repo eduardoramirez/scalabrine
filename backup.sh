@@ -1,5 +1,5 @@
 #!/bin/bash
-# A Simple Shell Script to Backup Red Hat / CentOS / Fedora / Debian / Ubuntu Apache Webserver and SQL Database
+
 # Path to backup directories
 DIRS="/var/www/html/ /etc"
  
