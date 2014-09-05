@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Path to backup directories
-DIRS="/var/www/html/  x/etc"
+DIR1="/var/www/html/"
+DIR2= "/etc"
  
 # Store todays date
 NOW=$(date +"%F")
@@ -32,7 +33,8 @@ LOGGER="/usr/bin/logger"
 $LOGGER "$0: *** Backup started @ $(date) ***"
  
 # Backup websever dirs
-$TAR -zcvf ${BACKUP}/${BFILE} "${DIRS}"
+$TAR -zcvf ${BACKUP}/${BFILE} ${DIR1}
+$TAR -zcvf ${BACKUP}/${BFILE} ${DIR2}
 
 # Backup MySQL
 $MYSQLDUMP  -u ${MYSQLUSER} -h localhost -p${MYSQLPASSWORD} --all-databases | $GZIP -9 > ${BACKUP}/${MFILE}
