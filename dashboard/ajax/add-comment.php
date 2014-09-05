@@ -36,7 +36,7 @@ if($_POST['act'] == 'add-com')
   $param = array(&$name, &$email, &$comment, &$id_post);
   $sql = "INSERT INTO comments (name, email, comment, id_post) VALUES(?,?,?,?)";
   
-  if(my_update('sssi', $param, $sql))
+  if(!my_update('sssi', $param, $sql))
   {
 ?>
     <div class="cmt-cnt">
