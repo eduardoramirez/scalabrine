@@ -23,7 +23,6 @@ TAR="/bin/tar"
 MYSQLDUMP="/usr/bin/mysqldump"
 GZIP="/bin/gzip"
 SCP="/usr/bin/scp"
-SSH="/usr/bin/ssh"
 LOGGER="/usr/bin/logger"
  
 # make sure backup directory exists
