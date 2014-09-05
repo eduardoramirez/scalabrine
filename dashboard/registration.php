@@ -33,13 +33,12 @@ else
         $sql="INSERT INTO user (username, email, password, admin, OrgID) VALUES (?, ?, ?, ?, ?)";
 
         $roleAdmin = "1";
-        
-        $data = getOrgID();
-echo "here two ".$data;
-        $orgid = "1";
+        $con  = new mysqli("localhost","root","Tw0sof+9Ly","scalabrinedb");
+        $stuff = $con->query("SELECT MAX(OrgID) AS orgid FROM user");
+        $orgid = $stuff['orgid'];
 
         my_update('sssss', array(&$username, &$email, &$h_password, &$roleAdmin, &$orgid), $sql);
-
+        $stuff->close();
         $_SESSION['signup'] = "";
         header("Location: /dashboard/index");
       } 
