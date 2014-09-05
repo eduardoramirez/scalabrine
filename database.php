@@ -22,7 +22,7 @@ function getNumRows($type, $param, $query)
   return $numRows;
 }
 
-function getOrgID($query)
+function getOrgID()
 {
   global $con;
   $data = $con->query("SELECT MAX(OrgID) AS orgid FROM user");
