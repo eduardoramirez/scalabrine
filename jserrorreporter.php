@@ -137,13 +137,14 @@ function badCode()
                      <span>error tracking script</span>
                   </a>
                </li>
+<!--
                <li>
                   <a href="/index">
                      <i class="icon-user"></i>
                      <span>home</span>
                   </a>
                </li>
-
+-->
             </ul>
             <!-- sidebar menu end-->
          </div>

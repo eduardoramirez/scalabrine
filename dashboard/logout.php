@@ -16,7 +16,7 @@ else{
 
     if(session_destroy())
     {
-        header("Location: /dashboard/login");
+        header("Location: /index");
     }
 }
 ?>
