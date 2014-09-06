@@ -251,6 +251,8 @@ include('config2.php');
 
                 $rate_value = ($data['rate']/5)*100;
 
+                echo $data['rate'];
+
             ?>
 
             <div class="rate-result-cnt" id="<?php echo $post_id ?>">
