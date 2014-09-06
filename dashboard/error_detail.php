@@ -243,8 +243,8 @@ include('config2.php');
 
         <div class="box-result-cnt">
             <?php
-                $query = mysql_query("SELECT * FROM ratings where id_post='$post_id'"); 
-                $data = mysql_fetch_assoc($query);
+                $result = $con->query("SELECT * FROM ratings where id_post='$post_id'"); 
+                $data = $result->fetch_assoc();
 
                   $rate_value = ($data['rate']/5)*100;
 
