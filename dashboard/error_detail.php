@@ -161,9 +161,10 @@ include('config2.php');
                           <div class="panel-body profile-activity">
                               <!--<h5 class="pull-right">21 August 2014</h5>-->
                               <?php 
-                                  $errorDetailID = $_GET['id'];
-                                  $sql = mysql_query("SELECT * FROM jserrors WHERE ID='$errorDetailID'") or die(mysql_error());;
-                                  while($affcom = mysql_fetch_assoc($sql)){ 
+                                  require("../database.php");
+                                  $errorDetailID = sanitize($_GET['id']);
+                                  $result = $con->query("SELECT * FROM jserrors WHERE ID='$errorDetailID'") or die(mysql_error());;
+                                  while($affcom = $con->fetch_assoc($result)){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];
                                   $id_post = $affcom['ID'];
@@ -203,8 +204,8 @@ include('config2.php');
                               <div class="timeline-messages">
 
                               <?php 
-                                  $sql = mysql_query("SELECT * FROM comments WHERE id_post = '$id_post'") or die(mysql_error());;
-                                  while($affcom = mysql_fetch_assoc($sql)){ 
+                                  $result = $con->idquery("SELECT * FROM comments WHERE id_post = '$id_post'") or die(mysql_error());;
+                                  while($affcom = $con->fetch_assoc($result)){ 
                                   $name = $affcom['name'];
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
