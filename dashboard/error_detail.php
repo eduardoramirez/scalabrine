@@ -204,7 +204,7 @@ include('config2.php');
                               <div class="timeline-messages">
 
                               <?php 
-                                  $result = $con->idquery("SELECT * FROM comments WHERE id_post = '$id_post'");
+                                  $result = $con->query("SELECT * FROM comments WHERE id_post = '$id_post'");
                                   while($affcom = $result->fetch_assoc()){ 
                                   $name = $affcom['name'];
                                   $email = $affcom['email'];
