@@ -6,7 +6,7 @@
 	$id = null;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
-    $orgid = $_REQUEST['orgID'];
+    $orgid = $_SESSION['orgID'];
 	}
 	
 	if ( null==$id ) {
