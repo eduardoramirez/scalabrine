@@ -4,7 +4,6 @@ $dbHost = 'localhost';
 $dbUsername = 'scala_master';  
 $dbUserPassword = 'Tw3n+ysof+9Ly'; 
 
-
 $con  = new mysqli($dbHost,$dbUsername,$dbUserPassword,$dbName);
 
 function getNumRows($type, $param, $query)
