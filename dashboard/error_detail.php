@@ -28,6 +28,10 @@
     <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
 
 
+    <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
+
+    <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
