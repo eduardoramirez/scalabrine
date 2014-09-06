@@ -163,8 +163,8 @@ include('config2.php');
                               <?php 
                                   require("../database.php");
                                   $errorDetailID = sanitize($_GET['id']);
-                                  $result = $con->query("SELECT * FROM jserrors WHERE ID='$errorDetailID'");
-                                  while($affcom = $result->fetch_assoc()){ 
+                                  $sql = "SELECT * FROM jserrors WHERE ID='$errorDetailID'";
+                                  while($con->query($sql) as $affcom){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];
                                   $id_post = $affcom['ID'];
@@ -204,13 +204,13 @@ include('config2.php');
                               <div class="timeline-messages">
 
                               <?php 
-                                  $result = $con->query("SELECT * FROM comments WHERE id_post = '$id_post'");
-                                  foreach($result->fetch_assoc() as $affcom){ 
-                                  $name = $affcom['name'];
-                                  $email = $affcom['email'];
-                                  $comment = $affcom['comment'];
-                                  $date = $affcom['date'];
-                                  $post_id = $affcom['id'];
+                                  $sql = "SELECT * FROM comments WHERE id_post = '$id_post'";
+                                  foreach($con->query($sql) as $affcom){ 
+                                    $name = $affcom['name'];
+                                    $email = $affcom['email'];
+                                    $comment = $affcom['comment'];
+                                    $date = $affcom['date'];
+                                    $post_id = $affcom['id'];
 
                                   // Get gravatar Image 
                                   // https://fr.gravatar.com/site/implement/images/php/
