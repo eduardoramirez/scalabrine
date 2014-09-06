@@ -173,6 +173,7 @@ else{
                 }
               }
               else{
+                echo "here" . $_SESSION['username'];
                 $sql = 'SELECT * FROM user WHERE OrgID = ' . $_SESSION['orgID'] . ' AND Username != ' . $_SESSION['username'] . ' ORDER BY ID DESC';
               }
 	 				    foreach ($con->query($sql) as $row) {
