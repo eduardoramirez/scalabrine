@@ -1,11 +1,7 @@
 /* WebCodo Header Stylesheet */
 
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
-
-
 a{ color: #000000; text-decoration: none;   }
 a img{ border: none;}
-a:hover{ text-decoration: underline;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
