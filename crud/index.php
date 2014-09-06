@@ -166,7 +166,8 @@ else{
               if ($_SESSION['admin'] == 2){
                 if ( !empty($_GET['orgID'])) {
                   $orgID = $_REQUEST['orgID'];
-                  $sql = 'SELECT * FROM user where orgID = ' . $orgID . ' ORDER BY ID DESC';
+                  echo "hehre" . $_SESSION['username'];
+                  $sql = 'SELECT * FROM user where orgID = ' . $orgID . ' AND Username != ' . $_SESSION['username'] . ' ORDER BY ID DESC';
                 }
                 else {
                   $sql = 'SELECT * FROM user ORDER BY ID DESC';
