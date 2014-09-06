@@ -85,14 +85,13 @@
 
 	} else {
     $data = my_query('ii', array(&$id,&$orgid), "SELECT * FROM user where ID = ? AND OrgID = ?");
+    if ($data==null) {
+      header("Location: index");
+    }
     $name = $data['Username'];
 		$email = $data['Email'];
     $h_password = $data['Password'];
     $level = $data['admin'];
-
-    if ($data==null) {
-      header("Location: index");
-    }
 	}
 ?>
 

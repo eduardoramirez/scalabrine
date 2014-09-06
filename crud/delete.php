@@ -39,6 +39,13 @@ else{
     my_disconnect();
     header("Location: index");
   }
+  else {
+    $data = my_query('ii', array(&$id,&$orgID), "SELECT * FROM user where ID = ? AND OrgID = ?");
+    if ($data==null) {
+      header("Location: index");
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
