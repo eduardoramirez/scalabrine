@@ -205,7 +205,7 @@ include('config2.php');
 
                               <?php 
                                   $result = $con->query("SELECT * FROM comments WHERE id_post = '$id_post'");
-                                  while($result->fetch_assoc() as $affcom){ 
+                                  foreach($result->fetch_assoc() as $affcom){ 
                                   $name = $affcom['name'];
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
