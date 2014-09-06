@@ -1,7 +1,6 @@
 /* WebCodo Header Stylesheet */
 
-a{ color: #000000; text-decoration: none;   }
-a img{ border: none;}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
