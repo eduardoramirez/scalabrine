@@ -164,7 +164,7 @@ include('config2.php');
                                   require("../database.php");
                                   $errorDetailID = sanitize($_GET['id']);
                                   $sql = "SELECT * FROM jserrors WHERE ID='$errorDetailID'";
-                                  while($con->query($sql) as $affcom){ 
+                                  foreach($con->query($sql) as $affcom){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];
                                   $id_post = $affcom['ID'];
