@@ -89,6 +89,10 @@
 		$email = $data['Email'];
     $h_password = $data['Password'];
     $level = $data['admin'];
+
+    if ($data==null) {
+      header("Location: index");
+    }
 	}
 ?>
 
