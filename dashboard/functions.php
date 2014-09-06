@@ -1,6 +1,5 @@
 <?php
 
-require('../database.php');
 require '../userLog.php';
 
 define('PW_SALT','(+3%_');
