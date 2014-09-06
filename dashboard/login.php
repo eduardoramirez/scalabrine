@@ -57,8 +57,7 @@ else if(isset($_POST['login']))
     date_default_timezone_set('America/Los_Angeles');
     $date = new DateTime();
     $_SESSION['time'] = $date->format('Y-m-d H:i:s');
-
-    require '../userLog.php';
+    
     recordEvent('log in', $id);
 
     header("Location: /dashboard/index");
