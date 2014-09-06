@@ -32,7 +32,6 @@
     <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
 
     <link type="text/css" rel="stylesheet" href="/rating/css/style.css">
-    <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
