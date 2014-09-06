@@ -163,8 +163,8 @@ include('config2.php');
                               <?php 
                                   require("../database.php");
                                   $errorDetailID = sanitize($_GET['id']);
-                                  $result = $con->query("SELECT * FROM jserrors WHERE ID='$errorDetailID'") or die(mysql_error());;
-                                  while($affcom = $con->fetch_assoc($result)){ 
+                                  $result = $con->query("SELECT * FROM jserrors WHERE ID='$errorDetailID'");
+                                  while($affcom = $result->fetch_assoc()){ 
                                   $message = $affcom['message'];
                                   $time = $affcom['time'];
                                   $id_post = $affcom['ID'];
@@ -204,8 +204,8 @@ include('config2.php');
                               <div class="timeline-messages">
 
                               <?php 
-                                  $result = $con->idquery("SELECT * FROM comments WHERE id_post = '$id_post'") or die(mysql_error());;
-                                  while($affcom = $con->fetch_assoc($result)){ 
+                                  $result = $con->idquery("SELECT * FROM comments WHERE id_post = '$id_post'");
+                                  while($affcom = $result->fetch_assoc()){ 
                                   $name = $affcom['name'];
                                   $email = $affcom['email'];
                                   $comment = $affcom['comment'];
