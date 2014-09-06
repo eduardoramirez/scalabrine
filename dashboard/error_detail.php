@@ -28,7 +28,6 @@
     <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
 
 
-    <link type="text/css" rel="stylesheet" href="/comments/css/style.css">
     <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
 
     <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
