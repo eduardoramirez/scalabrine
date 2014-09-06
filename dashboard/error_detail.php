@@ -28,11 +28,11 @@
     <link href="/dashboard/css/style-responsive.css" rel="stylesheet" />
 
 
-        <link type="text/css" rel="stylesheet" href="/comments/css/style.css">
-        <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
+    <link type="text/css" rel="stylesheet" href="/comments/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/comments/css/example.css">
 
-        <link type="text/css" rel="stylesheet" href="/rating/css/style.css">
-        <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
+    <link type="text/css" rel="stylesheet" href="/rating/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/rating/css/example.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -66,8 +66,10 @@
          </div>
 
          <div class="top-nav ">
-            <!--search & user info start-->
+            <!--user start-->
+            
             <ul class="nav pull-right top-menu">
+               
                <!-- user login dropdown start-->
                <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -204,13 +206,13 @@ include('config2.php');
                               <div class="timeline-messages">
 
                               <?php 
-                                  $sql = "SELECT * FROM comments WHERE id_post = '$id_post'";
-                                  foreach($con->query($sql) as $affcom){ 
-                                    $name = $affcom['name'];
-                                    $email = $affcom['email'];
-                                    $comment = $affcom['comment'];
-                                    $date = $affcom['date'];
-                                    $post_id = $affcom['id'];
+                                $sql = "SELECT * FROM comments WHERE id_post = '$id_post'";
+                                foreach($con->query($sql) as $affcom){ 
+                                  $name = $affcom['name'];
+                                  $email = $affcom['email'];
+                                  $comment = $affcom['comment'];
+                                  $date = $affcom['date'];
+                                  $post_id = $affcom['id'];
 
                                   // Get gravatar Image 
                                   // https://fr.gravatar.com/site/implement/images/php/
@@ -243,16 +245,9 @@ include('config2.php');
 
         <div class="box-result-cnt">
             <?php
-                //$result = $con->query("SELECT * FROM ratings where id_post='$post_id'"); 
-                //$data = $result->fetch_assoc();
-
                 $data = my_query('i', array(&$post_id), "SELECT * FROM ratings where id_post=?");
 
-
                 $rate_value = ($data['rate']/5)*100;
-
-                echo $data['rate'];
-
             ?>
 
             <div class="rate-result-cnt" id="<?php echo $post_id ?>">
