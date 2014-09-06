@@ -6,6 +6,7 @@
 	$id = null;
 	if ( !empty($_GET['id'])) {
 		$id = $_REQUEST['id'];
+    $orgid = $_REQUEST['orgID'];
 	}
 	
 	if ( null==$id ) {
@@ -83,7 +84,7 @@
     }
 
 	} else {
-    $data = my_query('i', array(&$id), "SELECT * FROM user where ID = ?");
+    $data = my_query('ii', array(&$id,&$orgid), "SELECT * FROM user where ID = ? AND OrgID = ?");
     $name = $data['Username'];
 		$email = $data['Email'];
     $h_password = $data['Password'];
