@@ -13,7 +13,7 @@ if($_POST['act'] == 'rate'){
 	if(@count($data) == 0 )
 	{
 		$param = array(&$thepost, &$ip, &$therate);
-		my_update('isi', "INSERT INTO ratings (id_post, ip, rate) VALUES (?,?,?)");
+		my_update('isi', $param, "INSERT INTO ratings (id_post, ip, rate) VALUES (?,?,?)");
 	}
 	else{
 		my_update('ii', array(&$therate, &$thepost), "UPDATE ratings SET rate=? WHERE id_post=?");
