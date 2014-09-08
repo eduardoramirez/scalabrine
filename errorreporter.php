@@ -1,12 +1,16 @@
 <?php
 session_start();
+
 if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
   header("Location: /dashboard/login");
 }
+
+else {
 ?>
+
 /* object literal wrapper to avoid namespace conflicts */
 var ErrorTracking = {};
-var org = '<?php session_start(); echo $_SESSION["OrgID"]; ?>';
+var org = '<?php echo $_SESSION["OrgID"]; ?>';
 
 /* URL of your server-side error recording script */
 ErrorTracking.errorReportingURL = "http://104.131.195.41:9091/seterrors.php";
@@ -98,3 +102,6 @@ ErrorTracking.registerErrorHandler = function ()
 /* bind the error handler */
 ErrorTracking.registerErrorHandler();
 
+<?php 
+} 
+?>
