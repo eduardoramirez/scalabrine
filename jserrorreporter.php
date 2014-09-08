@@ -34,7 +34,7 @@ else
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-<script src="errorreporter.js" type="text/javascript"></script>
+<script src="errorreporter.php" type="text/javascript"></script>
 <script type="text/javascript">
 
 /* scripts that may trigger errors */
