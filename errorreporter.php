@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+  header("Location: /dashboard/login");
+}
+?>
 /* object literal wrapper to avoid namespace conflicts */
 var ErrorTracking = {};
 var org = '<?php echo $_SESSION["OrgID"]; ?>';
