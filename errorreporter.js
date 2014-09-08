@@ -1,6 +1,6 @@
 /* object literal wrapper to avoid namespace conflicts */
 var ErrorTracking = {};
-
+var org = '<?php echo $_SESSION["OrgID"]; ?>';
 
 /* URL of your server-side error recording script */
 ErrorTracking.errorReportingURL = "http://104.131.195.41:9091/seterrors.php";
@@ -60,7 +60,7 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
 
   payload += "&line=" + ErrorTracking.encodeValue(lineNumber);
 
-  payload += "&orgID=1";
+  payload += "&orgID=" + orgid;
 
   /* submit error message  */
   sendRequest(ErrorTracking.errorReportingURL,payload);
