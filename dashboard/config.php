@@ -214,7 +214,7 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)<br>
 <br>
   payload += "&line=" + ErrorTracking.encodeValue(lineNumber);<br>
 <br>
-  payload += "&orgID=" + '.$currOrgID.'<br>
+  payload += "&orgID=" + '.$currOrgID.';<br>
 <br>
   /* submit error message  */<br>
   sendRequest(ErrorTracking.errorReportingURL,payload);<br>
