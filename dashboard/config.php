@@ -153,98 +153,98 @@
                               $currOrgID=$_SESSION['orgID'];
          echo 
 '/* object literal wrapper to avoid namespace conflicts */<br>
-var ErrorTracking = {};
+var ErrorTracking = {};<br>
 
 
-/* URL of your server-side error recording script */
-ErrorTracking.errorReportingURL = "http://104.131.195.41:9091/seterrors.php";
-
-
-
-ErrorTracking.encodeValue = function(val)
-{
-
-  var encodedVal;
-
-  if (!encodeURIComponent)
-  {
-    encodedVal = escape(val);
-
-    /* fix the omissions */
-    encodedVal = encodedVal.replace(/@/g, \'%40\');
-
-    encodedVal = encodedVal.replace(/\//g, \'%2F\');
-
-    encodedVal = encodedVal.replace(/\+/g, \'%2B\');
-  }
-  else
-  {
-    encodedVal = encodeURIComponent(val);
-
-    /* fix the omissions */
-    encodedVal = encodedVal.replace(/~/g, \'%7E\');
-
-    encodedVal = encodedVal.replace(/!/g, \'%21\');
-
-    encodedVal = encodedVal.replace(/\(/g, \'%28\');
-
-    encodedVal = encodedVal.replace(/\)/g, \'%29\');
-
-    encodedVal = encodedVal.replace(/\'/g, \'%27\');
-  }
-
- /* clean up the spaces and return */
- return encodedVal.replace(/\%20/g,\'+\'); 
-} 
-
-
-ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
-{
-  function sendRequest(url,payload)
-  {
-    var img = new Image();
-
-    img.src = url+"?"+payload;
-  }
-
-  /* form payload string with error data */
-  var payload = "url=" + ErrorTracking.encodeValue(url);
-
-  payload += "&message=" + ErrorTracking.encodeValue(errorMessage);
-
-  payload += "&line=" + ErrorTracking.encodeValue(lineNumber);
-
-  payload += "&orgID="'.$currOrgID.'
-
-  /* submit error message  */
-  sendRequest(ErrorTracking.errorReportingURL,payload);
-
-  alert("JavaScript Error Encountered.  \nSite Administrators have been notified.");
-
-  return true; // suppress normal JS errors since we handled
-}
+/* URL of your server-side error recording script */<br>
+ErrorTracking.errorReportingURL = "http://104.131.195.41:9091/seterrors.php";<br>
 
 
 
-ErrorTracking.registerErrorHandler = function () 
-{ 
-  if (window.onerror) // then one exists
-  {
-    var oldError = window.onerror;
+ErrorTracking.encodeValue = function(val)<br>
+{<br>
+<br>
+  var encodedVal;<br>
+<br>
+  if (!encodeURIComponent)<br>
+  {<br>
+    encodedVal = escape(val);<br>
+<br>
+    /* fix the omissions */<br>
+    encodedVal = encodedVal.replace(/@/g, \'%40\');<br>
+<br>
+    encodedVal = encodedVal.replace(/\//g, \'%2F\');<br>
+<br>
+    encodedVal = encodedVal.replace(/\+/g, \'%2B\');<br>
+  }<br>
+  else<br>
+  {<br>
+    encodedVal = encodeURIComponent(val);<br>
+<br>
+    /* fix the omissions */<br>
+    encodedVal = encodedVal.replace(/~/g, \'%7E\');<br>
+<br>
+    encodedVal = encodedVal.replace(/!/g, \'%21\');<br>
+<br>
+    encodedVal = encodedVal.replace(/\(/g, \'%28\');<br>
+<br>
+    encodedVal = encodedVal.replace(/\)/g, \'%29\');<br>
+<br>
+    encodedVal = encodedVal.replace(/\'/g, \'%27\');<br>
+  }<br>
+<br>
+ /* clean up the spaces and return */<br>
+ return encodedVal.replace(/\%20/g,\'+\'); <br>
+} <br>
+<br>
+<br>
+ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)<br>
+{<br>
+  function sendRequest(url,payload)<br>
+  {<br>
+    var img = new Image();<br>
+<br>
+    img.src = url+"?"+payload;<br>
+  }<br>
+<br>
+  /* form payload string with error data */<br>
+  var payload = "url=" + ErrorTracking.encodeValue(url);<br>
+<br>
+  payload += "&message=" + ErrorTracking.encodeValue(errorMessage);<br>
+<br>
+  payload += "&line=" + ErrorTracking.encodeValue(lineNumber);<br>
+<br>
+  payload += "&orgID="'.$currOrgID.'<br>
+<br>
+  /* submit error message  */<br>
+  sendRequest(ErrorTracking.errorReportingURL,payload);<br>
+<br>
+  alert("JavaScript Error Encountered.  \nSite Administrators have been notified.");<br>
+<br>
+  return true; // suppress normal JS errors since we handled<br>
+}<br>
+<br>
+<br>
 
-    var newErrorHandler = function (errorMessage, url, lineNumber){ 
-      ErrorTracking.reportJSError(errorMessage,url,lineNumber); 
-      oldError(errorMessage,url,lineNumber); 
-    }
-
-    window.onerror = newErrorHandler;
-  } 
-  else   
-    window.onerror = ErrorTracking.reportJSError;
-}
-
-/* bind the error handler */
-ErrorTracking.registerErrorHandler();'
+ErrorTracking.registerErrorHandler = function () <br>
+{ <br>
+  if (window.onerror) // then one exists<br>
+  {<br>
+    var oldError = window.onerror;<br>
+<br>
+    var newErrorHandler = function (errorMessage, url, lineNumber){ <br>
+      ErrorTracking.reportJSError(errorMessage,url,lineNumber); <br>
+      oldError(errorMessage,url,lineNumber); <br>
+    }<br>
+<br>
+    window.onerror = newErrorHandler;<br>
+  } <br>
+  else   <br>
+    window.onerror = ErrorTracking.reportJSError;<br>
+}<br>
+<br>
+/* bind the error handler */<br>
+ErrorTracking.registerErrorHandler();<br>'
 ?>
                         </div>
                      </div>
