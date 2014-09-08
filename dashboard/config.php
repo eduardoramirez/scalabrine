@@ -152,7 +152,7 @@
                            <?php 
                               $currOrgID=$_SESSION['orgID'];
          echo 
-'/* object literal wrapper to avoid namespace conflicts */
+'/* object literal wrapper to avoid namespace conflicts */<br>
 var ErrorTracking = {};
 
 
