@@ -76,14 +76,14 @@ ErrorTracking.reportJSError = function (errorMessage,url,lineNumber)
 
   alert("JavaScript Error Encountered.  \nSite Administrators have been notified.");
 
-  return true; // suppress normal JS errors since we handled
+  return true; 
 }
 
 
 
 ErrorTracking.registerErrorHandler = function () 
 {	
-  if (window.onerror) // then one exists
+  if (window.onerror) 
   {
     var oldError = window.onerror;
 
