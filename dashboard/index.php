@@ -271,7 +271,7 @@
       {
          var aData = oTable.fnGetData( nTr );
          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
-         sOut += '<tr><td>Error Detail URL:</td><td><a href="/dashboard/error_detail?id='+aData[1]+'">'+document.write(location.href);+'dashboard/error_detail?id='+aData[1]+'</a></td></tr>';
+         sOut += '<tr><td>Error Detail URL:</td><td><a href="/dashboard/error_detail?id='+aData[1]+'">dashboard/error_detail?id='+aData[1]+'</a></td></tr>';
          sOut += '<tr><td>User Agent:</td><td>'+aData[2]+'</td></tr>';
          sOut += '<tr><td>Origin:</td><td>'+aData[3]+'</td></tr>';
          sOut += '<tr><td>Line Number:</td><td>'+aData[4]+'</td></tr>';
